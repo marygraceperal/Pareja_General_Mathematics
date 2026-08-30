@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G11 General Mathematics | Term 1 Week 3 | Patterns and Sequences</title>
+<style>
+:root{
+  --primary:#5b21b6;--secondary:#7c3aed;--accent:#ddd6fe;--soft:#f5f3ff;
+  --bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--line:#e2e8f0;
+  --success:#15803d;--warning:#b45309;--danger:#b91c1c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+button,input{font:inherit}
+.header{background:linear-gradient(135deg,#faf5ff,#fff 55%,#f5f3ff);border-bottom:1px solid var(--line)}
+.header-inner,main{max-width:1200px;margin:auto}
+.header-inner{padding:36px 20px 30px}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);padding:6px 11px;border-radius:999px;font-size:.76rem;font-weight:900;letter-spacing:.05em}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:14px 0 5px}
+.subtitle{font-size:1.15rem;color:var(--primary);font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+.meta span{background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--muted)}
+.meta strong{color:var(--text)}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+.primary{background:var(--primary);color:#fff}.secondary{background:#fff;color:var(--primary);border:1px solid var(--accent)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1200px;margin:auto;padding:9px 14px;display:flex;gap:7px;overflow-x:auto}
+.tab{white-space:nowrap;border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:9px;font-weight:800;color:var(--text);cursor:pointer}
+.tab.active,.tab:hover{background:var(--primary);border-color:var(--primary);color:#fff}
+main{padding:28px 18px 60px}
+.section{display:none}.section.active{display:block}
+.title{margin-bottom:19px}.label{display:inline-block;color:var(--primary);background:var(--soft);padding:5px 9px;border-radius:7px;font-size:.74rem;font-weight:900}
+.title h2{margin:8px 0 3px;font-size:1.75rem}.title p{margin:0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:20px;margin-bottom:17px;box-shadow:0 6px 20px rgba(15,23,42,.05)}
+.card h3{margin-top:0;color:var(--primary)}.card h4{color:var(--secondary);margin-bottom:7px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.info{background:#fafafa;border:1px solid var(--line);border-radius:11px;padding:13px}
+.callout{background:var(--soft);border-left:5px solid var(--secondary);padding:13px 15px;border-radius:8px}
+.evidence{background:#f0fdf4;border-left:5px solid var(--success);padding:13px 15px;border-radius:8px}
+.warning{background:#fffbeb;border-left:5px solid var(--warning);padding:13px 15px;border-radius:8px}
+.locknote{background:#faf5ff;border-left:5px solid var(--primary);padding:13px 15px;border-radius:8px}
+table{width:100%;border-collapse:collapse;margin:9px 0 14px}
+th,td{border:1px solid var(--line);padding:9px;vertical-align:top;text-align:left}
+th{background:var(--soft);color:var(--primary)}
+.formula{background:#f8fafc;border:1px dashed #c4b5fd;padding:11px;border-radius:9px;margin:8px 0;font-weight:750}
+.session{border:1px solid var(--line);border-radius:15px;overflow:hidden;margin-bottom:17px}
+.session-head{background:var(--soft);padding:14px 17px;border-bottom:1px solid var(--line)}
+.session-head h3{margin:0;color:var(--primary)}
+.session-body{padding:17px}
+.fouras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.a{border:1px solid var(--line);border-radius:11px;padding:13px}
+.a h4{margin:0 0 6px;color:var(--primary)}
+.tag{display:inline-block;background:#f1f5f9;color:#475569;border-radius:6px;padding:3px 6px;font-size:.69rem;font-weight:900;text-transform:uppercase}
+.objective{border-left:4px solid var(--secondary);background:#fafafa;padding:9px 11px;border-radius:7px;margin-bottom:12px}
+.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}
+.student div{background:#fff;border:1px solid var(--line);padding:9px;border-radius:8px}
+.q{margin-bottom:19px}.q strong{color:var(--primary)}
+.space{min-height:46px;border-bottom:1px solid #94a3b8;margin-top:8px}.bigspace{min-height:90px;border:1px dashed #cbd5e1;border-radius:8px;margin-top:8px}
+.solution{background:#fafafa;border-left:4px solid var(--success);padding:10px 12px;border-radius:7px;margin:7px 0}
+.footer{text-align:center;color:var(--muted);border-top:1px solid var(--line);padding:24px;font-size:.82rem}
+.answer-locked{display:none!important}
+.modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.58);z-index:100;padding:18px;align-items:center;justify-content:center}
+.modal.show{display:flex}.modalbox{background:#fff;width:min(420px,100%);border-radius:18px;padding:28px;text-align:center;box-shadow:0 25px 70px rgba(15,23,42,.3)}
+.modalbox h3{color:var(--primary);margin:4px 0}.modalbox p{color:var(--muted)}
+.modalbox input{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;text-align:center;letter-spacing:.3em}
+.modal-actions{display:flex;gap:8px;margin-top:12px}.modal-actions button{flex:1}
+.error{height:20px;color:var(--danger);font-size:.8rem;font-weight:700;margin-top:7px}
+@media(max-width:800px){.grid2,.grid3,.fouras,.student{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .actions,.nav,.footer,.no-print{display:none!important}
+  .header{background:#fff}.header-inner{padding:12px 0}
+  main{max-width:none;padding:0}
+  .section{display:block!important}.section:not(:first-child){page-break-before:always}
+  .card{box-shadow:none;break-inside:avoid}.session{break-inside:auto}
+  .modal{display:none!important}.answer-locked{display:none!important}
+  table{font-size:9.5pt}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+<span class="badge">📘 EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Patterns and Sequences</h1>
+<div class="subtitle">General Mathematics • Term 1 • Week 3</div>
+<div class="meta">
+<span><strong>Teacher:</strong> Mary Grace M. Peral</span>
+<span><strong>School:</strong> Pareja Integrated School</span>
+<span><strong>Grade & Section:</strong> Grade 11 – Magsaysay</span>
+<span><strong>Sessions:</strong> 4</span>
+<span><strong>Theme:</strong> Term 1 Purple</span>
+</div>
+<div class="actions">
+<button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button>
+<button class="btn secondary" onclick="printCurrent()">🖨️ Print Current View</button>
+</div>
+</div>
+</header>
+
+<nav class="nav">
+<div class="nav-inner">
+<button class="tab active" data-target="lesson">📘 LESSON PLAN</button>
+<button class="tab" data-target="fact">📖 FACT SHEET</button>
+<button class="tab" data-target="activity">📝 ACTIVITY SHEET</button>
+<button class="tab" data-target="assessment">✅ ASSESSMENT</button>
+<button class="tab" data-target="answers">🔒 ANSWER KEY</button>
+<button class="tab" data-target="notes">🧭 TEACHER NOTES</button>
+</div>
+</nav>
+
+<main>
+
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW DLP</span><h2>Evidence-Informed 4As Lesson Plan</h2><p>Every session completes Activity → Analysis → Abstraction → Application.</p></div>
+
+<div class="card">
+<h3>Lesson Information</h3>
+<div class="grid2">
+<div class="info"><strong>Learning Area</strong><br>General Mathematics</div>
+<div class="info"><strong>Topic</strong><br>Patterns and Sequences</div>
+<div class="info"><strong>Grade & Section</strong><br>Grade 11 – Magsaysay</div>
+<div class="info"><strong>Number of Sessions</strong><br>4 sessions</div>
+<div class="info"><strong>Teacher</strong><br>Mary Grace M. Peral</div>
+<div class="info"><strong>School Year</strong><br>2026–2027</div>
+</div>
+<div class="callout" style="margin-top:14px">
+<strong>BOW Learning Competencies — Term 1 Week 3:</strong>
+<ul>
+<li>Describe patterns by inspection, including patterns in art and nature.</li>
+<li>Determine the next term of a given pattern, including the Fibonacci sequence.</li>
+<li>Identify the rule of a given pattern.</li>
+<li>Illustrate the attributes of arithmetic and geometric sequences.</li>
+<li>Solve problems involving arithmetic and geometric sequences.</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<h3>Learning Intentions</h3>
+<p>Learners will recognize, describe, represent and explain patterns; determine missing or next terms; infer rules; distinguish arithmetic from geometric sequences; and solve contextual problems involving both types of sequences.</p>
+<h4>Observable Objectives</h4>
+<ul>
+<li>Describe visible numerical and visual patterns using precise mathematical language.</li>
+<li>Determine missing or next terms, including terms in Fibonacci sequences, and justify the pattern.</li>
+<li>Identify and represent the rule of a sequence and classify it as arithmetic or geometric when appropriate.</li>
+<li>Apply arithmetic and geometric sequence formulas to solve and interpret real-world problems.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Evidence-Informed Weekly Cycle</h3>
+<table>
+<tr><th>Evidence</th><th>Teacher Interpretation</th><th>Instructional Response</th></tr>
+<tr><td>Pattern observation and retrieval responses</td><td>Can learners notice regularity and describe it?</td><td>Use visual/number representations and sentence frames.</td></tr>
+<tr><td>Next-term predictions</td><td>Can learners justify rather than guess the next term?</td><td>Ask learners to state the operation or relationship.</td></tr>
+<tr><td>Rule identification</td><td>Can learners distinguish a pattern's rule from individual terms?</td><td>Use input-output tables and multiple examples.</td></tr>
+<tr><td>Sequence classification</td><td>Can learners recognize constant difference versus constant ratio?</td><td>Compare paired examples and non-examples.</td></tr>
+<tr><td>Integrated mastery task</td><td>Can learners select and apply the appropriate sequence model?</td><td>Remediate the failed decision step or provide transfer/enrichment.</td></tr>
+</table>
+</div>
+
+<div class="session">
+<div class="session-head"><h3>SESSION 1 — Describing Patterns and Finding Next Terms</h3></div>
+<div class="session-body">
+<div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will describe numerical and visual patterns and determine the next term using evidence from the observed relationship.</div>
+<div class="fouras">
+<div class="a"><h4>A1 • ACTIVITY</h4><span class="tag">Retrieval + Notice</span><p>Show short patterns such as 2, 4, 6, 8, …; 3, 6, 12, 24, …; and a simple visual growth pattern. Learners write what changes and predict the next term.</p><p><strong>Evidence:</strong> prediction + one-sentence description.</p></div>
+<div class="a"><h4>A2 • ANALYSIS</h4><span class="tag">Formative Check</span><p>Pairs compare predictions and answer: “What stayed the same? What changed? What operation connects one term to the next?” Teacher addresses guessing without justification.</p><p><strong>Evidence:</strong> identified relationship.</p></div>
+<div class="a"><h4>A3 • ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Teacher models how to inspect consecutive terms, test addition/subtraction/multiplication/division relationships, and describe a pattern precisely.</p><div class="formula">A sequence is an ordered list of numbers or objects that follows an identifiable pattern or rule.</div></div>
+<div class="a"><h4>A4 • APPLICATION</h4><span class="tag">Guided → Independent</span><p>Learners solve five new sequences, determine the next term and write the rule in words. One item uses a visual pattern from nature or art.</p><p><strong>Exit evidence:</strong> accurate next term + justified rule.</p></div>
+</div>
+<div class="evidence" style="margin-top:13px"><strong>Ways Forward:</strong> If learners can predict but cannot explain, use “term-to-term” sentence frames. If they explain accurately, ask them to create a pattern with a hidden rule.</div>
+</div>
+</div>
+
+<div class="session">
+<div class="session-head"><h3>SESSION 2 — Fibonacci Sequence and Rules of Patterns</h3></div>
+<div class="session-body">
+<div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will determine Fibonacci terms and infer the rule of given patterns using organized evidence.</div>
+<div class="fouras">
+<div class="a"><h4>A1 • ACTIVITY</h4><span class="tag">Retrieval + Exploration</span><p>Complete partial sequences: 1, 1, 2, 3, 5, …; 2, 3, 5, 8, 13, …; and non-Fibonacci patterns. Learners predict missing terms.</p></div>
+<div class="a"><h4>A2 • ANALYSIS</h4><span class="tag">Error Analysis</span><p>Examine a learner's incorrect claim that Fibonacci terms are found by adding 2 each time. Learners identify the error and explain the actual relationship.</p><p><strong>Evidence:</strong> correction with justification.</p></div>
+<div class="a"><h4>A3 • ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Model the Fibonacci relationship: after the first two terms, each term is the sum of the two preceding terms.</p><div class="formula">Fₙ = Fₙ₋₁ + Fₙ₋₂</div><p>For general pattern rules, compare consecutive terms and test whether the same operation continues to work.</p></div>
+<div class="a"><h4>A4 • APPLICATION</h4><span class="tag">Collaborative → Independent</span><p>Teams analyze four sequences and state each rule. Each learner independently solves a Fibonacci item and one non-Fibonacci rule item.</p></div>
+</div>
+<div class="evidence" style="margin-top:13px"><strong>Ways Forward:</strong> Learners needing support use a two-column “previous two terms → sum” table. Learners ready for enrichment create a sequence whose rule is not obvious from only two terms and explain why more evidence is needed.</div>
+</div>
+</div>
+
+<div class="session">
+<div class="session-head"><h3>SESSION 3 — Arithmetic and Geometric Sequences</h3></div>
+<div class="session-body">
+<div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will identify and illustrate the attributes of arithmetic and geometric sequences and determine missing terms using the appropriate relationship.</div>
+<div class="fouras">
+<div class="a"><h4>A1 • ACTIVITY</h4><span class="tag">Compare</span><p>Compare pairs: 5, 8, 11, 14, … and 3, 6, 12, 24, …. Learners calculate consecutive differences and ratios.</p></div>
+<div class="a"><h4>A2 • ANALYSIS</h4><span class="tag">Formative Check</span><p>Learners decide whether each sequence has a constant difference, a constant ratio, or neither. Discuss why “multiply by 3” is not an arithmetic rule and why “add 3” is not geometric.</p></div>
+<div class="a"><h4>A3 • ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Teacher introduces the common difference d and common ratio r.</p><div class="formula">Arithmetic: aₙ = a₁ + (n − 1)d</div><div class="formula">Geometric: aₙ = a₁rⁿ⁻¹</div><p>Attributes: arithmetic → constant difference; geometric → constant non-zero ratio.</p></div>
+<div class="a"><h4>A4 • APPLICATION</h4><span class="tag">Guided → Independent</span><p>Learners classify sequences, find d or r, determine a requested term, and explain which model they selected.</p><p><strong>Evidence:</strong> classification + correct model + computation.</p></div>
+</div>
+<div class="evidence" style="margin-top:13px"><strong>Ways Forward:</strong> Use a “difference or ratio?” checklist for learners who confuse the two. Extend proficient learners to reverse problems involving an unknown first term, difference or ratio.</div>
+</div>
+</div>
+
+<div class="session">
+<div class="session-head"><h3>SESSION 4 — Solving Problems with Arithmetic and Geometric Sequences</h3></div>
+<div class="session-body">
+<div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will select an appropriate arithmetic or geometric sequence model, solve a contextual problem, verify the result and interpret its meaning.</div>
+<div class="fouras">
+<div class="a"><h4>A1 • ACTIVITY</h4><span class="tag">Retrieval</span><p>Four quick prompts: identify d, identify r, select arithmetic/geometric, and write the corresponding nth-term formula.</p></div>
+<div class="a"><h4>A2 • ANALYSIS</h4><span class="tag">Model Selection</span><p>Analyze two contextual problems and discuss what evidence tells us whether a constant amount or constant factor is changing.</p></div>
+<div class="a"><h4>A3 • ABSTRACTION</h4><span class="tag">Synthesis</span><p>Build a decision flow:</p><div class="formula">List terms → compare differences/ratios → classify → identify known values → select formula → substitute → calculate → interpret/check</div></div>
+<div class="a"><h4>A4 • APPLICATION</h4><span class="tag">Mastery Task</span><p>Individually solve an arithmetic and a geometric contextual problem. Learners show formula, substitution, answer and interpretation. Calculator/spreadsheet may be used to verify.</p></div>
+</div>
+<div class="evidence" style="margin-top:13px"><strong>Ways Forward:</strong> Classify learners as Not Yet Mastered, Developing or Mastered. Remediate model selection before repeating calculations. Provide transfer problems to learners demonstrating mastery.</div>
+</div>
+</div>
+
+<div class="card">
+<h3>Weekly Mastery Evidence</h3>
+<table>
+<tr><th>Competency</th><th>Primary Evidence</th><th>Decision</th></tr>
+<tr><td>Describe patterns</td><td>Session 1 descriptions</td><td>Strengthen mathematical language if descriptions are vague.</td></tr>
+<tr><td>Determine next term/Fibonacci</td><td>Sessions 1–2 predictions and justifications</td><td>Require rule evidence, not guesses.</td></tr>
+<tr><td>Identify rules</td><td>Session 2 rule analysis</td><td>Use additional terms and input-output tables when needed.</td></tr>
+<tr><td>Illustrate arithmetic/geometric attributes</td><td>Session 3 classification</td><td>Compare constant difference and ratio.</td></tr>
+<tr><td>Solve arithmetic/geometric problems</td><td>Session 4 mastery task</td><td>Remediate model selection or extend application.</td></tr>
+</table>
+</div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Patterns and Sequences</h2><p>Discussion and study guide for four sessions.</p></div>
+
+<div class="card"><h3>What You Will Learn</h3>
+<ul><li>Describe patterns in numbers, art and nature.</li><li>Find the next or missing term of a sequence.</li><li>Recognize and use the Fibonacci sequence.</li><li>Identify a sequence's rule.</li><li>Distinguish arithmetic from geometric sequences.</li><li>Find a specified term and solve contextual problems.</li></ul>
+</div>
+
+<div class="card"><h3>Essential Definitions</h3>
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Pattern</td><td>An identifiable regularity or relationship in a set of numbers, objects or events.</td></tr>
+<tr><td>Sequence</td><td>An ordered list of terms following a pattern or rule.</td></tr>
+<tr><td>Term</td><td>An individual member of a sequence, often represented by aₙ.</td></tr>
+<tr><td>Arithmetic sequence</td><td>A sequence in which the difference between consecutive terms is constant.</td></tr>
+<tr><td>Common difference</td><td>The constant value added to each term to obtain the next term of an arithmetic sequence.</td></tr>
+<tr><td>Geometric sequence</td><td>A sequence in which the ratio of consecutive terms is constant.</td></tr>
+<tr><td>Common ratio</td><td>The constant factor by which each term is multiplied to obtain the next term of a geometric sequence.</td></tr>
+<tr><td>Fibonacci sequence</td><td>A sequence in which, after the first two terms, each term is the sum of the two preceding terms.</td></tr>
+</table></div>
+
+<div class="card"><h3>Key Ideas and Formulas</h3>
+<div class="formula">Arithmetic: aₙ = a₁ + (n − 1)d</div>
+<div class="formula">Geometric: aₙ = a₁rⁿ⁻¹</div>
+<div class="formula">Arithmetic common difference: d = aₙ − aₙ₋₁</div>
+<div class="formula">Geometric common ratio: r = aₙ ÷ aₙ₋₁, when the preceding term is non-zero</div>
+<div class="formula">Fibonacci: Fₙ = Fₙ₋₁ + Fₙ₋₂</div>
+<div class="callout"><strong>Decision tip:</strong> Check differences first. If they are constant, the sequence is arithmetic. If differences are not constant, check ratios. A constant ratio indicates a geometric sequence.</div>
+</div>
+
+<div class="card"><h3>Worked Examples</h3>
+<h4>Example 1 — Describe and Extend a Pattern</h4>
+<p>Sequence: 7, 10, 13, 16, …</p>
+<div class="solution">Each term increases by 3. The next term is 16 + 3 = <strong>19</strong>.</div>
+
+<h4>Example 2 — Fibonacci</h4>
+<p>Sequence: 2, 3, 5, 8, 13, …</p>
+<div class="solution">Each new term is the sum of the previous two: 5 + 8 = <strong>13</strong>, then 8 + 13 = <strong>21</strong>.</div>
+
+<h4>Example 3 — Arithmetic nth Term</h4>
+<p>Find the 12th term of 5, 9, 13, 17, …</p>
+<div class="solution">a₁ = 5, d = 4, n = 12.<br>a₁₂ = 5 + (12 − 1)(4) = 5 + 44 = <strong>49</strong>.</div>
+
+<h4>Example 4 — Geometric nth Term</h4>
+<p>Find the 6th term of 3, 6, 12, 24, …</p>
+<div class="solution">a₁ = 3, r = 2, n = 6.<br>a₆ = 3(2⁵) = 3 × 32 = <strong>96</strong>.</div>
+
+<h4>Example 5 — Contextual Arithmetic Problem</h4>
+<p>A student saves ₱500 in the first month and increases the amount saved by ₱100 every month. How much is saved in the 8th month?</p>
+<div class="solution">a₁ = ₱500, d = ₱100, n = 8.<br>a₈ = ₱500 + 7(₱100) = <strong>₱1,200</strong>.</div>
+</div>
+
+<div class="card"><h3>Common Mistakes and Pitfalls</h3>
+<ol><li>Guessing a next term without stating the relationship.</li><li>Confusing constant difference with constant ratio.</li><li>Using the arithmetic formula for a geometric sequence or vice versa.</li><li>Forgetting that n − 1 is the exponent in the geometric nth-term formula.</li><li>Substituting the wrong first term.</li><li>Failing to check whether the final answer fits the context.</li></ol>
+</div>
+
+<div class="card"><h3>Real-World Connections</h3>
+<p>Patterns and sequences help describe repeated changes in savings, production, population models, repeated designs, natural arrangements and other situations where quantities change according to a recognizable rule.</p>
+</div>
+
+<div class="card"><h3>Quick Self-Check</h3>
+<ol><li>What makes a sequence arithmetic?</li><li>What makes a sequence geometric?</li><li>How is a Fibonacci term generated?</li><li>What should you check before choosing an nth-term formula?</li><li>Why should a solution include an interpretation or reasonableness check?</li></ol>
+</div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY SHEET</span><h2>Week 3 Practice — Patterns and Sequences</h2><p>Show your reasoning. Do not give an unexplained answer.</p></div>
+<div class="student">
+<div><strong>Name:</strong> ______________________________</div><div><strong>Grade/Section:</strong> 11 – Magsaysay</div><div><strong>Date:</strong> ______________</div><div><strong>Score:</strong> ____ / 20</div>
+</div>
+
+<div class="card"><h3>Part 1 — Recall and Basic Understanding</h3><p><strong>LEVEL 1–2</strong></p>
+<div class="q"><strong>1.</strong> Find the next term: 4, 7, 10, 13, ___.
+<div class="space"></div></div>
+<div class="q"><strong>2.</strong> Find the next term: 2, 4, 8, 16, ___.
+<div class="space"></div></div>
+<div class="q"><strong>3.</strong> Find the next two terms: 1, 1, 2, 3, 5, ___, ___.
+<div class="space"></div></div>
+<div class="q"><strong>4.</strong> State the common difference of 18, 14, 10, 6, ….
+<div class="space"></div></div>
+<div class="q"><strong>5.</strong> State the common ratio of 5, 15, 45, 135, ….
+<div class="space"></div></div>
+<div class="q"><strong>6.</strong> Classify 9, 13, 17, 21, … as arithmetic or geometric. Give your reason.
+<div class="space"></div></div>
+</div>
+
+<div class="card"><h3>Part 2 — Application and Problem Solving</h3><p><strong>LEVEL 3</strong></p>
+<div class="q"><strong>7.</strong> Find the 15th term of 6, 10, 14, 18, ….
+<div class="space"></div></div>
+<div class="q"><strong>8.</strong> Find the 8th term of 2, 6, 18, 54, ….
+<div class="space"></div></div>
+<div class="q"><strong>9.</strong> Determine the rule for 30, 25, 20, 15, … and find the 10th term.
+<div class="space"></div></div>
+<div class="q"><strong>10.</strong> A learner saves ₱300 in the first week and increases the weekly saving by ₱50. Find the amount saved in the 10th week.
+<div class="bigspace"></div></div>
+<div class="q"><strong>11.</strong> A machine produces 400 units in its first cycle. Production doubles every cycle. How many units are produced in the 6th cycle?
+<div class="bigspace"></div></div>
+<div class="q"><strong>12.</strong> The number of seats in successive rows of a small hall is 12, 16, 20, 24, …. How many seats are in the 18th row?
+<div class="bigspace"></div></div>
+</div>
+
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis and Challenge</h3><p><strong>LEVEL 4–5</strong></p>
+<div class="q"><strong>13.</strong> A learner says 4, 8, 12, 16, … is geometric because the terms increase. Is the learner correct? Explain.
+<div class="bigspace"></div></div>
+<div class="q"><strong>14.</strong> A learner finds the 10th term of 3, 6, 12, 24, … using aₙ = a₁ + (n − 1)d. Explain the error and give the correct 10th term.
+<div class="bigspace"></div></div>
+<div class="q"><strong>15.</strong> Sequence A begins 100, 90, 80, 70, … and Sequence B begins 100, 90, 81, 72.9, …. Which is arithmetic and which is geometric? Explain using evidence.
+<div class="bigspace"></div></div>
+<div class="q"><strong>16.</strong> Find the missing term: 7, ___, 19, 25, 31, … if the sequence is arithmetic. Show how you know.
+<div class="space"></div></div>
+<div class="q"><strong>17.</strong> A geometric sequence has first term 5 and common ratio 3. Which term is 1,215? Show your reasoning.
+<div class="bigspace"></div></div>
+<div class="q"><strong>18.</strong> CHALLENGE: Create one arithmetic sequence and one geometric sequence that both begin with 4 and 8. Give the next three terms of each and explain how the two rules differ.
+<div class="bigspace"></div></div>
+</div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Patterns and Sequences</h2><p>Show complete solutions for constructed-response items.</p></div>
+<div class="student">
+<div><strong>Name:</strong> ______________________________</div><div><strong>Grade/Section:</strong> 11 – Magsaysay</div><div><strong>Date:</strong> ______________</div><div><strong>Score:</strong> ____ / 20</div>
+</div>
+<div class="card">
+<div class="q"><strong>1. (2 points)</strong> What is the next term of 5, 9, 13, 17, …?<div class="choice">A. 19</div><div class="choice">B. 20</div><div class="choice">C. 21</div><div class="choice">D. 22</div><div class="space"></div></div>
+<div class="q"><strong>2. (2 points)</strong> Which sequence is geometric?<div class="choice">A. 3, 6, 9, 12</div><div class="choice">B. 4, 7, 10, 13</div><div class="choice">C. 2, 6, 18, 54</div><div class="choice">D. 20, 18, 16, 14</div><div class="space"></div></div>
+<div class="q"><strong>3. (2 points)</strong> What is the 7th Fibonacci term if the sequence begins 1, 1, 2, 3, 5, …?<div class="choice">A. 7</div><div class="choice">B. 8</div><div class="choice">C. 13</div><div class="choice">D. 21</div><div class="space"></div></div>
+<div class="q"><strong>4. (2 points)</strong> Find the 10th term of the arithmetic sequence 7, 11, 15, 19, ….<div class="choice">A. 39</div><div class="choice">B. 41</div><div class="choice">C. 43</div><div class="choice">D. 45</div><div class="space"></div></div>
+<div class="q"><strong>5. (2 points)</strong> Find the 6th term of the geometric sequence 3, 6, 12, 24, ….<div class="choice">A. 48</div><div class="choice">B. 72</div><div class="choice">C. 96</div><div class="choice">D. 192</div><div class="space"></div></div>
+<div class="q"><strong>6. (2 points)</strong> State the rule of 50, 45, 40, 35, … and find the 12th term.<div class="bigspace"></div></div>
+<div class="q"><strong>7. (3 points)</strong> A student saves ₱200 in the first month and adds ₱75 to the amount saved each month. Find the amount saved in the 9th month and explain why an arithmetic sequence is appropriate.<div class="bigspace"></div></div>
+<div class="q"><strong>8. (5 points)</strong> A digital display starts with 80 points. The points become 1.5 times the previous value after each completed level. Model this as a geometric sequence and find the points after the 6th level. Show the formula, substitution and interpretation.<div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3>
+<table><tr><th>Score</th><th>Interpretation</th><th>Instructional Action</th></tr>
+<tr><td>18–20</td><td>Mastered</td><td>Provide transfer or enrichment task.</td></tr>
+<tr><td>14–17</td><td>Developing</td><td>Target the specific error pattern and reassess.</td></tr>
+<tr><td>0–13</td><td>Not Yet Mastered</td><td>Use explicit modeling, scaffolded practice and a focused reassessment.</td></tr>
+</table></div>
+</section>
+
+<section id="answers" class="section answer-locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key and Scoring Guide</h2><p>Protected teacher resource.</p></div>
+<div class="locknote"><strong>Teacher property:</strong> Complete solutions and scoring information are contained in this section.</div>
+
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3>
+<ol>
+<li>4, 7, 10, 13: add 3. Next term = <strong>16</strong>.</li>
+<li>2, 4, 8, 16: multiply by 2. Next term = <strong>32</strong>.</li>
+<li>Each term after the first two is the sum of the preceding two: 5 + 3 = 8; 3 + 5 = 8 depending on sequence position; specifically sequence 1,1,2,3,5 gives <strong>8, 13</strong>.</li>
+<li>d = 14 − 18 = <strong>−4</strong>.</li>
+<li>r = 15 ÷ 5 = <strong>3</strong>.</li>
+<li><strong>Arithmetic</strong>; consecutive differences are 4.</li>
+<li>a₁ = 6, d = 4, n = 15. a₁₅ = 6 + 14(4) = 6 + 56 = <strong>62</strong>.</li>
+<li>a₁ = 2, r = 3, n = 8. a₈ = 2(3⁷) = 2(2,187) = <strong>4,374</strong>.</li>
+<li>Rule: subtract 5 each time. a₁₀ = 30 + 9(−5) = <strong>−15</strong>.</li>
+<li>a₁ = ₱300, d = ₱50, n = 10. a₁₀ = ₱300 + 9(₱50) = <strong>₱750</strong>.</li>
+<li>a₁ = 400, r = 2, n = 6. a₆ = 400(2⁵) = 400 × 32 = <strong>12,800 units</strong>.</li>
+<li>a₁ = 12, d = 4, n = 18. a₁₈ = 12 + 17(4) = <strong>80 seats</strong>.</li>
+<li><strong>No.</strong> It is arithmetic because the constant difference is 4. Ratios are not constant.</li>
+<li>The error is using an arithmetic formula for a geometric sequence. Here r = 2. a₁₀ = 3(2⁹) = 3 × 512 = <strong>1,536</strong>.</li>
+<li>Sequence A is <strong>arithmetic</strong> because the difference is −10. Sequence B is <strong>geometric</strong> because each term is multiplied by 0.9.</li>
+<li>Let 7, x, 19 be consecutive terms. Arithmetic means equal differences: x − 7 = 19 − x. Thus 2x = 26 and x = <strong>13</strong>. Sequence: 7, 13, 19, 25, 31.</li>
+<li>1,215 = 5(3ⁿ⁻¹). Divide by 5: 243 = 3ⁿ⁻¹ = 3⁵. Therefore n − 1 = 5 and n = <strong>6</strong>. It is the 6th term.</li>
+<li>Arithmetic example: 4, 8, 12, 16, 20, 24 (d = 4). Geometric example: 4, 8, 16, 32, 64, 128 (r = 2). Both begin 4, 8, but one adds 4 while the other multiplies by 2.</li>
+</ol>
+</div>
+
+<div class="card"><h3>Assessment — Complete Solutions</h3>
+<ol>
+<li><strong>C. 21</strong>. Difference = 4, so 17 + 4 = 21.</li>
+<li><strong>C. 2, 6, 18, 54</strong>. Each term is multiplied by 3.</li>
+<li><strong>C. 13</strong>. The terms are 1, 1, 2, 3, 5, 8, 13. Therefore, the 7th term is <strong>13</strong>.</li>
+<li><strong>C. 43</strong>. a₁ = 7, d = 4, n = 10: a₁₀ = 7 + 9(4) = 43.</li>
+<li><strong>C. 96</strong>. a₆ = 3(2⁵) = 96.</li>
+<li>Rule: subtract 5. a₁₂ = 50 + 11(−5) = <strong>−5</strong>.</li>
+<li>a₁ = ₱200, d = ₱75, n = 9. a₉ = ₱200 + 8(₱75) = ₱200 + ₱600 = <strong>₱800</strong>. It is arithmetic because the same amount, ₱75, is added each month.</li>
+<li>a₁ = 80, r = 1.5, n = 6. a₆ = 80(1.5⁵) = 80(7.59375) = <strong>607.5 points</strong>. Interpretation: after six levels under the stated model, the value is 607.5 points.</li>
+</ol>
+<div class="warning"><strong>Teacher note:</strong> Assessment Item 3 is keyed to C. 13 because the 7th Fibonacci term in the stated sequence is 13.</div>
+</div>
+
+<div class="card"><h3>Open-Ended Rubric</h3>
+<table>
+<tr><th>Criterion</th><th>4</th><th>3</th><th>2</th><th>1</th></tr>
+<tr><td>Model selection</td><td>Correct model with clear justification.</td><td>Correct model with minor explanation gap.</td><td>Model selected with substantial support.</td><td>Incorrect or unexplained model.</td></tr>
+<tr><td>Mathematical process</td><td>Complete and accurate.</td><td>Mostly accurate with minor error.</td><td>Some correct steps.</td><td>Process largely incorrect.</td></tr>
+<tr><td>Interpretation</td><td>Clear, contextual and reasonable.</td><td>Clear but brief.</td><td>Partially connected to context.</td><td>Missing or incorrect.</td></tr>
+<tr><td>Communication</td><td>Organized and mathematically precise.</td><td>Generally clear.</td><td>Some ambiguity.</td><td>Unclear.</td></tr>
+</table>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Instructional Support and Ways Forward</h2><p>Use learner evidence to decide the next instructional move.</p></div>
+
+<div class="grid2">
+<div class="card"><h3>Common Misconceptions</h3><ul><li>Assuming every sequence has a unique rule from only two or three terms.</li><li>Confusing “increasing” with “geometric.”</li><li>Using difference when the pattern is multiplicative.</li><li>Using the wrong nth-term formula.</li><li>Forgetting n − 1 in the formulas.</li><li>Giving a next term without evidence for the rule.</li></ul></div>
+<div class="card"><h3>Remediation Strategies</h3><ul><li>Use concrete objects before symbolic sequences.</li><li>Have learners write consecutive differences beneath terms.</li><li>If needed, write consecutive ratios beside terms.</li><li>Use paired examples: arithmetic vs geometric.</li><li>Provide formula frames with known values highlighted.</li><li>Reassess the exact failed step.</li></ul></div>
+</div>
+
+<div class="card"><h3>Enrichment and Transfer</h3><ul><li>Ask learners to photograph or sketch a pattern in art or nature and describe its mathematical regularity.</li><li>Create a sequence with a specified nth term.</li><li>Work backward to find a missing first term, common difference or ratio.</li><li>Use a spreadsheet to generate the first 15 terms of an arithmetic or geometric sequence.</li><li>Compare two models and explain which better represents a real situation.</li></ul></div>
+
+<div class="card"><h3>Cross-Curricular Connections</h3>
+<table><tr><th>Area</th><th>Connection</th></tr><tr><td>Arts</td><td>Repeated designs, symmetry and visual growth patterns.</td></tr><tr><td>Science</td><td>Patterns observed in natural arrangements and repeated change.</td></tr><tr><td>ICT</td><td>Spreadsheets for generating and checking sequences.</td></tr><tr><td>Financial Literacy</td><td>Regular increases or multiplicative growth in simplified savings or production contexts.</td></tr></table>
+</div>
+
+<div class="card"><h3>Teacher Evidence Record</h3>
+<table><tr><th>Session</th><th>Evidence</th><th>Observed Need</th><th>Instructional Response</th></tr>
+<tr><td>1</td><td>Pattern descriptions / next terms</td><td>________________</td><td>________________</td></tr>
+<tr><td>2</td><td>Fibonacci / rule identification</td><td>________________</td><td>________________</td></tr>
+<tr><td>3</td><td>Arithmetic vs geometric classification</td><td>________________</td><td>________________</td></tr>
+<tr><td>4</td><td>Integrated problem solving</td><td>________________</td><td>________________</td></tr></table>
+</div>
+
+<div class="card"><h3>AI-Assisted Instructional Design Declaration</h3><p>This learning package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, mathematical accuracy, assessment decisions, learner data interpretation and final instructional use.</p></div>
+
+<div class="card"><h3>References</h3>
+<ul><li>Department of Education. Grade 11 General Mathematics curriculum materials.</li><li>School-level Grade 11 General Mathematics Budget of Work, Term 1, Week 3.</li><li>Teacher-developed evidence-informed ILAW 4As instructional sequence.</li></ul>
+<p class="warning">The exact Week 3 competency wording is taken from the supplied Grade 11 General Mathematics BOW. fileciteturn11file0L30-L36</p>
+</div>
+</section>
+
+</main>
+
+<footer>General Mathematics • Term 1 • Week 3 • Evidence-Informed ILAW 4As<br>Pareja Integrated School • School Year 2026–2027</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+<div class="modalbox" role="dialog" aria-modal="true">
+<div style="font-size:2.2rem">🔒</div>
+<h3>Teacher Access Required</h3>
+<p>The Answer Key is reserved for teacher use.</p>
+<input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code" autocomplete="off">
+<div class="modal-actions"><button class="btn secondary" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div>
+<div class="error" id="err"></div>
+</div>
+</div>
+
+<script>
+const ACCESS_CODE="010203";
+let unlocked=false;
+let current="lesson";
+const tabs=document.querySelectorAll(".tab");
+const sections=document.querySelectorAll(".section");
+
+tabs.forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    const target=tab.dataset.target;
+    if(target==="answers" && !unlocked){openModal();return;}
+    activate(target);
+  });
+});
+
+function activate(target){
+  current=target;
+  tabs.forEach(t=>t.classList.toggle("active",t.dataset.target===target));
+  sections.forEach(s=>s.classList.toggle("active",s.id===target));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function openModal(){
+  const m=document.getElementById("modal"),c=document.getElementById("code"),e=document.getElementById("err");
+  c.value="";e.textContent="";m.classList.add("show");m.setAttribute("aria-hidden","false");
+  setTimeout(()=>c.focus(),50);
+}
+function closeModal(){
+  const m=document.getElementById("modal");m.classList.remove("show");m.setAttribute("aria-hidden","true");
+}
+function unlock(){
+  const c=document.getElementById("code"),e=document.getElementById("err");
+  if(c.value===ACCESS_CODE){
+    unlocked=true;
+    document.getElementById("answers").classList.remove("answer-locked");
+    closeModal();
+    activate("answers");
+  }else{e.textContent="Incorrect code. The Answer Key remains locked.";c.select();}
+}
+document.getElementById("code").addEventListener("keydown",e=>{
+  if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal();
+});
+document.getElementById("modal").addEventListener("click",e=>{
+  if(e.target.id==="modal")closeModal();
+});
+function printAll(){window.print();}
+function printCurrent(){
+  if(current==="answers" && !unlocked){openModal();return;}
+  window.print();
+}
+</script>
+</body>
+</html>
