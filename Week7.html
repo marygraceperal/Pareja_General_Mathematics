@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G11 General Mathematics | Term 1 Week 7 | Surface Area and Volume</title>
+<style>
+:root{--p:#5b21b6;--s:#7c3aed;--a:#ddd6fe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#f5f3ff;--ok:#166534}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#faf5ff,#fff,#f5f3ff);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:var(--p);padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.08rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:var(--ok)}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#faf5ff;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #c4b5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:95px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid var(--ok);padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Surface Area and Volume of Solid Figures</h1>
+<div class="sub">General Mathematics • Term 1 • Week 7</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 1 Purple</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+<main>
+
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Surface Area and Volume of Solid Figures</h2><p>Four complete daily Evidence-Informed 4As sessions based directly on BOW Week 7.</p></div>
+<div class="card"><h3>Lesson Information</h3><div class="grid"><div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Surface area and volume of solid figures</div><div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Week</b><br>Term 1 • Week 7</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div><div class="info"><b>Teacher</b><br>Mary Grace M. Peral</div></div></div>
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Week 7 — Measurement and Geometry:</b><ul><li>Determine the surface area of three-dimensional objects, such as prisms, pyramids, cylinders, cones, spheres, and combinations of these.</li><li>Calculate the volume of prisms, pyramids, cylinders, cones, spheres, and combinations of these.</li></ul><p>These are the exact Week 7 competency elements in the provided BOW. fileciteturn23file0L17-L21</p></div></div>
+<div class="card"><h3>Weekly Learning Intentions</h3><ul><li>Identify the dimensions and relevant faces or parts of common solid figures.</li><li>Determine surface area of prisms, pyramids, cylinders, cones, spheres, and composite solids.</li><li>Calculate volume of prisms, pyramids, cylinders, cones, spheres, and composite solids.</li><li>Select an appropriate formula, substitute accurately, use correct units, and interpret a real-life measurement result.</li></ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve prior measurement knowledge → elicit visual/spatial thinking → explicitly model formulas → guided practice → independent application → analyze errors → respond with targeted support.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Surface Area of Prisms and Pyramids</h3></div><div class="sb"><p><b>Daily objective:</b> Determine the surface area of rectangular prisms and pyramids by identifying all required faces and dimensions.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit</span><p>Display a box and a square-based pyramid. Learners identify faces, edges, and dimensions, then predict which surfaces would need covering if the solid were wrapped.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare a net of a rectangular prism with the solid. Discuss why surface area counts the areas of all exposed faces. For a pyramid, distinguish base area from the triangular lateral faces.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>For a rectangular prism, surface area is the sum of the areas of its six faces. For a right prism, SA = 2B + Ph, where B is base area, P is base perimeter, and h is prism height. For a pyramid, SA = B + ½Pl, where l is slant height for a regular/right pyramid.</p><div class="formula">Rectangular prism: SA = 2(lw + lh + wh)<br>Regular pyramid: SA = B + ½Pl</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Find the surface area of rectangular prisms and square pyramids. Learners label dimensions, select a formula, substitute, calculate, and state square units.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners omit a face, return to a net or physical model. If the correct faces are identified but arithmetic is inaccurate, isolate the arithmetic step for short practice.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Surface Area of Cylinders, Cones, and Spheres</h3></div><div class="sb"><p><b>Daily objective:</b> Calculate surface area of cylinders, cones, and spheres and distinguish total surface area from lateral/curved surface area when appropriate.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Examine a can, cone-shaped object, and ball. Learners identify circular bases and curved surfaces and predict which parts would be covered.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Compare a learner's use of 2πr² + 2πrh for a closed cylinder with an incorrect formula that omits a base. Discuss whether the context requires a closed or open solid.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Use the standard total surface-area formulas. For a closed cylinder, SA = 2πr² + 2πrh. For a cone, SA = πr² + πrl. For a sphere, SA = 4πr², where l is slant height of the cone.</p><div class="formula">Cylinder: SA = 2πr² + 2πrh<br>Cone: SA = πr² + πrl<br>Sphere: SA = 4πr²</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Practice</span><p>Solve surface-area problems involving a closed cylinder, cone, and sphere. Use π ≈ 3.14 unless another value is specified. Round sensibly and include square units.</p></div></div><div class="evidence"><b>Teacher response:</b> When learners confuse radius and diameter, have them mark the centre-to-edge distance before substitution and check whether r = d ÷ 2 is needed.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Volume of Prisms, Pyramids, Cylinders, Cones, and Spheres</h3></div><div class="sb"><p><b>Daily objective:</b> Calculate the volume of common solid figures and explain how the formula relates to the solid's dimensions.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Sort solids into prism/pyramid/curved categories. Learners predict which shapes could be filled with equal layers and which use a fraction of a corresponding prism/cylinder.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare V = Bh for a prism with V = ⅓Bh for a pyramid. For curved solids, compare cylinder/cone and sphere formulas. Ask learners to identify which dimensions belong in each formula.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Prism: V = Bh<br>Pyramid: V = ⅓Bh<br>Cylinder: V = πr²h<br>Cone: V = ⅓πr²h<br>Sphere: V = ⁴⁄₃πr³</div><p>Volume measures the amount of three-dimensional space occupied and is expressed in cubic units.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Calculate volumes of a rectangular prism, square pyramid, cylinder, cone, and sphere. Learners identify B or r first, then substitute and label cubic units.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners choose the wrong formula, use a formula-sort task before further computation. If formula selection is secure but errors remain, focus on substitution and calculator entry.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Composite Solids and Real-Life Applications</h3></div><div class="sb"><p><b>Daily objective:</b> Solve surface-area and volume problems involving composite solids, justify the selected approach, and interpret the result in context.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieval</span><p>Review formula cards. Learners decompose a composite solid into familiar figures, identifying shared or hidden surfaces.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Analyze which surfaces should be counted for an outside-painting problem and which internal/shared surfaces should not. Compare addition and subtraction of component volumes.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><div class="formula">Composite volume = add/subtract component volumes as required.<br>Composite surface area = add only the exposed surfaces required by the context.</div><p>Always sketch, label, decompose, choose formulas, calculate, check, and interpret.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Solve real-life packaging, storage, painting, construction, and capacity problems. Learners explain why a surface is included or excluded and report appropriate units.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Classify learners as Not Yet Mastered, Developing, or Mastered. Reteach the exact failed step—figure recognition, formula selection, exposed-surface reasoning, computation, or interpretation—then reassess.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Competency</th><th>Evidence</th><th>What It Shows</th><th>Response</th></tr>
+<tr><td>Surface area of solids</td><td>Sessions 1–2 practice</td><td>Can learners identify and calculate required surfaces?</td><td>________________</td></tr>
+<tr><td>Volume of solids</td><td>Session 3 practice</td><td>Can learners select and apply the appropriate volume formula?</td><td>________________</td></tr>
+<tr><td>Composite applications</td><td>Session 4 mastery task</td><td>Can learners decompose, calculate, check, and interpret?</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Surface Area and Volume</h2><p>A practical guide to measuring the outside and inside of three-dimensional objects.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>How to determine surface area of common solid figures.</li><li>How to calculate volume of common solid figures.</li><li>How to handle composite solids.</li><li>How to select formulas, substitute correctly, use appropriate units, and check answers.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Surface area</td><td>The total area of the exposed surfaces of a three-dimensional object.</td></tr><tr><td>Volume</td><td>The amount of three-dimensional space occupied by a solid.</td></tr><tr><td>Base area (B)</td><td>The area of the base of a prism or pyramid.</td></tr><tr><td>Radius (r)</td><td>The distance from the centre of a circle or sphere to its edge.</td></tr><tr><td>Slant height (l)</td><td>The sloping height used in the lateral surface-area formula of a regular/right pyramid or cone.</td></tr><tr><td>Composite solid</td><td>A solid formed by combining two or more familiar solid figures.</td></tr></table></div>
+<div class="card"><h3>Formula Guide</h3><table><tr><th>Solid</th><th>Surface Area</th><th>Volume</th></tr><tr><td>Rectangular prism</td><td>SA = 2(lw + lh + wh)</td><td>V = lwh</td></tr><tr><td>Prism</td><td>SA = 2B + Ph</td><td>V = Bh</td></tr><tr><td>Regular pyramid</td><td>SA = B + ½Pl</td><td>V = ⅓Bh</td></tr><tr><td>Closed cylinder</td><td>SA = 2πr² + 2πrh</td><td>V = πr²h</td></tr><tr><td>Cone</td><td>SA = πr² + πrl</td><td>V = ⅓πr²h</td></tr><tr><td>Sphere</td><td>SA = 4πr²</td><td>V = ⁴⁄₃πr³</td></tr></table></div>
+<div class="card"><h3>Step-by-Step Worked Examples</h3>
+<h4>1. Rectangular Prism — Surface Area</h4><p>A box has l = 8 cm, w = 5 cm, and h = 3 cm.</p><div class="solution">SA = 2(lw + lh + wh)<br>= 2(8×5 + 8×3 + 5×3)<br>= 2(40 + 24 + 15)<br>= <b>158 cm²</b>.</div>
+<h4>2. Cylinder — Volume</h4><p>A cylinder has radius 3 cm and height 10 cm. Use π ≈ 3.14.</p><div class="solution">V = πr²h = 3.14(3²)(10) = 3.14(9)(10) = <b>282.6 cm³</b>.</div>
+<h4>3. Cone — Surface Area</h4><p>A cone has r = 3 cm and l = 5 cm.</p><div class="solution">SA = πr² + πrl = 3.14(9) + 3.14(15) = 28.26 + 47.10 = <b>75.36 cm²</b>.</div>
+<h4>4. Sphere — Volume</h4><p>A sphere has radius 3 cm.</p><div class="solution">V = ⁴⁄₃πr³ = ⁴⁄₃(3.14)(27) = <b>113.04 cm³</b>.</div>
+<h4>5. Composite Volume</h4><p>A solid is formed by a 10 cm × 4 cm × 3 cm rectangular prism and a 4 cm × 4 cm × 3 cm rectangular prism attached without overlap.</p><div class="solution">V₁ = 10×4×3 = 120 cm³.<br>V₂ = 4×4×3 = 48 cm³.<br>Total V = 120 + 48 = <b>168 cm³</b>.</div></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Using a surface-area formula when the question asks for volume, or vice versa.</li><li>Using diameter as radius without dividing by 2.</li><li>Forgetting a base when the solid is closed.</li><li>Counting a hidden/shared surface in a composite outside-surface problem.</li><li>Using square units for volume or cubic units for area.</li><li>Rounding too early.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Surface area is useful for painting, wrapping, coating, packaging, and estimating material needed to cover an object. Volume is useful for storage capacity, filling containers, construction, manufacturing, and estimating how much material a solid can hold or occupy.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>What does surface area measure?</li><li>What does volume measure?</li><li>Find the volume of a 5 cm × 4 cm × 3 cm rectangular prism.</li><li>Find the volume of a cylinder with r = 2 cm and h = 5 cm using π ≈ 3.14.</li><li>Why should shared internal surfaces usually not be counted in the outside surface area of a composite solid?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 7 Practice — Surface Area and Volume</h2><p>Show the formula, substitution, computation, and correct units.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> What is the difference between surface area and volume? <div class="space"></div></div>
+<div class="q"><b>2.</b> State the volume formula for a rectangular prism. <div class="space"></div></div>
+<div class="q"><b>3.</b> State the volume formula for a cylinder. <div class="space"></div></div>
+<div class="q"><b>4.</b> A sphere has radius 4 cm. Which formula gives its surface area? <div class="space"></div></div>
+<div class="q"><b>5.</b> Find the volume of a rectangular prism with l = 6 cm, w = 4 cm, h = 3 cm. <div class="space"></div></div>
+<div class="q"><b>6.</b> Find the surface area of a cube with side length 5 cm. <div class="space"></div></div></div>
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> Find the surface area of a rectangular prism with l = 8 cm, w = 5 cm, h = 3 cm. <div class="space"></div></div>
+<div class="q"><b>8.</b> Find the volume of a square pyramid with base side 6 cm and height 9 cm. <div class="space"></div></div>
+<div class="q"><b>9.</b> Find the total surface area of a closed cylinder with r = 3 cm and h = 7 cm. Use π ≈ 3.14. <div class="space"></div></div>
+<div class="q"><b>10.</b> Find the volume of a cylinder with r = 3 cm and h = 10 cm. Use π ≈ 3.14. <div class="space"></div></div>
+<div class="q"><b>11.</b> Find the surface area of a cone with r = 3 cm and l = 5 cm. Use π ≈ 3.14. <div class="space"></div></div>
+<div class="q"><b>12.</b> Find the volume of a cone with r = 3 cm and h = 8 cm. Use π ≈ 3.14. <div class="bigspace"></div></div></div>
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner uses V = 4πr² for a sphere. Identify the error and state the correct volume formula. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A sphere has r = 3 cm. Find its surface area using π ≈ 3.14. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> A sphere has r = 3 cm. Find its volume using π ≈ 3.14. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A storage box measures 12 cm × 8 cm × 5 cm. Find its volume and total surface area. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A composite solid is made from two rectangular prisms: 10×4×3 cm and 4×4×3 cm, joined without overlap. Find the total volume. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Design a real-life composite solid problem involving either surface area or volume. Give dimensions, identify the component solids, solve it, and explain which surfaces should be included or excluded. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Surface Area and Volume</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which quantity is measured in cubic units?<br>A. Surface area &nbsp; B. Volume &nbsp; C. Length &nbsp; D. Perimeter<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> Find the volume of a rectangular prism measuring 5 cm × 4 cm × 3 cm.<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Find the surface area of a cube with side length 4 cm.<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> A cylinder has r = 2 cm and h = 5 cm. Find its volume using π ≈ 3.14.<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Which formula represents the volume of a pyramid?<br>A. Bh &nbsp; B. ⅓Bh &nbsp; C. πr²h &nbsp; D. 4πr²<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Explain why a composite-solid surface-area problem may require excluding some surfaces. <div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> A closed cylinder has radius 3 cm and height 6 cm. Find its total surface area using π ≈ 3.14. <div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A rectangular prism measuring 10 cm × 4 cm × 3 cm is joined to a 4 cm × 4 cm × 3 cm rectangular prism without overlap. Determine the total volume and explain how you know the volumes can be added. <div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific formula, substitution, or unit error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Explicit reteaching + scaffolded reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Complete solutions are hidden until the teacher enters the access code.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li><b>Surface area</b> measures the total exposed area of a solid; <b>volume</b> measures the space occupied by the solid.</li>
+<li><b>V = lwh</b>.</li>
+<li><b>V = πr²h</b>.</li>
+<li><b>SA = 4πr²</b>.</li>
+<li>V = lwh = 6×4×3 = <b>72 cm³</b>.</li>
+<li>SA = 6s² = 6(5²) = 6(25) = <b>150 cm²</b>.</li>
+<li>SA = 2(lw + lh + wh) = 2(40 + 24 + 15) = <b>158 cm²</b>.</li>
+<li>Base area B = 6² = 36 cm². V = ⅓Bh = ⅓(36)(9) = <b>108 cm³</b>.</li>
+<li>SA = 2πr² + 2πrh = 2(3.14)(9) + 2(3.14)(3)(7) = 56.52 + 131.88 = <b>188.40 cm²</b>.</li>
+<li>V = πr²h = 3.14(9)(10) = <b>282.6 cm³</b>.</li>
+<li>SA = πr² + πrl = 3.14(9) + 3.14(15) = <b>75.36 cm²</b>.</li>
+<li>V = ⅓πr²h = ⅓(3.14)(9)(8) = <b>75.36 cm³</b>.</li>
+<li>The expression 4πr² is the <b>surface area</b> formula for a sphere. The correct volume formula is <b>V = ⁴⁄₃πr³</b>.</li>
+<li>SA = 4πr² = 4(3.14)(9) = <b>113.04 cm²</b>.</li>
+<li>V = ⁴⁄₃πr³ = ⁴⁄₃(3.14)(27) = <b>113.04 cm³</b>.</li>
+<li>V = 12×8×5 = <b>480 cm³</b>.<br>SA = 2(12×8 + 12×5 + 8×5) = 2(96 + 60 + 40) = <b>392 cm²</b>.</li>
+<li>V₁ = 10×4×3 = 120 cm³. V₂ = 4×4×3 = 48 cm³. Total = 120 + 48 = <b>168 cm³</b>.</li>
+<li>Answers vary. A valid response must identify realistic component solids and dimensions, apply appropriate formulas, use correct units, and correctly reason about included/excluded surfaces.</li>
+</ol></div>
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>B. Volume</b>.</li>
+<li>V = 5×4×3 = <b>60 cm³</b>.</li>
+<li>SA = 6(4²) = 6(16) = <b>96 cm²</b>.</li>
+<li>V = πr²h = 3.14(2²)(5) = 3.14(4)(5) = <b>62.8 cm³</b>.</li>
+<li><b>B. ⅓Bh</b>.</li>
+<li>In a composite solid, some faces may be joined to another component and therefore are internal rather than exposed. If the problem asks for outside surface area, those hidden/shared faces are not counted.</li>
+<li>SA = 2πr² + 2πrh = 2(3.14)(9) + 2(3.14)(3)(6) = 56.52 + 113.04 = <b>169.56 cm²</b>.</li>
+<li>V₁ = 10×4×3 = 120 cm³. V₂ = 4×4×3 = 48 cm³. Total V = <b>168 cm³</b>. Because the prisms are joined without overlap, the combined occupied space is the sum of their individual volumes.</li>
+</ol></div>
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Model/formula selection</td><td>Correct solid and formula selected.</td><td>Mostly correct with minor omission.</td><td>Incorrect or unsupported.</td></tr><tr><td>Computation and units</td><td>Accurate substitution, arithmetic, and units.</td><td>Minor error that does not obscure method.</td><td>Major computational or unit error.</td></tr><tr><td>Reasoning/interpretation</td><td>Clearly explains the geometric decision.</td><td>Explanation is incomplete.</td><td>Missing or incorrect explanation.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Confusing surface area with volume.</li><li>Using diameter as radius.</li><li>Choosing a formula based only on appearance rather than the solid.</li><li>Forgetting a base or counting an internal/shared surface.</li><li>Confusing slant height with vertical height in cone/pyramid surface-area problems.</li><li>Using square units for volume or cubic units for surface area.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use physical solids and nets before symbolic formulas.</li><li>Build a formula-to-solid matching routine.</li><li>Have learners label every dimension before substituting.</li><li>For circles, explicitly identify radius versus diameter.</li><li>Use worked-example comparison: correct solution versus one-error solution.</li><li>Require a final “Does this unit make sense?” check.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Design packaging that minimizes surface area for a fixed volume.</li><li>Compare two container designs with equal volume but different surface areas.</li><li>Model a composite object from classroom materials and calculate its volume.</li><li>Use technology or spreadsheets to investigate how changing one dimension affects surface area and volume.</li></ul></div>
+<div class="card"><h3>Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Prism/pyramid surface-area task</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Curved-solid surface-area task</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Volume task</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Composite/mastery task</td><td>____________</td><td>____________</td></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, First Term, Week 7, Measurement and Geometry. The BOW states that learners should determine surface area of three-dimensional objects including prisms, pyramids, cylinders, cones, spheres, and combinations, and calculate the volume of those solids and combinations. fileciteturn23file0L17-L21</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final classroom use.</p></div>
+</section>
+</main>
+<footer>Pareja Integrated School • General Mathematics • Term 1 Week 7 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
