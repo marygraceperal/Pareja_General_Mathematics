@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>General Mathematics | Term 1 Week 10 | Functions and Graphs</title>
+<style>
+:root{--p:#5b21b6;--s:#7c3aed;--a:#ddd6fe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#f5f3ff;--ok:#166534}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#faf5ff,#fff,#f5f3ff);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:var(--p);padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.08rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:var(--ok)}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#faf5ff;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #c4b5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:95px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid var(--ok);padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Functions and Their Graphs</h1>
+<div class="sub">General Mathematics • Term 1 • Week 10</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 1 Purple</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Functions and Their Graphs</h2><p>Four complete daily Evidence-Informed 4As sessions based on BOW Week 10.</p></div>
+
+<div class="card"><h3>Lesson Information</h3><div class="grid">
+<div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Sketching and applying linear, absolute value, quadratic, square root, and cube root functions</div>
+<div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Week</b><br>Term 1 • Week 10</div>
+<div class="info"><b>Sessions</b><br>4 complete 4As sessions</div><div class="info"><b>Teacher</b><br>Mary Grace M. Peral</div>
+</div></div>
+
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Week 10 — Number and Algebra:</b><p>Sketch the graph of the following functions: linear, absolute value, quadratic, square root, or cube root with or without technology. Apply the functions to model and solve real-life problems. fileciteturn26file5L318-L321</p></div></div>
+
+<div class="card"><h3>Daily Learning Targets</h3>
+<table><tr><th>Session</th><th>Daily objective</th><th>Evidence of learning</th></tr>
+<tr><td>1</td><td>Sketch and interpret linear and absolute value functions from equations and key points.</td><td>Correct graph, intercepts/vertex, direction, and interpretation.</td></tr>
+<tr><td>2</td><td>Sketch quadratic functions using key features such as vertex, axis of symmetry, and intercepts.</td><td>Accurate parabola with justified key points.</td></tr>
+<tr><td>3</td><td>Sketch square root and cube root functions and identify their key features.</td><td>Correct starting point/orientation and plotted values.</td></tr>
+<tr><td>4</td><td>Use functions and their graphs to model and solve real-life problems and justify the reasonableness of results.</td><td>Model, graph, solution, and contextual explanation.</td></tr></table>
+<div class="evidence"><b>Evidence-informed cycle:</b> retrieve → predict/represent → explicitly model → guided practice → independent practice → error analysis → targeted response → reassessment.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Linear and Absolute Value Functions</h3></div><div class="sb"><p><b>Daily objective:</b> Sketch and interpret linear and absolute value functions using equations, tables, and key points.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit</span><p>Display a straight-line graph and a V-shaped graph. Ask learners what visual features distinguish them and what information a graph communicates.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare y = x and y = |x|. Identify slope, intercept, symmetry, and the effect of changing signs or constants.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Linear: y = mx + b<br>Absolute value: y = a|x − h| + k<br>Vertex: (h,k)</div><p>Model a table → plot key points → connect according to the function's shape.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Sketch y = 2x − 1 and y = |x − 2| + 1. Learners identify the slope/intercept or vertex and describe the graph.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners plot points but do not recognize the shape, use a small set of anchor points and ask them to verbalize the pattern before drawing.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Quadratic Functions</h3></div><div class="sb"><p><b>Daily objective:</b> Sketch quadratic functions using a table and key features, including vertex and axis of symmetry.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Use a simple projectile or arch-shaped situation. Ask learners what makes the graph curve and where its highest or lowest point would occur.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Compare y = x², y = (x − 2)² + 1, and y = −x². Identify shifts, reflection, vertex, and opening direction.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">y = ax² + bx + c<br>Vertex x-coordinate: x = −b/(2a)</div><p>Find the vertex, axis of symmetry, selected points, and intercepts when useful; then sketch the parabola.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Practice</span><p>Sketch a quadratic model, identify its maximum/minimum, and explain what the key point means in context.</p></div></div><div class="evidence"><b>Teacher response:</b> When symmetry is missed, fold/compare points equidistant from the axis or use a coordinate table that pairs equal distances.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Square Root and Cube Root Functions</h3></div><div class="sb"><p><b>Daily objective:</b> Sketch square root and cube root functions and identify their key features from equations.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Recall perfect squares and cubes. Ask learners which x-values make √x and ∛x easy to plot.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Examine graphs with incorrect starting points or orientations. Determine whether the error came from the table, transformation, or plotting.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">y = √(x − h) + k<br>y = ∛(x − h) + k</div><p>For square root, begin with the endpoint/domain. For cube root, use symmetric values around the central point when convenient.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Sketch y = √(x − 1) + 2 and y = ∛(x + 1) − 2. Identify starting/central points and describe the transformations.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners confuse the two graph shapes, provide a visual comparison and require one sentence describing each function's characteristic shape.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Modeling and Solving Real-Life Problems</h3></div><div class="sb"><p><b>Daily objective:</b> Select an appropriate function, construct or interpret its graph, solve a real-world problem, and justify the reasonableness of the result.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieval</span><p>Function sort: match equations/graphs to linear, absolute value, quadratic, square root, or cube root models.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Compare two possible models for the same situation. Discuss which graph better represents the context and why.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><p>Use the routine: <b>Understand context → Choose function → Define variables → Model → Graph → Solve → Interpret → Check.</b></p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Solve an integrated modeling task involving a cost relationship, distance from a reference point, or height/time relationship. Explain the meaning of the graph and answer.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Use the final task to identify whether the learner needs support with function selection, graphing, algebraic solving, or interpretation.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Teacher interpretation</th><th>Response</th></tr>
+<tr><td>1</td><td>Linear/absolute value graph</td><td>________________</td><td>________________</td></tr>
+<tr><td>2</td><td>Quadratic graph</td><td>________________</td><td>________________</td></tr>
+<tr><td>3</td><td>Root-function graph</td><td>________________</td><td>________________</td></tr>
+<tr><td>4</td><td>Real-world modeling/mastery</td><td>________________</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Functions and Their Graphs</h2><p>A practical guide to recognizing, sketching, and applying common functions.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>How to recognize linear, absolute value, quadratic, square root, and cube root functions.</li><li>How to sketch each graph using key points and features.</li><li>How transformations affect a graph.</li><li>How to use graphs to interpret and solve real-world problems.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Function</th><th>Key graph idea</th></tr><tr><td>Linear</td><td>Straight line; slope controls steepness/direction.</td></tr><tr><td>Absolute value</td><td>V-shaped graph; vertex is the turning point.</td></tr><tr><td>Quadratic</td><td>Parabola; vertex is a maximum or minimum depending on opening direction.</td></tr><tr><td>Square root</td><td>Curve with an endpoint and a restricted domain in its basic form.</td></tr><tr><td>Cube root</td><td>S-shaped curve passing through its central point in its basic form.</td></tr></table></div>
+<div class="card"><h3>Key Forms</h3><div class="formula">Linear: y = mx + b</div><div class="formula">Absolute value: y = a|x − h| + k</div><div class="formula">Quadratic: y = ax² + bx + c</div><div class="formula">Square root: y = a√(x − h) + k</div><div class="formula">Cube root: y = a∛(x − h) + k</div></div>
+<div class="card"><h3>Step-by-Step Worked Examples</h3>
+<h4>1. Linear</h4><p>Sketch y = 2x − 1. Use x = 0, 1, 2.</p><div class="solution">Points: (0,−1), (1,1), (2,3). Plot the points and draw a straight line. Slope = 2 and y-intercept = −1.</div>
+<h4>2. Absolute Value</h4><p>Sketch y = |x − 2| + 1.</p><div class="solution">Vertex = (2,1). Points include (1,2) and (3,2). The graph is V-shaped and symmetric about x = 2.</div>
+<h4>3. Quadratic</h4><p>Sketch y = x² − 4x + 3.</p><div class="solution">Vertex x = −(−4)/(2) = 2. y = 4−8+3 = −1, so vertex = (2,−1). Axis: x = 2. The graph opens upward because a = 1.</div>
+<h4>4. Square Root</h4><p>Sketch y = √(x − 1) + 2.</p><div class="solution">Endpoint = (1,2). Using x = 2,5,10 gives y = 3,4,5. The graph begins at (1,2) and extends rightward.</div>
+<h4>5. Cube Root</h4><p>Sketch y = ∛(x + 1) − 2.</p><div class="solution">Central point = (−1,−2). Using x = −9, −2, −1, 0, 7 gives y = −4, −3, −2, −1, 0. The graph has the characteristic cube-root S shape.</div></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Plotting points but joining them with the wrong function shape.</li><li>Confusing the vertex of an absolute value graph with the y-intercept.</li><li>Using −b/(2a) incorrectly for a quadratic.</li><li>Forgetting the restricted domain of a basic square-root function.</li><li>Ignoring horizontal/vertical shifts inside or outside a function.</li><li>Giving a graph without explaining what its important features mean.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Functions can model costs, distances, height, time, production, and other quantities. A graph helps reveal trends, turning points, thresholds, and relationships that may be difficult to see from an equation alone.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>What is the slope of y = 3x + 2?</li><li>What is the vertex of y = |x − 4| + 2?</li><li>What is the vertex of y = x² − 6x + 5?</li><li>What is the endpoint of y = √(x + 3) − 1?</li><li>What is the central point of y = ∛(x − 2) + 4?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 10 Practice — Functions and Graphs</h2><p>Show key features, points, graph, and interpretation where required.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> Identify the function type: y = 4x − 3. <div class="space"></div></div>
+<div class="q"><b>2.</b> Identify the function type: y = |x + 2|. <div class="space"></div></div>
+<div class="q"><b>3.</b> Identify the function type: y = x² − 5x + 6. <div class="space"></div></div>
+<div class="q"><b>4.</b> Identify the function type: y = √(x − 4). <div class="space"></div></div>
+<div class="q"><b>5.</b> Identify the function type: y = ∛(x + 3). <div class="space"></div></div>
+<div class="q"><b>6.</b> State the slope and y-intercept of y = −2x + 5. <div class="space"></div></div></div>
+
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> For y = |x − 3| + 2, state the vertex and give two points on the graph. <div class="space"></div></div>
+<div class="q"><b>8.</b> For y = x² − 6x + 5, find the vertex and axis of symmetry. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> For y = √(x + 4) − 2, state the endpoint and give two additional points. <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> For y = ∛(x − 2) + 1, state the central point and give two additional points. <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> Sketch y = 2x + 1 and describe its slope and y-intercept. <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> Sketch y = −x² + 4x and state whether the vertex is a maximum or minimum. <div class="bigspace"></div></div></div>
+
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says the vertex of y = |x − 5| + 2 is (−5,2). Identify the error and give the correct vertex. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A learner finds the vertex of y = x² − 8x + 7 as (−4,−9). Identify the error and calculate the correct vertex. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> Explain why y = √(x − 2) cannot have x-values less than 2 in the real-number domain. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A delivery cost is modeled by C(x) = 50x + 100, where x is the number of kilometers. Interpret the slope and y-intercept. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A ball's height is modeled by h(t) = −5t² + 20t + 1. Find the time of maximum height using the vertex formula and explain what it means. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Choose one of the five function types and create a real-life situation it could model. State the equation, identify two key graph features, and explain what the graph means. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Functions and Graphs</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which equation represents an absolute value function?<br>A. y = 2x + 1 &nbsp; B. y = |x − 3| + 2 &nbsp; C. y = x² − 1 &nbsp; D. y = √x<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> What is the vertex of y = |x − 4| + 1?<br>A. (−4,1) &nbsp; B. (4,−1) &nbsp; C. (4,1) &nbsp; D. (−4,−1)<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Find the vertex of y = x² − 6x + 5. <div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> State the endpoint of y = √(x + 2) − 3. <div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> State the central point of y = ∛(x − 1) + 2. <div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Explain one important difference between the graphs of a square root function and a cube root function. <div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> A delivery service uses C(x) = 60x + 120. Explain the meaning of 60 and 120 in the model. <div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A ball's height is modeled by h(t) = −5t² + 20t + 1. Find the time and height of the maximum point, then interpret the result in context. <div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific graph/modeling error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Explicit reteaching + scaffolded reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Complete solutions are hidden until the teacher enters the access code.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li><b>Linear.</b> It has the form y = mx + b.</li>
+<li><b>Absolute value.</b> It contains |x + 2|.</li>
+<li><b>Quadratic.</b> It contains x².</li>
+<li><b>Square root.</b> It contains √(x − 4).</li>
+<li><b>Cube root.</b> It contains ∛(x + 3).</li>
+<li>m = <b>−2</b>; y-intercept = <b>5</b>.</li>
+<li>Vertex = <b>(3,2)</b>. Example points: (2,3) and (4,3).</li>
+<li>x = −b/(2a) = 6/2 = 3. y = 9−18+5 = −4. Vertex = <b>(3,−4)</b>; axis x = 3.</li>
+<li>Endpoint = <b>(−4,−2)</b>. Examples: x = −3 gives y = −1; x = 0 gives y = 0.</li>
+<li>Central point = <b>(2,1)</b>. Examples: x = 1 gives y = 0; x = 10 gives y = 3.</li>
+<li>For y = 2x + 1, slope = <b>2</b>, y-intercept = <b>1</b>. Points such as (0,1), (1,3), (−1,−1) form a straight line.</li>
+<li>y = −x² + 4x. x-coordinate of vertex = −4/(2·−1) = 2. y = −4+8 = 4. Vertex = <b>(2,4)</b>, a <b>maximum</b> because the parabola opens downward.</li>
+<li>The sign inside the absolute value is reversed when identifying h. |x − 5| gives h = 5, so the correct vertex is <b>(5,2)</b>.</li>
+<li>x = −b/(2a) = 8/2 = 4, not −4. y = 16−32+7 = −9. Correct vertex = <b>(4,−9)</b>.</li>
+<li>For real outputs, the radicand must be nonnegative: x − 2 ≥ 0, so <b>x ≥ 2</b>.</li>
+<li>In C(x) = 50x + 100, <b>50</b> is the cost per kilometer and <b>100</b> is the fixed starting/base cost.</li>
+<li>For h(t) = −5t² + 20t + 1: t = −20/[2(−5)] = <b>2 seconds</b>. h(2) = −20 + 40 + 1 = <b>21 units</b>. The ball reaches maximum height at 2 seconds.</li>
+<li>Answers vary. Full credit requires a valid function type, meaningful real-life context, equation, two accurate graph features, and a clear interpretation.</li>
+</ol></div>
+
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>B. y = |x − 3| + 2.</b></li>
+<li><b>C. (4,1).</b> In y = |x − h| + k, the vertex is (h,k).</li>
+<li>x = 6/2 = 3. y = 9−18+5 = <b>−4</b>. Vertex = <b>(3,−4)</b>.</li>
+<li>Endpoint = <b>(−2,−3)</b>.</li>
+<li>Central point = <b>(1,2)</b>.</li>
+<li>A square-root graph has an endpoint and a restricted domain in its basic form; a cube-root graph extends in both directions and has an S-shaped form.</li>
+<li>In C(x) = 60x + 120, <b>60</b> is the cost per kilometer and <b>120</b> is the fixed cost.</li>
+<li>t = −20/[2(−5)] = <b>2 seconds</b>. h(2) = 21. The maximum height is <b>21 units at 2 seconds</b>.</li>
+</ol></div>
+
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Model/function selection</td><td>Appropriate function and variables clearly identified.</td><td>Mostly appropriate with minor issue.</td><td>Model is inappropriate or unclear.</td></tr><tr><td>Mathematical work</td><td>Accurate graph/features/calculation.</td><td>Sound method with minor error.</td><td>Major errors or incomplete work.</td></tr><tr><td>Interpretation</td><td>Correctly explains the mathematical result in context.</td><td>Partial interpretation.</td><td>No meaningful interpretation.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Confusing function type from appearance alone without checking the equation.</li><li>Reading the sign inside a transformed function incorrectly.</li><li>Forgetting the factor 2a in the quadratic vertex formula.</li><li>Plotting points without respecting the characteristic graph shape.</li><li>Ignoring domain restrictions for square-root functions.</li><li>Solving the algebra correctly but failing to interpret the graph in context.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a five-function identification chart.</li><li>Begin with parent functions before introducing transformations.</li><li>Require learners to mark vertex/endpoint/central point before plotting.</li><li>Use tables with deliberately chosen easy x-values.</li><li>Provide error-analysis cards based on actual learner mistakes.</li><li>For modeling, separate function selection from computation before combining them.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Use GeoGebra or another graphing tool to explore transformations.</li><li>Compare two possible models for the same real-world situation.</li><li>Create a mini “function museum” showing one real-life use for each function type.</li><li>Investigate how changing a, h, or k changes a graph.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Linear/absolute value</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Quadratic</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Square/cube root</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Modeling/mastery</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, First Term, Week 10. The BOW requires learners to sketch linear, absolute value, quadratic, square root, and cube root functions with or without technology and apply functions to model and solve real-life problems. fileciteturn26file5L318-L321</p><p>Daily sequencing follows the BOW unpacking: Session 1 linear and absolute value; Session 2 quadratic; Session 3 square root and cube root; Session 4 real-life application. fileciteturn26file2L207-L220</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, mathematical accuracy, assessment decisions, and final instructional use.</p></div>
+</section>
+</main>
+
+<footer>Pareja Integrated School • General Mathematics • Term 1 Week 10 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
