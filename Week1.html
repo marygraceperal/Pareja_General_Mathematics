@@ -510,6 +510,91 @@ td{
   }
 }
 
+
+/* =========================================================
+   TEACHER-ONLY ANSWER KEY SECURITY
+   Access code: 010203
+   ========================================================= */
+.section.answer-locked{display:none!important}
+
+.answer-key-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.answer-key-modal.show{display:flex}
+
+.answer-key-box{
+  width:min(420px,100%);
+  background:#fff;
+  border:1px solid var(--accent);
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 20px 50px rgba(15,23,42,.20);
+  text-align:center;
+}
+
+.answer-key-box .lock-icon{
+  font-size:2.2rem;
+  margin-bottom:8px;
+}
+
+.answer-key-box h3{
+  color:var(--primary);
+  margin:0 0 7px;
+}
+
+.answer-key-box p{
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.answer-key-box input{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  text-align:center;
+  font-size:1.05rem;
+  letter-spacing:.25em;
+  outline:none;
+}
+
+.answer-key-box input:focus{
+  border-color:var(--secondary);
+  box-shadow:0 0 0 3px rgba(124,58,237,.12);
+}
+
+.answer-key-actions{
+  display:flex;
+  gap:9px;
+  margin-top:14px;
+}
+
+.answer-key-actions button{
+  flex:1;
+}
+
+.answer-key-error{
+  min-height:21px;
+  color:var(--danger);
+  font-size:.82rem;
+  font-weight:700;
+  margin-top:9px;
+}
+
+@media print{
+  .answer-locked{
+    display:none!important;
+  }
+}
+
 @media print{
   body{
     background:#fff;
@@ -638,10 +723,28 @@ body.print-current .section.print-target{
     <button class="tab" data-tab="fact">FACT SHEET</button>
     <button class="tab" data-tab="activity">ACTIVITY SHEET</button>
     <button class="tab" data-tab="assessment">ASSESSMENT</button>
-    <button class="tab" data-tab="answers">ANSWER KEY</button>
+    <button class="tab" data-tab="answers">🔒 ANSWER KEY</button>
     <button class="tab" data-tab="notes">TEACHER NOTES</button>
   </div>
 </nav>
+
+
+<!-- =========================================================
+     TEACHER ANSWER KEY ACCESS
+========================================================= -->
+<div id="answerKeyModal" class="answer-key-modal" role="dialog" aria-modal="true" aria-labelledby="answerKeyTitle">
+  <div class="answer-key-box">
+    <div class="lock-icon">🔒</div>
+    <h3 id="answerKeyTitle">Teacher Access</h3>
+    <p>Enter the teacher access code to open the protected Answer Key.</p>
+    <input id="answerKeyCode" type="password" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="off">
+    <div id="answerKeyError" class="answer-key-error"></div>
+    <div class="answer-key-actions">
+      <button class="btn btn-secondary" type="button" onclick="closeAnswerKeyModal()">Cancel</button>
+      <button class="btn btn-primary" type="button" onclick="unlockAnswerKey()">Unlock</button>
+    </div>
+  </div>
+</div>
 
 <main>
 
@@ -1903,7 +2006,7 @@ body.print-current .section.print-target{
      ANSWER KEY
 ========================================================= -->
 
-<section id="answers" class="section">
+<section id="answers" class="section answer-locked">
 
   <div class="section-title">
     <span class="label">SOLUTIONS & SCORING GUIDE</span>
@@ -2355,29 +2458,78 @@ body.print-current .section.print-target{
 </footer>
 
 <script>
+const ANSWER_KEY_CODE = "010203";
 const tabs = document.querySelectorAll(".tab");
 const sections = document.querySelectorAll(".section");
 
+let answerKeyUnlocked = false;
+
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
-
     const target = tab.dataset.tab;
 
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
+    if (target === "answers" && !answerKeyUnlocked) {
+      openAnswerKeyModal();
+      return;
+    }
 
-    sections.forEach(section => {
-      section.classList.toggle(
-        "active",
-        section.id === target
-      );
-    });
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
+    activateSection(target, tab);
   });
+});
+
+function activateSection(target, selectedTab){
+  tabs.forEach(t => t.classList.remove("active"));
+  if(selectedTab) selectedTab.classList.add("active");
+
+  sections.forEach(section => {
+    section.classList.toggle("active", section.id === target);
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+function openAnswerKeyModal(){
+  const modal = document.getElementById("answerKeyModal");
+  const input = document.getElementById("answerKeyCode");
+  const error = document.getElementById("answerKeyError");
+
+  error.textContent = "";
+  input.value = "";
+  modal.classList.add("show");
+
+  setTimeout(() => input.focus(), 50);
+}
+
+function closeAnswerKeyModal(){
+  document.getElementById("answerKeyModal").classList.remove("show");
+}
+
+function unlockAnswerKey(){
+  const input = document.getElementById("answerKeyCode");
+  const error = document.getElementById("answerKeyError");
+
+  if(input.value === ANSWER_KEY_CODE){
+    answerKeyUnlocked = true;
+
+    const answerSection = document.getElementById("answers");
+    answerSection.classList.remove("answer-locked");
+
+    closeAnswerKeyModal();
+
+    const answerTab = document.querySelector('[data-tab="answers"]');
+    activateSection("answers", answerTab);
+  } else {
+    error.textContent = "Incorrect code. The Answer Key remains locked.";
+    input.select();
+  }
+}
+
+document.getElementById("answerKeyCode").addEventListener("keydown", function(event){
+  if(event.key === "Enter") unlockAnswerKey();
+  if(event.key === "Escape") closeAnswerKeyModal();
 });
 
 function printEntire(){
@@ -2392,6 +2544,11 @@ function printCurrent(){
   const active = document.querySelector(".section.active");
 
   if(!active) return;
+
+  if(active.id === "answers" && !answerKeyUnlocked){
+    openAnswerKeyModal();
+    return;
+  }
 
   document.body.classList.add("print-current");
 
