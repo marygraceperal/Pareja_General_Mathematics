@@ -3,390 +3,1757 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>General Mathematics | Whole-Year Repository</title>
+
+<title>General Mathematics | Whole-Year Learning Repository</title>
+
 <style>
+/* =========================================================
+   GENERAL MATHEMATICS WHOLE-YEAR DASHBOARD
+   Pareja Integrated School
+   School Year 2026–2027
+   ========================================================= */
+
 :root {
-  --purple:#7c3aed;
-  --purple-soft:#f3e8ff;
-  --blue:#2563eb;
-  --blue-soft:#dbeafe;
-  --teal:#0f766e;
-  --teal-soft:#ccfbf1;
-  --ink:#172033;
-  --muted:#64748b;
-  --bg:#f6f7fb;
-  --white:#ffffff;
-  --line:#e2e8f0;
+  --purple: #7c3aed;
+  --purple-soft: #f3e8ff;
+
+  --blue: #2563eb;
+  --blue-soft: #dbeafe;
+
+  --teal: #0f766e;
+  --teal-soft: #ccfbf1;
+
+  --ink: #172033;
+  --muted: #64748b;
+
+  --bg: #f6f7fb;
+  --white: #ffffff;
+  --line: #e2e8f0;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:Inter,"Segoe UI",Arial,sans-serif;
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
 }
-.hero{
-  background:linear-gradient(135deg,#ffffff,#f3e8ff);
-  border-bottom:1px solid var(--line);
+
+html {
+  scroll-behavior: smooth;
 }
-.hero-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:55px 22px 48px;
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
 }
-.eyebrow{
-  display:inline-block;
-  padding:7px 12px;
-  border-radius:999px;
-  background:var(--purple-soft);
-  color:#5b21b6;
-  font-size:.78rem;
-  font-weight:800;
-  letter-spacing:.06em;
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f3e8ff 100%
+    );
+
+  border-bottom: 1px solid var(--line);
 }
-h1{font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.05;margin:15px 0 10px}
-.hero p{max-width:760px;color:var(--muted);font-size:1.05rem;margin:0}
-.school{margin-top:15px;font-weight:700;color:#475569}
-.nav{
-  position:sticky;top:0;z-index:20;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
+
+.hero-inner {
+  max-width: 1180px;
+  margin: auto;
+  padding: 55px 22px 48px;
 }
-.nav-inner{
-  max-width:1180px;margin:auto;padding:10px 18px;
-  display:flex;gap:8px;overflow:auto;
+
+.eyebrow {
+  display: inline-block;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  background: var(--purple-soft);
+  color: #5b21b6;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
 }
-.nav button{
-  border:1px solid var(--line);background:white;
-  padding:9px 14px;border-radius:10px;
-  font-weight:750;cursor:pointer;white-space:nowrap;
+
+.hero h1 {
+  margin: 15px 0 10px;
+
+  font-size: clamp(
+    2.1rem,
+    5vw,
+    3.7rem
+  );
+
+  line-height: 1.05;
 }
-.nav button:hover{background:var(--purple);color:white;border-color:var(--purple)}
-main{max-width:1180px;margin:auto;padding:30px 18px 70px}
-.topbar{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:28px}
-.search{
-  flex:1;min-width:250px;padding:13px 15px;
-  border:1px solid var(--line);border-radius:12px;
-  font-size:1rem;background:white;outline:none;
+
+.hero p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
-.search:focus{border-color:var(--purple)}
-.print{border:0;background:var(--ink);color:white;padding:12px 16px;border-radius:11px;font-weight:750;cursor:pointer}
-.term-section{margin-bottom:45px}
-.term-heading{margin-bottom:15px}
-.term-heading h2{margin:8px 0 2px;font-size:1.7rem}
-.term-heading p{margin:0;color:var(--muted)}
-.term-badge{font-size:.72rem;font-weight:900;letter-spacing:.08em;padding:6px 10px;border-radius:999px}
-.term-badge.purple{background:var(--purple-soft);color:#5b21b6}
-.term-badge.blue{background:var(--blue-soft);color:#1d4ed8}
-.term-badge.teal{background:var(--teal-soft);color:#115e59}
-.week-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
-.week-card{
-  display:block;position:relative;min-height:190px;
-  background:white;border:1px solid var(--line);
-  border-radius:17px;padding:19px 19px 22px;
-  text-decoration:none;color:var(--ink);
-  box-shadow:0 5px 18px rgba(15,23,42,.045);
-  transition:.18s ease;overflow:hidden;
+
+.school {
+  margin-top: 15px;
+
+  color: #475569;
+
+  font-weight: 700;
 }
-.week-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent)}
-.week-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,23,42,.09)}
-.week-card.purple{--accent:var(--purple)}
-.week-card.blue{--accent:var(--blue)}
-.week-card.teal{--accent:var(--teal)}
-.week-label{font-size:.75rem;font-weight:900;letter-spacing:.08em;color:var(--accent);margin-bottom:8px}
-.week-card h3{font-size:1.08rem;line-height:1.3;margin:0 0 9px}
-.week-card p{font-size:.9rem;line-height:1.5;color:var(--muted);margin:0 0 30px}
-.open{position:absolute;bottom:16px;left:19px;color:var(--accent);font-weight:800;font-size:.88rem}
-.info{
-  background:white;border:1px solid var(--line);border-radius:16px;
-  padding:22px;margin-top:10px;
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.96
+  );
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid var(--line);
 }
-.info h2{margin:0 0 8px}
-.info p{color:var(--muted);margin:0}
-footer{text-align:center;color:var(--muted);padding:28px;border-top:1px solid var(--line)}
-.hidden{display:none!important}
-@media(max-width:650px){.hero-inner{padding:40px 17px}.week-grid{grid-template-columns:1fr}}
-@media print{.nav,.topbar{display:none}.week-card{box-shadow:none;break-inside:avoid}body{background:white}}
+
+.nav-inner {
+  max-width: 1180px;
+  margin: auto;
+
+  padding: 10px 18px;
+
+  display: flex;
+  gap: 8px;
+
+  overflow-x: auto;
+}
+
+.nav button {
+  border: 1px solid var(--line);
+
+  background: var(--white);
+
+  padding: 9px 14px;
+
+  border-radius: 10px;
+
+  color: var(--ink);
+
+  font-size: 0.9rem;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: 0.18s ease;
+}
+
+.nav button:hover {
+  background: var(--purple);
+  color: var(--white);
+
+  border-color: var(--purple);
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 30px 18px 70px;
+}
+
+/* =========================================================
+   SEARCH / PRINT
+   ========================================================= */
+
+.topbar {
+  display: flex;
+
+  gap: 12px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 30px;
+}
+
+.search {
+  flex: 1;
+
+  min-width: 250px;
+
+  padding: 13px 15px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 12px;
+
+  background: var(--white);
+
+  color: var(--ink);
+
+  font-size: 1rem;
+
+  outline: none;
+}
+
+.search:focus {
+  border-color: var(--purple);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(124, 58, 237, 0.08);
+}
+
+.print {
+  border: 0;
+
+  padding: 12px 16px;
+
+  border-radius: 11px;
+
+  background: var(--ink);
+  color: var(--white);
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.18s ease;
+}
+
+.print:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.92;
+}
+
+/* =========================================================
+   TERM SECTION
+   ========================================================= */
+
+.term-section {
+  margin-bottom: 48px;
+
+  scroll-margin-top: 75px;
+}
+
+.term-heading {
+  margin-bottom: 16px;
+}
+
+.term-heading h2 {
+  margin: 8px 0 3px;
+
+  font-size: 1.7rem;
+}
+
+.term-heading p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.5;
+}
+
+.term-badge {
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+.term-badge.purple {
+  background: var(--purple-soft);
+  color: #5b21b6;
+}
+
+.term-badge.blue {
+  background: var(--blue-soft);
+  color: #1d4ed8;
+}
+
+.term-badge.teal {
+  background: var(--teal-soft);
+  color: #115e59;
+}
+
+/* =========================================================
+   WEEK GRID
+   ========================================================= */
+
+.week-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(260px, 1fr)
+    );
+
+  gap: 15px;
+}
+
+/* =========================================================
+   WEEK CARD
+   ========================================================= */
+
+.week-card {
+  position: relative;
+
+  display: block;
+
+  min-height: 190px;
+
+  padding: 19px 19px 22px;
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: 17px;
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.week-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 5px;
+
+  background: var(--accent);
+}
+
+.week-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(15, 23, 42, 0.09);
+}
+
+.week-card.purple {
+  --accent: var(--purple);
+}
+
+.week-card.blue {
+  --accent: var(--blue);
+}
+
+.week-card.teal {
+  --accent: var(--teal);
+}
+
+.week-label {
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-size: 0.75rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+.week-card h3 {
+  margin: 0 0 9px;
+
+  font-size: 1.08rem;
+
+  line-height: 1.3;
+}
+
+.week-card p {
+  margin: 0 0 30px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+}
+
+.open {
+  position: absolute;
+
+  left: 19px;
+  bottom: 16px;
+
+  color: var(--accent);
+
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   INFORMATION BOX
+   ========================================================= */
+
+.info {
+  margin-top: 10px;
+
+  padding: 22px;
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+}
+
+.info h2 {
+  margin: 0 0 8px;
+
+  font-size: 1.2rem;
+}
+
+.info p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   NO SEARCH RESULTS
+   ========================================================= */
+
+.no-results {
+  display: none;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  background: var(--white);
+
+  border: 1px dashed var(--line);
+
+  border-radius: 15px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  padding: 28px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+
+  text-align: center;
+
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .hero-inner {
+    padding:
+      40px 17px;
+  }
+
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .print {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+  .nav,
+  .topbar {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .hero {
+    background: white;
+  }
+
+  .week-card {
+    box-shadow: none;
+
+    break-inside: avoid;
+  }
+
+  .term-section {
+    break-inside: avoid;
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
 
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
 <header class="hero">
+
   <div class="hero-inner">
-    <span class="eyebrow">📘 WHOLE-YEAR GENERAL MATHEMATICS</span>
-    <h1>Learning Repository</h1>
+
+    <span class="eyebrow">
+      📘 WHOLE-YEAR GENERAL MATHEMATICS
+    </span>
+
+    <h1>
+      Learning Repository
+    </h1>
+
     <p>
-      Grade 11 weekly learning hub based on the Three-Term Budget of Work.
-      Select a week to open its complete instructional package.
+      Grade 11 weekly learning hub based on
+      the Three-Term Budget of Work and the
+      ILAW Evidence-Informed 4As teaching approach.
     </p>
-    <div class="school">Pareja Integrated School • School Year 2026–2027</div>
+
+    <div class="school">
+      Pareja Integrated School • School Year 2026–2027
+    </div>
+
   </div>
+
 </header>
 
+
+<!-- =======================================================
+     NAVIGATION
+     ======================================================= -->
+
 <nav class="nav">
+
   <div class="nav-inner">
-    <button onclick="topPage()">🏠 Dashboard</button>
-    <button onclick="goTo('term1')">Term 1</button>
-    <button onclick="goTo('term2')">Term 2</button>
-    <button onclick="goTo('term3')">Term 3</button>
+
+    <button onclick="topPage()">
+      🏠 Dashboard
+    </button>
+
+    <button onclick="goTo('term1')">
+      Term 1
+    </button>
+
+    <button onclick="goTo('term2')">
+      Term 2
+    </button>
+
+    <button onclick="goTo('term3')">
+      Term 3
+    </button>
+
   </div>
+
 </nav>
 
+
+<!-- =======================================================
+     MAIN
+     ======================================================= -->
+
 <main>
+
+  <!-- =====================================================
+       SEARCH / PRINT
+       ===================================================== -->
+
   <div class="topbar">
-    <input id="search" class="search" type="search"
-           placeholder="Search a week or topic...">
-    <button class="print" onclick="window.print()">🖨️ Save Dashboard as PDF</button>
+
+    <input
+      id="search"
+      class="search"
+      type="search"
+      placeholder="Search a week or topic..."
+      aria-label="Search weekly topics"
+    >
+
+    <button
+      class="print"
+      onclick="window.print()"
+    >
+      🖨️ Save Dashboard as PDF
+    </button>
+
   </div>
 
-  
-<section class="term-section" id="term1">
-  <div class="term-heading">
-    <div>
-      <span class="term-badge purple">TERM 1</span>
-      <h2>Term 1</h2>
-      <p>10-week General Mathematics learning sequence</p>
+
+  <!-- =====================================================
+       TERM 1
+       ===================================================== -->
+
+  <section
+    class="term-section"
+    id="term1"
+  >
+
+    <div class="term-heading">
+
+      <span class="term-badge purple">
+        TERM 1
+      </span>
+
+      <h2>
+        Term 1
+      </h2>
+
+      <p>
+        Financial Mathematics • Sequences and Series •
+        Measurement • Functions
+      </p>
+
     </div>
-  </div>
-  <div class="week-grid">
-    
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week1">
-        <div class="week-label">WEEK 1</div>
-        <h3>Earnings, Percentage, Markup and Profit/Loss</h3>
-        <p>Weekly or monthly wages, hourly rates, overtime, allowances, commissions, inflation, markups, discounts, VAT, and profit or loss.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/week2">
-        <div class="week-label">WEEK 2</div>
-        <h3>Salaries, Benefits and Deductions</h3>
-        <p>Salaries, wages, benefits, deductions, overtime pay, gross income, net income, and tax computations using appropriate technology.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week3">
-        <div class="week-label">WEEK 3</div>
-        <h3>Patterns and Sequences</h3>
-        <p>Patterns in art and nature, Fibonacci sequence, identifying pattern rules, and arithmetic and geometric sequences.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week4">
-        <div class="week-label">WEEK 4</div>
-        <h3>Arithmetic and Geometric Series</h3>
-        <p>Sequences versus series, sigma notation, arithmetic and geometric series, sums, and practical problem solving.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week5">
-        <div class="week-label">WEEK 5</div>
-        <h3>Financial Applications of Sequences and Series</h3>
-        <p>Periodic payments for loans and mortgages and accumulated investment values using sequences and series.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week6">
-        <div class="week-label">WEEK 6</div>
-        <h3>Metric Units and Measurement Conversion</h3>
-        <p>Selecting appropriate metric units and converting measurements within the same system and between different systems.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week7">
-        <div class="week-label">WEEK 7</div>
-        <h3>Surface Area and Volume</h3>
-        <p>Surface area and volume of prisms, pyramids, cylinders, cones, spheres, and combinations of three-dimensional objects.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="week8.html">
-        <div class="week-label">WEEK 8</div>
-        <h3>Scale, Currency and Time Conversion</h3>
-        <p>Using scale for maps, blueprints and sketches; converting currencies; and applying time conversions in real-life situations.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="week9.html">
-        <div class="week-label">WEEK 9</div>
-        <h3>Temperature Conversion and Function Classification</h3>
-        <p>Temperature conversions in practical contexts and classification of functions from graphs or equations.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card purple" href="week10.html">
-        <div class="week-label">WEEK 10</div>
-        <h3>Function Graphs and Real-Life Models</h3>
-        <p>Sketching linear, absolute value, quadratic, square root, and cube root graphs and applying functions to real-life problems.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-  </div>
-</section>
 
-<section class="term-section" id="term2">
-  <div class="term-heading">
-    <div>
-      <span class="term-badge blue">TERM 2</span>
-      <h2>Term 2</h2>
-      <p>10-week General Mathematics learning sequence</p>
+
+    <div class="week-grid">
+
+      <!-- WEEK 1 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week1.html"
+      >
+
+        <div class="week-label">
+          WEEK 1
+        </div>
+
+        <h3>
+          Earnings, Percentage, Markup and Profit/Loss
+        </h3>
+
+        <p>
+          Weekly or monthly wages, hourly rates,
+          overtime, allowances, commissions,
+          inflation, markups, discounts, VAT,
+          and profit or loss.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 2 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week2.html"
+      >
+
+        <div class="week-label">
+          WEEK 2
+        </div>
+
+        <h3>
+          Salaries, Benefits and Deductions
+        </h3>
+
+        <p>
+          Salaries, wages, benefits, deductions,
+          overtime pay, gross income, net income,
+          and tax computations using appropriate
+          technology.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 3 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week3.html"
+      >
+
+        <div class="week-label">
+          WEEK 3
+        </div>
+
+        <h3>
+          Patterns and Sequences
+        </h3>
+
+        <p>
+          Patterns in art and nature, Fibonacci sequence,
+          identifying pattern rules, and arithmetic and
+          geometric sequences.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 4 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week4.html"
+      >
+
+        <div class="week-label">
+          WEEK 4
+        </div>
+
+        <h3>
+          Arithmetic and Geometric Series
+        </h3>
+
+        <p>
+          Sequences versus series, sigma notation,
+          arithmetic and geometric series, sums,
+          and practical problem solving.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 5 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week5.html"
+      >
+
+        <div class="week-label">
+          WEEK 5
+        </div>
+
+        <h3>
+          Financial Applications of Sequences and Series
+        </h3>
+
+        <p>
+          Periodic payments for loans and mortgages
+          and accumulated investment values using
+          sequences and series.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 6 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week6.html"
+      >
+
+        <div class="week-label">
+          WEEK 6
+        </div>
+
+        <h3>
+          Metric Units and Measurement Conversion
+        </h3>
+
+        <p>
+          Selecting appropriate metric units and
+          converting measurements within the same
+          system and between different systems.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 7 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week7.html"
+      >
+
+        <div class="week-label">
+          WEEK 7
+        </div>
+
+        <h3>
+          Surface Area and Volume
+        </h3>
+
+        <p>
+          Surface area and volume of prisms, pyramids,
+          cylinders, cones, spheres, and combinations
+          of three-dimensional objects.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 8 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week8.html"
+      >
+
+        <div class="week-label">
+          WEEK 8
+        </div>
+
+        <h3>
+          Scale, Currency and Time Conversion
+        </h3>
+
+        <p>
+          Using scale for maps, blueprints and sketches;
+          converting currencies; and applying time
+          conversions in real-life situations.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 9 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week9.html"
+      >
+
+        <div class="week-label">
+          WEEK 9
+        </div>
+
+        <h3>
+          Temperature Conversion and Function Classification
+        </h3>
+
+        <p>
+          Temperature conversions in practical contexts
+          and classification of functions from graphs
+          or equations.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 10 -->
+
+      <a
+        class="week-card purple"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week10.html"
+      >
+
+        <div class="week-label">
+          WEEK 10
+        </div>
+
+        <h3>
+          Function Graphs and Real-Life Models
+        </h3>
+
+        <p>
+          Sketching linear, absolute value, quadratic,
+          square-root, and cube-root graphs and applying
+          functions to real-life problems.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
     </div>
-  </div>
-  <div class="week-grid">
-    
-      <a class="week-card blue" href="week11.html">
-        <div class="week-label">WEEK 1</div>
-        <h3>Piecewise Functions</h3>
-        <p>Illustrating and solving practical piecewise-function problems involving fare rates, purchasing, income tax, and similar contexts.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week12.html">
-        <div class="week-label">WEEK 2</div>
-        <h3>Data Types, Levels of Measurement and Variability</h3>
-        <p>Types and levels of data, measures of central tendency and variability, technology-supported computation, and interpretation.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week13.html">
-        <div class="week-label">WEEK 3</div>
-        <h3>Trigonometric Ratios and Areas of Oblique Triangles</h3>
-        <p>Right-triangle trigonometric ratios, Heron's Formula, and the area formula A = ½ab sin C.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week14.html">
-        <div class="week-label">WEEK 4</div>
-        <h3>Applications of Triangles, Elevation, Depression and Bearings</h3>
-        <p>Practical problems involving right and oblique triangles, angles of elevation and depression, and bearings.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week15.html">
-        <div class="week-label">WEEK 5</div>
-        <h3>Length, Distance, Area and Perimeter</h3>
-        <p>Estimating and measuring lengths and distances and calculating area and perimeter for practical spaces.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week16.html">
-        <div class="week-label">WEEK 6</div>
-        <h3>Volume, Capacity and Cost Estimation</h3>
-        <p>Volume and capacity of three-dimensional objects and practical cost estimation using volume and capacity.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week17.html">
-        <div class="week-label">WEEK 7</div>
-        <h3>Discrete and Continuous Random Variables</h3>
-        <p>Distinguishing discrete and continuous random variables and calculating expected value, variance, and standard deviation.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week18.html">
-        <div class="week-label">WEEK 8</div>
-        <h3>Normal and Standard Normal Variables</h3>
-        <p>Characteristics of a normal random variable and conversion between normal and standard normal variables.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week19.html">
-        <div class="week-label">WEEK 9</div>
-        <h3>Normal Distribution Probabilities and Percentiles</h3>
-        <p>Computing probabilities and percentiles using the standard normal distribution and solving normal-distribution problems.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card blue" href="week20.html">
-        <div class="week-label">WEEK 10</div>
-        <h3>Random Sampling and Sample Size</h3>
-        <p>Random sampling, appropriate sample size, parameter versus statistic, and probability versus nonprobability sampling techniques.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-  </div>
-</section>
 
-<section class="term-section" id="term3">
-  <div class="term-heading">
-    <div>
-      <span class="term-badge teal">TERM 3</span>
-      <h2>Term 3</h2>
-      <p>10-week General Mathematics learning sequence</p>
+  </section>
+
+
+  <!-- =====================================================
+       TERM 2
+       ===================================================== -->
+
+  <section
+    class="term-section"
+    id="term2"
+  >
+
+    <div class="term-heading">
+
+      <span class="term-badge blue">
+        TERM 2
+      </span>
+
+      <h2>
+        Term 2
+      </h2>
+
+      <p>
+        Functions • Statistics • Trigonometry •
+        Measurement • Probability
+      </p>
+
     </div>
-  </div>
-  <div class="week-grid">
-    
-      <a class="week-card teal" href="week21.html">
-        <div class="week-label">WEEK 1</div>
-        <h3>Compound Interest</h3>
-        <p>Maturity value, future value, nominal rates, number of terms, and practical compound-interest problems.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week22.html">
-        <div class="week-label">WEEK 2</div>
-        <h3>Simple, General and Deferred Annuities</h3>
-        <p>Illustrating simple, general, and deferred annuities and solving practical annuity problems.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week23.html">
-        <div class="week-label">WEEK 3</div>
-        <h3>Fair Market Value of Cash-Flow Streams</h3>
-        <p>Calculating the fair market value of a cash-flow stream that includes an annuity.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week24.html">
-        <div class="week-label">WEEK 4</div>
-        <h3>Business and Consumer Loans</h3>
-        <p>Comparing business and consumer loans and solving problems involving repayment, interest, amortization, and mortgages.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week25.html">
-        <div class="week-label">WEEK 5</div>
-        <h3>Hypothesis Testing Fundamentals</h3>
-        <p>Null and alternative hypotheses, level of significance, and types of errors in hypothesis testing.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week26.html">
-        <div class="week-label">WEEK 6</div>
-        <h3>Tests for One and Two Population Means</h3>
-        <p>Using z-tests and t-tests for one and two population means with appropriate technology.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week27.html">
-        <div class="week-label">WEEK 7</div>
-        <h3>Scatter Plots, Correlation and Statistical Conclusions</h3>
-        <p>Scatter plots, line of best fit, Pearson's r, and conclusions from hypothesis tests and relationships between variables.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week28.html">
-        <div class="week-label">WEEK 8</div>
-        <h3>Logical Propositions</h3>
-        <p>Identifying logical propositions and distinguishing simple propositions from compound propositions.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week29.html">
-        <div class="week-label">WEEK 9</div>
-        <h3>Logical Operations and Conditional Propositions</h3>
-        <p>Basic logical operations and different forms of conditional propositions.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-      <a class="week-card teal" href="week30.html">
-        <div class="week-label">WEEK 10</div>
-        <h3>Tautologies, Contradictions and Truth Values</h3>
-        <p>Tautologies, contradictions, and determining truth values of propositions in practical situations.</p>
-        <span class="open">Open weekly package →</span>
-      </a>
-  </div>
-</section>
 
 
-  <div class="info">
-    <h2>🔗 How the repository works</h2>
+    <div class="week-grid">
+
+      <!-- WEEK 11 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week11.html"
+      >
+
+        <div class="week-label">
+          WEEK 11
+        </div>
+
+        <h3>
+          Piecewise Functions
+        </h3>
+
+        <p>
+          Illustrating and solving practical piecewise-function
+          problems involving fare rates, purchasing,
+          income tax, and similar contexts.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 12 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week12.html"
+      >
+
+        <div class="week-label">
+          WEEK 12
+        </div>
+
+        <h3>
+          Data Types, Levels of Measurement and Variability
+        </h3>
+
+        <p>
+          Types and levels of data, measures of central
+          tendency and variability, technology-supported
+          computation, and interpretation.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 13 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week13.html"
+      >
+
+        <div class="week-label">
+          WEEK 13
+        </div>
+
+        <h3>
+          Trigonometric Ratios and Areas of Oblique Triangles
+        </h3>
+
+        <p>
+          Right-triangle trigonometric ratios,
+          Heron's Formula, and the area formula
+          A = ½ab sin C.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 14 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week14.html"
+      >
+
+        <div class="week-label">
+          WEEK 14
+        </div>
+
+        <h3>
+          Applications of Triangles, Elevation, Depression and Bearings
+        </h3>
+
+        <p>
+          Practical problems involving right and oblique
+          triangles, angles of elevation and depression,
+          and bearings.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 15 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week15.html"
+      >
+
+        <div class="week-label">
+          WEEK 15
+        </div>
+
+        <h3>
+          Length, Distance, Area and Perimeter
+        </h3>
+
+        <p>
+          Estimating and measuring lengths and distances
+          and calculating area and perimeter for practical
+          spaces.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 16 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week16.html"
+      >
+
+        <div class="week-label">
+          WEEK 16
+        </div>
+
+        <h3>
+          Volume, Capacity and Cost Estimation
+        </h3>
+
+        <p>
+          Volume and capacity of three-dimensional objects
+          and practical cost estimation using volume
+          and capacity.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 17 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week17.html"
+      >
+
+        <div class="week-label">
+          WEEK 17
+        </div>
+
+        <h3>
+          Discrete and Continuous Random Variables
+        </h3>
+
+        <p>
+          Distinguishing discrete and continuous random
+          variables and calculating expected value,
+          variance, and standard deviation.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 18 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week18.html"
+      >
+
+        <div class="week-label">
+          WEEK 18
+        </div>
+
+        <h3>
+          Normal and Standard Normal Variables
+        </h3>
+
+        <p>
+          Characteristics of a normal random variable
+          and conversion between normal and standard
+          normal variables.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 19 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week19.html"
+      >
+
+        <div class="week-label">
+          WEEK 19
+        </div>
+
+        <h3>
+          Normal Distribution Probabilities and Percentiles
+        </h3>
+
+        <p>
+          Computing probabilities and percentiles using
+          the standard normal distribution and solving
+          normal-distribution problems.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 20 -->
+
+      <a
+        class="week-card blue"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week20.html"
+      >
+
+        <div class="week-label">
+          WEEK 20
+        </div>
+
+        <h3>
+          Random Sampling and Sample Size
+        </h3>
+
+        <p>
+          Random sampling, appropriate sample size,
+          parameter versus statistic, and probability
+          versus nonprobability sampling techniques.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TERM 3
+       ===================================================== -->
+
+  <section
+    class="term-section"
+    id="term3"
+  >
+
+    <div class="term-heading">
+
+      <span class="term-badge teal">
+        TERM 3
+      </span>
+
+      <h2>
+        Term 3
+      </h2>
+
+      <p>
+        Financial Mathematics • Inferential Statistics •
+        Correlation • Logic
+      </p>
+
+    </div>
+
+
+    <div class="week-grid">
+
+      <!-- WEEK 21 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week21.html"
+      >
+
+        <div class="week-label">
+          WEEK 21
+        </div>
+
+        <h3>
+          Compound Interest
+        </h3>
+
+        <p>
+          Maturity value, future value, nominal rates,
+          number of terms, and practical compound-interest
+          problems.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 22 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week22.html"
+      >
+
+        <div class="week-label">
+          WEEK 22
+        </div>
+
+        <h3>
+          Simple, General and Deferred Annuities
+        </h3>
+
+        <p>
+          Illustrating simple, general, and deferred
+          annuities and solving practical annuity problems.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 23 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week23.html"
+      >
+
+        <div class="week-label">
+          WEEK 23
+        </div>
+
+        <h3>
+          Fair Market Value of Cash-Flow Streams
+        </h3>
+
+        <p>
+          Calculating the fair market value of a
+          cash-flow stream that includes an annuity.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 24 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week24.html"
+      >
+
+        <div class="week-label">
+          WEEK 24
+        </div>
+
+        <h3>
+          Business and Consumer Loans
+        </h3>
+
+        <p>
+          Comparing business and consumer loans and
+          solving problems involving repayment,
+          interest, amortization, and mortgages.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 25 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week25.html"
+      >
+
+        <div class="week-label">
+          WEEK 25
+        </div>
+
+        <h3>
+          Hypothesis Testing Fundamentals
+        </h3>
+
+        <p>
+          Null and alternative hypotheses, level of
+          significance, and types of errors in
+          hypothesis testing.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 26 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week26.html"
+      >
+
+        <div class="week-label">
+          WEEK 26
+        </div>
+
+        <h3>
+          Tests for One and Two Population Means
+        </h3>
+
+        <p>
+          Using z-tests and t-tests for one and two
+          population means with appropriate technology.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 27 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week27.html"
+      >
+
+        <div class="week-label">
+          WEEK 27
+        </div>
+
+        <h3>
+          Scatter Plots, Correlation and Statistical Conclusions
+        </h3>
+
+        <p>
+          Scatter plots, line of best fit, Pearson's r,
+          and conclusions from hypothesis tests and
+          relationships between variables.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 28 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week28.html"
+      >
+
+        <div class="week-label">
+          WEEK 28
+        </div>
+
+        <h3>
+          Logical Propositions
+        </h3>
+
+        <p>
+          Identifying logical propositions and distinguishing
+          simple propositions from compound propositions.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 29 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week29.html"
+      >
+
+        <div class="week-label">
+          WEEK 29
+        </div>
+
+        <h3>
+          Logical Operations and Conditional Propositions
+        </h3>
+
+        <p>
+          Basic logical operations and different forms
+          of conditional propositions.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+
+      <!-- WEEK 30 -->
+
+      <a
+        class="week-card teal"
+        href="https://marygraceperal.github.io/Pareja_General_Mathematics/Week30.html"
+      >
+
+        <div class="week-label">
+          WEEK 30
+        </div>
+
+        <h3>
+          Tautologies, Contradictions and Truth Values
+        </h3>
+
+        <p>
+          Tautologies, contradictions, and determining
+          truth values of propositions in practical
+          situations.
+        </p>
+
+        <span class="open">
+          Open weekly package →
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       REPOSITORY INFORMATION
+       ===================================================== -->
+
+  <section class="info">
+
+    <h2>
+      🔗 About This Learning Repository
+    </h2>
+
     <p>
-      The dashboard contains the weekly topic links only. Each Week link is
-      intended to open a separate substantial HTML learning package containing
-      the DLP, Student Study Notes, MUSCLE, Activities, Assessment, Remediation,
-      Enrichment, and protected Teacher Answer Key.
+      This dashboard organizes the Grade 11 General Mathematics
+      learning sequence into 30 weekly instructional packages
+      across three terms. Each weekly package is intended to
+      integrate the ILAW lesson-plan structure, Evidence-Informed
+      4As, learning activities, assessment, remediation,
+      enrichment, and learning evidence.
     </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       NO RESULTS MESSAGE
+       ===================================================== -->
+
+  <div
+    id="noResults"
+    class="no-results"
+  >
+    No matching week or topic found.
   </div>
+
 </main>
 
-<footer>General Mathematics • Whole-Year Learning Repository</footer>
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+  General Mathematics • Whole-Year Learning Repository
+
+  <br>
+
+  Pareja Integrated School • SY 2026–2027
+
+</footer>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
 
 <script>
+
+/* =========================================================
+   RETURN TO TOP
+   ========================================================= */
+
 function topPage() {
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-function goTo(id) {
-  document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"});
-}
-document.getElementById("search").addEventListener("input", function() {
-  const q = this.value.toLowerCase().trim();
-  document.querySelectorAll(".week-card").forEach(card => {
-    card.classList.toggle("hidden", q && !card.innerText.toLowerCase().includes(q));
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
-});
+
+}
+
+
+/* =========================================================
+   GO TO TERM
+   ========================================================= */
+
+function goTo(id) {
+
+  const section =
+    document.getElementById(id);
+
+  if (!section) {
+    return;
+  }
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+const search =
+  document.getElementById("search");
+
+const cards =
+  document.querySelectorAll(".week-card");
+
+const noResults =
+  document.getElementById("noResults");
+
+
+search.addEventListener(
+  "input",
+  function () {
+
+    const query =
+      this.value
+        .toLowerCase()
+        .trim();
+
+    let visibleCount = 0;
+
+    cards.forEach(function (card) {
+
+      const text =
+        card.innerText
+          .toLowerCase();
+
+      const matches =
+        !query ||
+        text.includes(query);
+
+      if (matches) {
+
+        card.classList.remove(
+          "hidden"
+        );
+
+        card.style.display =
+          "block";
+
+        visibleCount++;
+
+      } else {
+
+        card.classList.add(
+          "hidden"
+        );
+
+        card.style.display =
+          "none";
+
+      }
+
+    });
+
+    noResults.style.display =
+      visibleCount === 0
+        ? "block"
+        : "none";
+
+  }
+);
+
 </script>
+
 </body>
 </html>
