@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>General Mathematics | Term 1 Week 4 | Series</title>
+<style>
+:root{--p:#5b21b6;--s:#7c3aed;--a:#ddd6fe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#f5f3ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#faf5ff,#fff,#f5f3ff);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:var(--p);padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.1rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:#15803d}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#faf5ff;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #c4b5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}
+.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:45px;border-bottom:1px solid #94a3b8}.bigspace{min-height:90px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid #15803d;padding:9px 11px;border-radius:6px}
+#answers.locked{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.grid3,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}#answers.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Arithmetic and Geometric Series</h1>
+<div class="sub">General Mathematics • Term 1 • Week 4</div>
+<div class="meta">
+<span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span>
+<span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 1 Purple</span>
+</div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Arithmetic and Geometric Series</h2><p>Four complete daily Evidence-Informed 4As sessions.</p></div>
+<div class="card"><h3>Curriculum Alignment</h3>
+<div class="grid"><div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Focus</b><br>Arithmetic and Geometric Series</div><div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term</b><br>Term 1 • Week 4</div></div>
+<div class="callout" style="margin-top:13px"><b>BOW Week 4 competencies:</b>
+<ul><li>Differentiate sequences from series.</li><li>Illustrate arithmetic and geometric series.</li><li>Represent series using sigma notation and vice versa.</li><li>Find the sum of arithmetic and geometric series.</li><li>Solve problems involving arithmetic and geometric series.</li></ul>
+</div></div>
+<div class="card"><h3>Weekly Learning Intentions</h3><ul>
+<li>Differentiate a sequence from a series using examples and representations.</li>
+<li>Identify and illustrate arithmetic and geometric series.</li>
+<li>Translate finite series into sigma notation and expand sigma notation into terms.</li>
+<li>Calculate sums and select an appropriate series model in contextual problems.</li></ul>
+<div class="evidence"><b>Evidence-informed cycle:</b> Elicit prior knowledge → inspect learner work → identify the misconception or successful strategy → provide targeted modeling/scaffolding → check again → transfer or remediate.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Sequence vs Series</h3></div><div class="sb"><p><b>Daily objective:</b> Distinguish a sequence from a series and explain the difference using mathematical examples.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Activate</span><p>Display: 2, 5, 8, 11, … and 2 + 5 + 8 + 11. Learners identify what is being shown and what changes when plus signs are inserted.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Pairs sort examples into “sequence” or “series” and justify the classification. Address the misconception that a series is simply another name for a sequence.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>A sequence is an ordered list of terms. A series is the indicated sum of the terms of a sequence.</p><div class="formula">Sequence: 3, 6, 9, 12, …<br>Series: 3 + 6 + 9 + 12 + …</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Independent</span><p>Learners classify six representations and convert three sequences into corresponding series. Exit ticket: explain the difference in one sentence.</p></div></div>
+<div class="evidence"><b>Ways forward:</b> If learners confuse the concepts, return to “list” versus “sum” representations. If secure, introduce finite and infinite notation conceptually.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Arithmetic and Geometric Series + Sigma Notation</h3></div><div class="sb"><p><b>Daily objective:</b> Illustrate arithmetic and geometric series and represent finite series using sigma notation and vice versa.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Recall arithmetic/geometric sequences. Convert 4, 7, 10, 13 into a sum and 3, 6, 12, 24 into a sum. Learners identify the generating pattern.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Compare</span><p>Determine whether the terms in each sum have a constant difference or ratio. Examine how the index in sigma notation tells how many terms are included.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Model</span><p>Introduce sigma notation as a compact way to write a sum.</p><div class="formula">Σ aₖ, from k = 1 to n means a₁ + a₂ + … + aₙ</div><div class="formula">Arithmetic series: Σ[a₁ + (k − 1)d]</div><div class="formula">Geometric series: Σ[a₁rᵏ⁻¹]</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Write four finite series in sigma notation and expand four sigma expressions. Learners identify whether each is arithmetic or geometric.</p></div></div>
+<div class="evidence"><b>Ways forward:</b> Scaffold with a term-index table. Enrichment: write two different-looking sigma expressions for the same finite sum and explain the equivalence.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Finding Sums of Arithmetic and Geometric Series</h3></div><div class="sb"><p><b>Daily objective:</b> Calculate finite arithmetic and geometric series sums using the appropriate formula and verify the result.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Quick classification: identify a₁, d, r and n from four examples. Learners predict whether the sum formula should use d or r.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Compare a correct and incorrect solution. Learners locate whether the error came from classification, substitution, exponent, or arithmetic.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Arithmetic: Sₙ = n/2 [2a₁ + (n − 1)d]</div><div class="formula">Geometric (r ≠ 1): Sₙ = a₁(1 − rⁿ)/(1 − r)</div><p>Model substitution and a reasonableness check.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Practice</span><p>Solve three arithmetic-series and three geometric-series sums. Learners label known values before substituting.</p></div></div>
+<div class="evidence"><b>Ways forward:</b> For learners who select the wrong formula, reteach classification before computation. For accurate learners, add missing-value problems.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Contextual Problems Involving Series</h3></div><div class="sb"><p><b>Daily objective:</b> Select, apply and interpret an arithmetic or geometric series model in a real-world problem.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieval</span><p>Four-minute formula sprint: identify whether each situation involves a constant addition or constant multiplication and select the matching series model.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Model Selection</span><p>Discuss evidence in two contexts: a fixed increase in weekly savings and repeated multiplication in production/growth. Learners explain why one model fits each.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><div class="formula">Read context → list terms → identify d or r → determine n → choose series formula → substitute → calculate → interpret/check</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Independently solve one arithmetic-series and one geometric-series contextual problem. Show model, formula, substitution, answer and interpretation.</p></div></div>
+<div class="evidence"><b>Ways forward:</b> Remediate the exact failed step. Learners demonstrating mastery create a context that can be modeled by a finite series and justify the model.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Competency</th><th>Evidence</th><th>Action</th></tr>
+<tr><td>Differentiate sequence/series</td><td>Session 1 sort + exit ticket</td><td>________________</td></tr><tr><td>Illustrate arithmetic/geometric series</td><td>Session 2 classification</td><td>________________</td></tr><tr><td>Use sigma notation</td><td>Session 2 translation task</td><td>________________</td></tr><tr><td>Find sums</td><td>Session 3 calculations</td><td>________________</td></tr><tr><td>Solve contextual problems</td><td>Session 4 mastery task</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Arithmetic and Geometric Series</h2><p>Four-session study guide.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>Differentiate sequences and series.</li><li>Recognize arithmetic and geometric series.</li><li>Use sigma notation.</li><li>Find finite sums.</li><li>Apply series to practical problems.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Concept</th><th>Meaning</th></tr>
+<tr><td>Sequence</td><td>An ordered list of terms.</td></tr><tr><td>Series</td><td>The indicated sum of the terms of a sequence.</td></tr><tr><td>Arithmetic series</td><td>A series formed from an arithmetic sequence with common difference d.</td></tr><tr><td>Geometric series</td><td>A series formed from a geometric sequence with common ratio r.</td><tr><td>Sigma notation</td><td>A compact notation used to represent a sum.</td></tr></table></div>
+<div class="card"><h3>Key Formulas</h3>
+<div class="formula">Arithmetic series: Sₙ = n/2 [2a₁ + (n − 1)d]</div>
+<div class="formula">Equivalent arithmetic form: Sₙ = n(a₁ + aₙ)/2</div>
+<div class="formula">Geometric series, r ≠ 1: Sₙ = a₁(1 − rⁿ)/(1 − r)</div>
+<div class="formula">Sigma: Σ aₖ, k = 1 to n = a₁ + a₂ + … + aₙ</div></div>
+<div class="card"><h3>Worked Examples</h3>
+<h4>1. Arithmetic Series</h4><p>Find the sum of 4 + 7 + 10 + … + 31.</p><div class="solution">a₁ = 4, aₙ = 31, d = 3. Find n: 31 = 4 + (n − 1)3 → 27 = 3(n − 1) → n = 10. Then S₁₀ = 10(4 + 31)/2 = <b>175</b>.</div>
+<h4>2. Geometric Series</h4><p>Find 3 + 6 + 12 + 24 + 48.</p><div class="solution">a₁ = 3, r = 2, n = 5. S₅ = 3(1 − 2⁵)/(1 − 2) = 3(−31)/(−1) = <b>93</b>.</div>
+<h4>3. Sigma Notation</h4><p>Write 5 + 8 + 11 + 14 + 17 in sigma notation.</p><div class="solution">a₁ = 5, d = 3. General term = 5 + 3(k − 1). Therefore: <b>Σ[5 + 3(k − 1)] from k = 1 to 5</b>.</div>
+<h4>4. Context</h4><p>A learner saves ₱200 in week 1 and increases the weekly saving by ₱50 for 8 weeks. Find the total saved.</p><div class="solution">S₈ = 8/2[2(₱200) + 7(₱50)] = 4[₱400 + ₱350] = <b>₱3,000</b>.</div>
+</div>
+<div class="card"><h3>Common Mistakes</h3><ul><li>Calling an ordered list a series without indicating a sum.</li><li>Using the arithmetic-series formula for a geometric series.</li><li>Using n when n − 1 is required in the term formula.</li><li>Forgetting the exponent n in the geometric sum.</li><li>Writing an incorrect sigma general term.</li><li>Failing to interpret a contextual answer.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Finite series can represent accumulated savings, repeated production amounts, staged arrangements, and other situations where a quantity follows a regular additive or multiplicative pattern.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>What is the difference between a sequence and a series?</li><li>How do you recognize an arithmetic series?</li><li>How do you recognize a geometric series?</li><li>What does the sigma index represent?</li><li>Which formula is used for a finite arithmetic series?</li><li>Which formula is used for a finite geometric series when r ≠ 1?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 4 Practice — Series</h2><p>Show mathematical reasoning.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> Is 4, 7, 10, 13 a sequence or a series? Explain.<div class="space"></div></div>
+<div class="q"><b>2.</b> Write 2, 5, 8, 11 as a finite series.<div class="space"></div></div>
+<div class="q"><b>3.</b> Classify 3 + 6 + 9 + 12 as arithmetic or geometric series.<div class="space"></div></div>
+<div class="q"><b>4.</b> Find d for 5 + 9 + 13 + 17.<div class="space"></div></div>
+<div class="q"><b>5.</b> Find r for 2 + 6 + 18 + 54.<div class="space"></div></div>
+<div class="q"><b>6.</b> Expand Σ(2k + 1), k = 1 to 4.<div class="space"></div></div></div>
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> Find S₁₀ for 3 + 7 + 11 + ….<div class="space"></div></div>
+<div class="q"><b>8.</b> Find the sum 2 + 6 + 18 + 54 + 162.<div class="space"></div></div>
+<div class="q"><b>9.</b> Write 6 + 10 + 14 + 18 + 22 in sigma notation.<div class="space"></div></div>
+<div class="q"><b>10.</b> Find S₈ for the arithmetic series 10 + 15 + 20 + ….<div class="space"></div></div>
+<div class="q"><b>11.</b> Find S₆ for the geometric series 5 + 10 + 20 + ….<div class="space"></div></div>
+<div class="q"><b>12.</b> A learner saves ₱250 in the first week and increases the weekly amount by ₱50 for 6 weeks. Find the total saved.<div class="bigspace"></div></div></div>
+<div class="card"><h3>Part 3 — Advanced Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says 2 + 4 + 8 + 16 is arithmetic because the terms increase by 2 at first. Identify the error.<div class="bigspace"></div></div>
+<div class="q"><b>14.</b> Find n if the arithmetic series 5 + 8 + 11 + … ends at 50.<div class="bigspace"></div></div>
+<div class="q"><b>15.</b> Find the sum of the first 7 terms of 81 + 27 + 9 + ….<div class="bigspace"></div></div>
+<div class="q"><b>16.</b> Represent 4 + 7 + 10 + 13 + 16 using sigma notation and explain your general term.<div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A school collects ₱100 in the first week for a project and increases the collection by ₱25 each week for 12 weeks. Find the total collection.<div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Create a finite geometric series with 5 terms whose first term is 3 and common ratio is 2. Find its sum and write it in sigma notation.<div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Series</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which statement is correct?<br>A. A sequence is always a sum.<br>B. A series is the indicated sum of sequence terms.<br>C. A series cannot be finite.<br>D. A sequence must be arithmetic.<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> Which is a geometric series?<br>A. 2 + 5 + 8 + 11<br>B. 4 + 8 + 12 + 16<br>C. 3 + 6 + 12 + 24<br>D. 10 + 7 + 4 + 1<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Find the sum of 5 + 9 + 13 + 17 + 21.<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> Find the sum of 2 + 4 + 8 + 16 + 32.<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Expand Σ(3k + 1), k = 1 to 4.<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Write 7 + 10 + 13 + 16 + 19 in sigma notation.<div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> A worker saves ₱300 in month 1 and adds ₱100 to the monthly saving for 7 months. Find the total saved.<div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A machine produces 50 units in its first cycle. Each succeeding cycle produces 1.5 times the previous cycle. Find the total production over the first 6 cycles. Show the series model, formula, substitution and interpretation.<div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific misconception and reassess.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Explicit reteaching + scaffolded reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> This section contains complete solutions and scoring information.</div>
+<div class="card"><h3>Activity Sheet — Solutions</h3><ol>
+<li>Sequence; it is an ordered list, not an indicated sum.</li>
+<li>2 + 5 + 8 + 11.</li>
+<li>Arithmetic; common difference d = 3.</li>
+<li>d = 9 − 5 = <b>4</b>.</li>
+<li>r = 6 ÷ 2 = <b>3</b>.</li>
+<li>2(1)+1 + 2(2)+1 + 2(3)+1 + 2(4)+1 = <b>3 + 5 + 7 + 9</b>.</li>
+<li>a₁ = 3, d = 4, n = 10. S₁₀ = 10/2[6 + 36] = <b>210</b>.</li>
+<li>a₁ = 2, r = 3, n = 5. S₅ = 2(1 − 3⁵)/(1 − 3) = 2(−242)/(−2) = <b>242</b>.</li>
+<li>Σ[6 + 4(k − 1)], k = 1 to 5.</li>
+<li>a₁ = 10, d = 5, n = 8. S₈ = 8/2[20 + 35] = <b>220</b>.</li>
+<li>a₁ = 5, r = 2, n = 6. S₆ = 5(1 − 2⁶)/(1 − 2) = <b>315</b>.</li>
+<li>S₆ = 6/2[2(₱250) + 5(₱50)] = 3[₱500 + ₱250] = <b>₱2,250</b>.</li>
+<li>Error: the differences are not constant. The terms double, so it is geometric with r = 2.</li>
+<li>50 = 5 + (n − 1)3 → 45 = 3(n − 1) → n − 1 = 15 → <b>n = 16</b>.</li>
+<li>a₁ = 81, r = 1/3, n = 7. S₇ = 81[1 − (1/3)⁷]/[1 − 1/3] = <b>121.5</b>.</li>
+<li>Σ[4 + 3(k − 1)], k = 1 to 5. The general term starts at 4 and increases by 3.</li>
+<li>S₁₂ = 12/2[2(₱100) + 11(₱25)] = 6[₱200 + ₱275] = <b>₱2,850</b>.</li>
+<li>3 + 6 + 12 + 24 + 48. S₅ = 3(1 − 2⁵)/(1 − 2) = <b>93</b>. Sigma: Σ(3·2ᵏ⁻¹), k = 1 to 5.</li>
+</ol></div>
+<div class="card"><h3>Assessment — Solutions</h3><ol>
+<li><b>B.</b> A series is the indicated sum of sequence terms.</li>
+<li><b>C.</b> Each term is multiplied by 2.</li>
+<li>Arithmetic: a₁ = 5, d = 4, n = 5. S₅ = 5/2[10 + 16] = <b>65</b>.</li>
+<li>Geometric: a₁ = 2, r = 2, n = 5. S₅ = 2(1 − 32)/(1 − 2) = <b>62</b>.</li>
+<li>3(1)+1 + 3(2)+1 + 3(3)+1 + 3(4)+1 = <b>4 + 7 + 10 + 13</b>.</li>
+<li>Σ[7 + 3(k − 1)], k = 1 to 5.</li>
+<li>a₁ = ₱300, d = ₱100, n = 7. S₇ = 7/2[₱600 + ₱600] = <b>₱4,200</b>.</li>
+<li>a₁ = 50, r = 1.5, n = 6. S₆ = 50(1 − 1.5⁶)/(1 − 1.5). Since 1.5⁶ = 11.390625, S₆ = 50(−10.390625)/(−0.5) = <b>₱1,039.0625-equivalent units</b>, or <b>1,039.0625 units</b>. Interpretation: the model gives 1,039.0625 total units over six cycles.</li>
+</ol></div>
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Model selection</td><td>Correct model and justification.</td><td>Correct model, weak justification.</td><td>Incorrect model.</td></tr><tr><td>Process</td><td>Complete, accurate substitution and computation.</td><td>Minor error.</td><td>Major gaps.</td></tr><tr><td>Interpretation</td><td>Contextual and reasonable.</td><td>Brief or incomplete.</td><td>Missing/incorrect.</td></tr></table></div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Misconceptions</h3><ul><li>Sequence and series are interchangeable terms.</li><li>Arithmetic means “adding any amount,” rather than a constant difference.</li><li>Geometric means “increasing,” rather than a constant ratio.</li><li>Incorrect sigma index or general term.</li><li>Confusing nth term with sum of n terms.</li><li>Using the wrong sum formula.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use term cards and physically arrange them as a list, then add them as a sum.</li><li>Place differences or ratios underneath consecutive terms.</li><li>Use a formula-selection decision tree.</li><li>Build sigma notation from a term-index table.</li><li>Reassess the failed step, not just the whole worksheet.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Derive or explain the arithmetic-series formula using pairing.</li><li>Compare two different representations of the same sum.</li><li>Use a spreadsheet to generate a finite series and verify its sum.</li><li>Create a real-world problem that requires choosing between arithmetic and geometric series.</li></ul></div>
+<div class="card"><h3>Teacher Evidence Record</h3><table><tr><th>Session</th><th>Evidence collected</th><th>Need observed</th><th>Response</th></tr><tr><td>1</td><td>Sequence/series sort</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Sigma translation</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Sum calculations</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Contextual mastery</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Department of Education Grade 11 General Mathematics curriculum materials; school-level Grade 11 General Mathematics Three-Term Budget of Work; teacher-developed Evidence-Informed ILAW 4As design.</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation, mathematical accuracy, assessment decisions and final classroom use.</p></div>
+</section>
+</main>
+<footer>Pareja Integrated School • General Mathematics • Term 1 Week 4 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
