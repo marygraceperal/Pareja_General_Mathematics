@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>General Mathematics | Term 1 Week 5 | Financial Applications of Sequences and Series</title>
+<style>
+:root{--p:#5b21b6;--s:#7c3aed;--a:#ddd6fe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#f5f3ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#faf5ff,#fff,#f5f3ff);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:var(--p);padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.08rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:#15803d}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#faf5ff;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #c4b5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:95px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid #15803d;padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Financial Applications of Sequences and Series</h1>
+<div class="sub">General Mathematics • Term 1 • Week 5</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 1 Purple</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+<main>
+
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Financial Applications of Sequences and Series</h2><p>Four complete daily Evidence-Informed 4As sessions based directly on BOW Week 5.</p></div>
+<div class="card"><h3>Lesson Information</h3><div class="grid"><div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Financial applications of sequences and series</div><div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Week</b><br>Term 1 • Week 5</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div><div class="info"><b>Teacher</b><br>Mary Grace M. Peral</div></div></div>
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Week 5 competencies:</b><ul><li>Apply sequences and series to solve financial problems, such as periodic payments for loans and mortgages.</li><li>Determine the accumulated values of investment over time using sequences and series.</li></ul><p><b>Source:</b> Grade 11 General Mathematics Three-Term Budget of Work, First Term, Week 5. fileciteturn16file0L31-L35</p></div></div>
+<div class="card"><h3>Weekly Learning Intentions</h3><ul><li>Model regular financial payments as sequences or series.</li><li>Use finite geometric-series reasoning for periodic loan or mortgage payments in simplified classroom contexts.</li><li>Determine accumulated investment values over time using repeated growth.</li><li>Interpret mathematical results and explain what they mean financially.</li></ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve → elicit evidence → analyze learner strategy/errors → explicitly model the next step → guided practice → independent transfer → respond to evidence.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Financial Patterns: Payments and Growth</h3></div><div class="sb"><p><b>Daily objective:</b> Identify the sequence or series structure in recurring payments and investment-growth situations and explain the role of the terms.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit</span><p>Present two situations: (A) a person pays ₱2,000 every month for 6 months; (B) an investment grows by 5% each period. Learners list the amounts and identify what stays constant or changes.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare constant-payment and repeated-growth patterns. Ask: Is the financial quantity represented by equal additions, equal multiplications, or a sum of periodic amounts?</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Repeated equal payments form an arithmetic/constant sequence of payments, while repeated percentage growth forms a geometric sequence. A total paid or accumulated amount is represented by a series.</p><div class="formula">Total of equal payments = payment × number of payments</div><div class="formula">Growth: Aₙ = P(1 + r)ⁿ</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Independent</span><p>Learners model three short financial situations, identify sequence/series type, and state whether they need a term or a sum. Exit ticket: distinguish “amount at one period” from “total over several periods.”</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners confuse a term with a total, use a timeline showing one balance versus the sum of several payments or deposits.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Periodic Payments for Loans and Mortgages</h3></div><div class="sb"><p><b>Daily objective:</b> Represent a simplified periodic-payment situation using a sequence/series and calculate the total of the stated payments.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Analyze a six-payment example: ₱3,000 paid every month. Learners build a payment table and calculate the total amount paid before discussing interest.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Compare “monthly payment” with “total payments.” Learners identify why multiplying the payment by the number of periods gives the total only when the payment is constant and the stated problem asks for the sum of payments.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Scaffold</span><p>For a simplified equal-payment model, the payment sequence is constant. The series is the sum of all scheduled payments.</p><div class="formula">Sₙ = a + a + … + a = na</div><p>For finance problems with changing payment amounts, use the appropriate arithmetic/geometric-series structure given by the situation.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Solve equal-payment loan examples and one changing-payment example. Learners show the payment sequence, identify n, then calculate the total scheduled payments.</p></div></div><div class="evidence"><b>Teacher response:</b> Separate the classroom model from a real lender's amortization schedule. Learners must not assume that “total payments” equals principal unless the problem explicitly defines it that way.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Accumulated Value of Investments</h3></div><div class="sb"><p><b>Daily objective:</b> Determine the accumulated value of an investment after repeated growth and use a geometric series when several deposits or accumulated amounts are involved.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Starting with ₱10,000 at 5% annual growth, calculate the value after one, two, and three periods. Learners identify the common ratio.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Discuss why 5% growth means multiplying by 1.05 rather than adding ₱5. Compare a single investment with repeated deposits.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Single amount after n periods: A = P(1 + r)ⁿ</div><div class="formula">Geometric sum: Sₙ = a₁(1 − rⁿ)/(1 − r), r ≠ 1</div><p>When each period contributes an amount that then grows, the resulting accumulated contributions can form a geometric series.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Practice</span><p>Calculate values for a single investment and for repeated equal deposits in simplified scenarios. Learners explain which quantity is a term and which is a sum.</p></div></div><div class="evidence"><b>Ways forward:</b> If the exponent is misplaced, use a period table. If learners are secure, introduce the distinction between nominal contribution and accumulated contribution.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Integrated Financial Problem Solving</h3></div><div class="sb"><p><b>Daily objective:</b> Select and apply an appropriate sequence/series model to solve and interpret an integrated loan or investment problem.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieval</span><p>Formula-selection sprint: identify whether each situation requires a constant-payment total, arithmetic sum, geometric growth, or geometric sum.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Learners annotate a word problem: known amount, rate, period, payment/deposit, requested value. Discuss why the model matches the wording.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><div class="formula">Read → identify financial quantities → write first terms → identify pattern → choose formula → substitute → compute → interpret → check reasonableness.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Independently solve one periodic-payment problem and one investment-growth problem. Require complete solution, units/currency, and a one-sentence interpretation.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Classify learners as Not Yet Mastered, Developing, or Mastered. Reteach the exact failed modeling or computation step before reassessment.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Competency</th><th>Evidence</th><th>What It Shows</th><th>Response</th></tr>
+<tr><td>Financial payment modeling</td><td>Session 2 payment table</td><td>Can learners distinguish a payment from total payments?</td><td>________________</td></tr>
+<tr><td>Investment accumulation</td><td>Session 3 growth task</td><td>Can learners identify repeated multiplication and exponent?</td><td>________________</td></tr>
+<tr><td>Series application</td><td>Session 4 mastery task</td><td>Can learners select the appropriate model?</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Financial Applications of Sequences and Series</h2><p>Study guide for loans, periodic payments, and investments.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>How recurring payments can be represented as sequences and series.</li><li>How to calculate the total of equal periodic payments.</li><li>How repeated percentage growth forms a geometric sequence.</li><li>How a geometric series can represent accumulated repeated contributions.</li><li>How to choose a mathematical model and interpret a financial result.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Periodic payment</td><td>An amount paid at regular intervals.</td></tr><tr><td>Investment</td><td>Money placed into an asset or account with the expectation of future value.</td></tr><tr><td>Accumulated value</td><td>The value of an amount after growth over one or more periods.</td></tr><tr><td>Growth factor</td><td>The multiplier used after a percentage increase. For rate r, the factor is 1 + r.</td></tr><tr><td>Geometric sequence</td><td>A sequence in which consecutive terms have a constant ratio.</td></tr><tr><td>Geometric series</td><td>The indicated sum of the terms of a geometric sequence.</td></tr></table></div>
+<div class="card"><h3>Key Formulas</h3><div class="formula">Equal periodic payments: Total = payment × number of payments</div><div class="formula">Compound growth for one initial amount: A = P(1 + r)ⁿ</div><div class="formula">Finite geometric series: Sₙ = a₁(1 − rⁿ)/(1 − r), r ≠ 1</div><div class="formula">Finite arithmetic series: Sₙ = n/2[2a₁ + (n − 1)d]</div><p><b>Important:</b> Use the formula that matches the structure described in the problem. A real loan's amortization schedule may require an annuity model and may not be represented by simple multiplication of a payment by n when interest is involved.</p></div>
+<div class="card"><h3>Worked Examples</h3>
+<h4>1. Equal Periodic Payments</h4><p>A simplified payment plan requires ₱2,500 every month for 8 months. Find the total scheduled payments.</p><div class="solution">There are 8 equal payments: S = 8(₱2,500) = <b>₱20,000</b>.</div>
+<h4>2. Investment Growth</h4><p>An investment of ₱10,000 grows at 5% per year. Find its value after 3 years.</p><div class="solution">A = ₱10,000(1.05)³ = ₱10,000(1.157625) = <b>₱11,576.25</b>.</div>
+<h4>3. Repeated Contributions</h4><p>Suppose ₱1,000 is invested at the end of each period and, for a classroom model, each earlier contribution is multiplied by 1.05 per period. After 4 periods, the accumulated contributions are modeled by 1,000(1.05)³ + 1,000(1.05)² + 1,000(1.05) + 1,000.</p><div class="solution">This is a geometric series with first term 1,000, ratio 1.05, and 4 terms. S₄ = 1,000[(1.05⁴ − 1)/(1.05 − 1)] = <b>₱4,310.125</b>.</div>
+<h4>4. Choosing the Model</h4><p>If a situation says “the amount increases by 5% each year,” use a multiplicative growth model. If it says “₱2,000 is paid every month,” the payment total is a constant-payment sum.</p></div>
+<div class="card"><h3>Common Mistakes</h3><ul><li>Adding 5% as 0.05 instead of multiplying by 1.05 for growth.</li><li>Confusing one accumulated value with the total of several accumulated contributions.</li><li>Using a geometric formula for equal payments without checking the problem structure.</li><li>Ignoring the number of periods.</li><li>Reporting a numerical result without ₱ or another appropriate unit.</li><li>Assuming a simplified classroom payment model is identical to a real amortization schedule.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Sequences and series help describe recurring payments, savings plans, investment growth, loan schedules, and other repeated financial processes. The key mathematical skill is matching the structure of the financial situation to the correct model.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>What is the difference between a payment and the total of payments?</li><li>What is the growth factor for a 6% increase?</li><li>What formula models one initial amount growing for n periods?</li><li>When would a geometric series be useful for accumulated contributions?</li><li>Why should you inspect the wording before choosing a formula?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 5 Practice — Financial Applications</h2><p>Show your model, computation, and interpretation.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> A payment of ₱1,500 is made every month for 6 months. Is the payment sequence constant, arithmetic, or geometric? <div class="space"></div></div>
+<div class="q"><b>2.</b> What is the total of six equal payments of ₱1,500? <div class="space"></div></div>
+<div class="q"><b>3.</b> What is the growth factor for a 4% annual increase? <div class="space"></div></div>
+<div class="q"><b>4.</b> Identify the type of pattern in ₱5,000, ₱5,250, ₱5,512.50. <div class="space"></div></div>
+<div class="q"><b>5.</b> Write the formula for the accumulated value of one initial amount P growing at rate r for n periods. <div class="space"></div></div>
+<div class="q"><b>6.</b> State one reason why a real loan should not automatically be modeled as “payment × number of payments” when interest is involved. <div class="space"></div></div></div>
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> A learner pays ₱2,200 monthly for 10 months. Find the total scheduled payments in the simplified model. <div class="space"></div></div>
+<div class="q"><b>8.</b> An investment of ₱8,000 grows at 5% annually. Find its value after 4 years. <div class="space"></div></div>
+<div class="q"><b>9.</b> An investment of ₱12,000 grows at 3% annually. Find its value after 2 years. <div class="space"></div></div>
+<div class="q"><b>10.</b> Write the first five terms of a repeated-growth model beginning with ₱2,000 and growth factor 1.10. <div class="space"></div></div>
+<div class="q"><b>11.</b> Find the sum of ₱1,000 + ₱1,100 + ₱1,210 + ₱1,331. <div class="space"></div></div>
+<div class="q"><b>12.</b> A person makes ₱3,000 equal payments for 12 periods. Find the total scheduled payments and explain what the result represents. <div class="bigspace"></div></div></div>
+<div class="card"><h3>Part 3 — Advanced Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says that a 5% increase means adding ₱0.05 to the balance. Explain the error using a ₱10,000 example. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> An investment starts at ₱20,000 and grows by 4% per year. Find the accumulated value after 5 years. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> Find the sum of the first 6 terms of ₱500, ₱550, ₱605, … . <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> Explain why a sequence of equal monthly payments is different from a sequence of balances that grow by a fixed percentage. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A classroom investment model has four accumulated contributions: ₱2,000(1.05)³, ₱2,000(1.05)², ₱2,000(1.05), and ₱2,000. Find the total accumulated contributions. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Create a 5-period financial situation that can be represented by a geometric series. State the first term, ratio, number of terms, formula, and sum. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Financial Applications</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which multiplier represents a 5% annual increase?<br>A. 0.05 &nbsp; B. 0.95 &nbsp; C. 1.05 &nbsp; D. 1.50<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> A person pays ₱2,500 every month for 8 months. What is the total of the scheduled payments?<br>A. ₱10,000 &nbsp; B. ₱18,000 &nbsp; C. ₱20,000 &nbsp; D. ₱25,000<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Find the value of ₱10,000 after 3 years at 5% annual growth.<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> Find the sum ₱1,000 + ₱1,100 + ₱1,210 + ₱1,331.<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> What mathematical structure best represents repeated percentage growth?<br>A. Constant sequence &nbsp; B. Geometric sequence &nbsp; C. Constant difference only &nbsp; D. Random sequence<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Explain the difference between an accumulated value and the total of periodic payments. <div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> A learner deposits ₱2,000 at the beginning of each of 6 periods in a simplified equal-deposit model. Find the total deposited and explain what it means. <div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> An investment of ₱15,000 grows at 4% annually. Find its value after 5 years. Show the model, formula, substitution, computation, and interpretation. <div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific modeling or computation error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Explicit reteaching + scaffolded reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Complete solutions are hidden until the teacher enters the access code.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Solutions</h3><ol>
+<li>Constant sequence; each payment is ₱1,500.</li>
+<li>6 × ₱1,500 = <b>₱9,000</b>.</li>
+<li>Growth factor = 1 + 0.04 = <b>1.04</b>.</li>
+<li>Geometric; ratio = 5,250 ÷ 5,000 = <b>1.05</b>.</li>
+<li><b>A = P(1 + r)ⁿ</b>.</li>
+<li>Interest changes the balance over time, so a real loan's total payments and amortization depend on the payment schedule, interest, and terms.</li>
+<li>10 × ₱2,200 = <b>₱22,000</b>.</li>
+<li>A = 8,000(1.05)⁴ = 8,000(1.21550625) = <b>₱9,724.05</b> approximately.</li>
+<li>A = 12,000(1.03)² = 12,000(1.0609) = <b>₱12,730.80</b>.</li>
+<li>₱2,000; ₱2,200; ₱2,420; ₱2,662; ₱2,928.20.</li>
+<li>S₄ = 1,000 + 1,100 + 1,210 + 1,331 = <b>₱4,641</b>.</li>
+<li>12 × ₱3,000 = <b>₱36,000</b>; this represents the total scheduled payments in the simplified equal-payment model.</li>
+<li>5% of ₱10,000 is ₱500, so the new amount is ₱10,500, not ₱10,000.05. The multiplier is 1.05.</li>
+<li>A = 20,000(1.04)⁵ = 20,000(1.2166529024) = <b>₱24,333.06</b> approximately.</li>
+<li>a₁ = 500, r = 1.10, n = 6. S₆ = 500[(1.10⁶ − 1)/(1.10 − 1)] = 500(0.771561/0.10) = <b>₱3,857.81</b> approximately.</li>
+<li>Equal payments have a common difference of 0 because each payment is the same. Percentage-growth balances have a common ratio greater than 1 because each amount is multiplied by the growth factor.</li>
+<li>S₄ = 2,000[(1.05⁴ − 1)/(1.05 − 1)] = 2,000(0.21550625/0.05) = <b>₱8,620.25</b>.</li>
+<li>Answers vary. A valid response must identify 5 terms, a consistent ratio, a first term, a correct geometric-series formula, and an accurate sum.</li>
+</ol></div>
+<div class="card"><h3>Assessment — Solutions</h3><ol>
+<li><b>C. 1.05</b>.</li>
+<li><b>C. ₱20,000</b>; 8 × ₱2,500 = ₱20,000.</li>
+<li>A = 10,000(1.05)³ = <b>₱11,576.25</b>.</li>
+<li>1,000 + 1,100 + 1,210 + 1,331 = <b>₱4,641</b>.</li>
+<li><b>B. Geometric sequence</b>.</li>
+<li>An accumulated value is the value of an amount after growth. A total of periodic payments is the sum of the separate scheduled payments.</li>
+<li>6 × ₱2,000 = <b>₱12,000</b>; this is the total amount deposited, not the accumulated investment value after interest.</li>
+<li>A = 15,000(1.04)⁵. Since 1.04⁵ = 1.2166529024, A = <b>₱18,249.79</b> approximately. Interpretation: under the stated annual-growth model, the investment is worth about ₱18,249.79 after 5 years.</li>
+</ol></div>
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Model selection</td><td>Correct model with clear justification.</td><td>Correct model but weak explanation.</td><td>Incorrect model.</td></tr><tr><td>Computation</td><td>Accurate formula, substitution and arithmetic.</td><td>Minor error that does not obscure method.</td><td>Major gaps or incorrect method.</td></tr><tr><td>Interpretation</td><td>Correctly explains financial meaning and units.</td><td>Partly explained.</td><td>Missing or incorrect.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Misconceptions</h3><ul><li>Thinking a percentage rate is the same as the growth factor.</li><li>Confusing a single future value with the sum of several contributions.</li><li>Assuming all loans can be solved by payment × number of periods.</li><li>Using a geometric-series formula when payments are simply equal.</li><li>Forgetting that the exponent counts growth periods.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a timeline for each period.</li><li>Write the first three terms before choosing a formula.</li><li>Color-code P, r, n, and A in worked examples.</li><li>Use a decision table: equal payments → constant sum; repeated percentage growth → geometric model.</li><li>Have learners explain the meaning of their answer before moving to another problem.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Compare equal periodic payments with growing payments.</li><li>Use a spreadsheet to generate investment-growth values.</li><li>Investigate how changing the growth rate changes accumulated value.</li><li>Extend the classroom model to annuity concepts after the core BOW competency is secure.</li></ul></div>
+<div class="card"><h3>Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Pattern/model classification</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Payment modeling</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Investment growth</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Integrated mastery task</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, First Term, Week 5, which specifies applying sequences and series to financial problems such as periodic loan/mortgage payments and determining accumulated investment values. fileciteturn16file0L31-L35</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, mathematical accuracy, assessment decisions and final classroom use.</p></div>
+</section>
+</main>
+<footer>Pareja Integrated School • General Mathematics • Term 1 Week 5 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
