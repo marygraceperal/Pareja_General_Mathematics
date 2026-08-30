@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Mathematics | Term 2 Week 13 | Trigonometric Ratios and Areas of Oblique Triangles</title>
+<style>
+:root{--primary:#1d4ed8;--secondary:#2563eb;--accent:#dbeafe;--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--soft:#eff6ff;--success:#166534;--warning:#b45309}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#eff6ff,#fff,#dbeafe);border-bottom:1px solid var(--border)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--accent);color:#1e40af;padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--primary);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(1.9rem,4vw,3rem);line-height:1.1;margin:12px 0 5px}.sub{color:var(--primary);font-weight:750}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--border);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--border);background:#fff}.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--primary);margin-top:0}.card h4{color:var(--secondary);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--border);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--secondary)}.evidence{background:#f0fdf4;border-color:var(--success)}.warn{background:#fffbeb;border-color:var(--warning)}.lock{background:#f8fafc;border-color:var(--primary)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--primary)}
+.session{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--primary)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--border);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--primary)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #93c5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--border);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:90px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid var(--success);padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--primary)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--border);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--muted);padding:22px;border-top:1px solid var(--border);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Trigonometric Ratios and Areas of Oblique Triangles</h1>
+<div class="sub">General Mathematics • Term 2 • Week 13 (BOW Second Term Week 3)</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 2 Blue</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Trigonometric Ratios and Areas of Oblique Triangles</h2><p>Four complete daily Evidence-Informed 4As sessions. Every session follows Activity → Analysis → Abstraction → Application.</p></div>
+
+<div class="card"><h3>Lesson Information</h3><div class="grid">
+<div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Trigonometric ratios in right-angled triangles; areas of oblique triangles</div>
+<div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Website Week</b><br>Term 2 • Week 13</div>
+<div class="info"><b>BOW Position</b><br>Second Term • Week 3</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div>
+</div></div>
+
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Second Term, Week 3 — Measurement and Geometry:</b><ul>
+<li>Illustrate the trigonometric ratios in a right-angled triangle using a real-life object or figure.</li>
+<li>Illustrate the area of oblique triangles using Heron’s Formula and the rule Area = ½ab sin C.</li>
+</ul>The wording above follows the Week 3 entry in the provided BOW. fileciteturn35file0L72-L84</div></div>
+
+<div class="card"><h3>Weekly Learning Intentions</h3><ul>
+<li>Identify opposite, adjacent, and hypotenuse sides relative to a chosen acute angle.</li>
+<li>Use sine, cosine, and tangent to determine unknown sides or angles in right-angled triangles.</li>
+<li>Illustrate and calculate the area of an oblique triangle using Heron’s Formula.</li>
+<li>Calculate the area of an oblique triangle using A = ½ab sin C and select the appropriate method.</li>
+</ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve prior geometry → predict → analyze errors → explicitly model → guided practice → independent practice → application → mastery check → targeted remediation.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Trigonometric Ratios in Right Triangles</h3></div><div class="sb"><p><b>Daily objectives:</b> Identify the three sides relative to an acute angle and determine sine, cosine, and tangent ratios from a right triangle or real-life figure.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit prior knowledge</span><p>Show a right-triangle ramp or ladder. Learners label the hypotenuse, opposite, and adjacent sides relative to a marked angle, then predict which sides should be compared.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Compare labels from pairs. Ask: “Adjacent to which angle?” and “Which side is always opposite the right angle?” Address the common error of treating adjacent as the longest side.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><div class="formula">sin θ = opposite ÷ hypotenuse<br>cos θ = adjacent ÷ hypotenuse<br>tan θ = opposite ÷ adjacent</div><p>Model how the chosen reference angle determines the opposite and adjacent sides.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Learners identify sides and write the correct ratio for several right triangles, including a ladder and ramp context.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners swap opposite and adjacent, return to “relative to the chosen angle” with color-free labeling and a new diagram before computation.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Solving Right Triangles</h3></div><div class="sb"><p><b>Daily objectives:</b> Use an appropriate trigonometric ratio to calculate an unknown side or acute angle and check whether the result is reasonable.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Give a right triangle with one acute angle and one known side. Learners choose whether sine, cosine, or tangent can connect the known and unknown sides.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Choice reasoning</span><p>Compare solution paths. Learners explain why a ratio is selected based on the side pair rather than choosing a formula from memory alone.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model selecting the ratio → substituting values → calculator mode check → solving → rounding → reasonableness check. For unknown angles, model inverse trigonometric functions.</p><div class="formula">θ = sin⁻¹(opposite/hypotenuse), when appropriate<br>θ = cos⁻¹(adjacent/hypotenuse), when appropriate<br>θ = tan⁻¹(opposite/adjacent), when appropriate</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Solve ladder, ramp, and line-of-sight problems. Require a diagram, ratio choice, computation, and unit/angle statement.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners obtain an impossible side longer than the hypotenuse, use a triangle-size check before repeating the computation.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Heron’s Formula for Oblique Triangles</h3></div><div class="sb"><p><b>Daily objectives:</b> Identify when all three sides are known, calculate the semiperimeter, and use Heron’s Formula to determine the area of an oblique triangle.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Present a triangular garden with side lengths 13 m, 14 m, and 15 m. Learners discuss how area could be found when no altitude is supplied.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Strategy selection</span><p>Compare the available information with the formulas from Sessions 1–2. Identify that three side lengths are sufficient for Heron’s Formula.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><div class="formula">s = (a+b+c) ÷ 2<br>A = √[s(s−a)(s−b)(s−c)]</div><p>Model the sequence: identify sides → find s → substitute → simplify → square root → state square units.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Find the area of several oblique triangles from side lengths. Learners show the semiperimeter and complete substitution before using a calculator.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners omit the semiperimeter or substitute the wrong side, require a four-line solution template before another item.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Area = ½ab sin C and Method Selection</h3></div><div class="sb"><p><b>Daily objectives:</b> Use A = ½ab sin C to find an oblique triangle’s area, determine which area method fits the given information, and justify the result in context.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Compare two triangles: one provides two sides and the included angle; another provides three sides. Learners choose the likely area method before calculating.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error analysis</span><p>Examine a solution that uses a non-included angle. Learners explain why the angle must be between the two known sides in A = ½ab sin C.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><div class="formula">A = ½ab sin C</div><p>Model method selection: three sides → Heron; two sides plus included angle → ½ab sin C. Review calculator angle mode and square units.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Solve mixed real-world problems involving triangular land, triangular supports, and triangular panels. Explain why the selected formula fits the information.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Classify mistakes as side/angle identification, formula selection, calculator mode, arithmetic, or interpretation errors, then provide targeted practice.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence collected</th><th>Observed need</th><th>Targeted response</th></tr>
+<tr><td>1</td><td>Side identification / ratio selection</td><td>________________</td><td>________________</td></tr><tr><td>2</td><td>Right-triangle calculation</td><td>________________</td><td>________________</td></tr><tr><td>3</td><td>Heron procedure</td><td>________________</td><td>________________</td></tr><tr><td>4</td><td>Method selection / interpretation</td><td>________________</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Trigonometry and Oblique Triangle Areas</h2><p>Choose the right relationship, calculate carefully, and explain what the answer means.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>How sine, cosine, and tangent describe relationships in right triangles.</li><li>How to solve for missing sides and angles.</li><li>How Heron’s Formula finds area when three sides are known.</li><li>How A = ½ab sin C finds area when two sides and their included angle are known.</li><li>How to select a method from the information given.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Right triangle</td><td>A triangle containing a 90° angle.</td></tr><tr><td>Hypotenuse</td><td>The side opposite the 90° angle; it is the longest side of a right triangle.</td></tr>
+<tr><td>Opposite side</td><td>The side directly across from the chosen acute reference angle.</td></tr><tr><td>Adjacent side</td><td>The non-hypotenuse side next to the chosen reference angle.</td></tr>
+<tr><td>Oblique triangle</td><td>A triangle that is not a right triangle.</td></tr><tr><td>Included angle</td><td>The angle formed by the two known sides used in A = ½ab sin C.</td></tr>
+<tr><td>Semiperimeter</td><td>Half the perimeter of a triangle: s = (a+b+c) ÷ 2.</td></tr></table></div>
+<div class="card"><h3>Key Ratios & Formulas</h3>
+<div class="formula">sin θ = opposite ÷ hypotenuse</div><div class="formula">cos θ = adjacent ÷ hypotenuse</div><div class="formula">tan θ = opposite ÷ adjacent</div>
+<div class="formula">s = (a+b+c) ÷ 2</div><div class="formula">Heron: A = √[s(s−a)(s−b)(s−c)]</div><div class="formula">Area of oblique triangle: A = ½ab sin C</div>
+<p><b>Method selection:</b> If three side lengths are given, Heron’s Formula is appropriate. If two side lengths and their included angle are given, use A = ½ab sin C.</p></div>
+<div class="card"><h3>Step-by-Step Worked Examples</h3>
+<h4>Example 1 — Identify the ratio</h4><p>A right triangle has θ = 35°. Relative to θ, the opposite side is 6 cm and the hypotenuse is 10 cm. Since opposite and hypotenuse are involved, use sine: sin 35° = 6/10 = 0.6. This identifies the relationship being represented.</p>
+<h4>Example 2 — Find a side</h4><p>A ladder forms a 60° angle with the ground. The ladder is 5 m long. Let h be the vertical height. Since h is opposite the 60° angle and 5 m is the hypotenuse:</p><div class="formula">sin 60° = h/5<br>h = 5 sin 60° ≈ 4.33 m</div><p>The vertical height is approximately 4.33 m.</p>
+<h4>Example 3 — Heron’s Formula</h4><p>For a triangle with sides 13 m, 14 m, and 15 m:</p><div class="formula">s = (13+14+15) ÷ 2 = 21 m<br>A = √[21(21−13)(21−14)(21−15)]<br>= √(21×8×7×6) = √7056 = 84 m²</div></p>
+<h4>Example 4 — Two sides and included angle</h4><p>If a triangular panel has sides 8 m and 11 m with an included angle of 30°:</p><div class="formula">A = ½(8)(11)sin 30°<br>= 44(0.5) = 22 m²</div><p>The area is 22 m².</p></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Calling the side next to the angle “adjacent” without checking that it is not the hypotenuse.</li><li>Using the wrong trigonometric ratio because the side pair was not identified first.</li><li>Using degrees/radians incorrectly on a calculator.</li><li>For A = ½ab sin C, using an angle that is not included between a and b.</li><li>Forgetting to calculate the semiperimeter in Heron’s Formula.</li><li>Reporting triangle area in linear units instead of square units.</li><li>Rounding too early.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Trigonometry helps estimate heights, distances, slopes, roof angles, ladder positions, and line-of-sight measurements. Triangle-area methods can be used for land plots, triangular signs, panels, supports, and construction layouts.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>Which side is always the hypotenuse?</li><li>When should sine be used?</li><li>What is the difference between an adjacent side and the hypotenuse?</li><li>When is Heron’s Formula useful?</li><li>What does “included angle” mean?</li><li>Why must the calculator be in the correct angle mode?</li><li>Why is area expressed in square units?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 13 Practice — Trigonometry and Triangle Areas</h2><p>Show the diagram/relationship, formula choice, computation, and final interpretation.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> In a right triangle, what is the name of the side opposite the 90° angle? <div class="space"></div></div>
+<div class="q"><b>2.</b> Write the three basic trigonometric ratios using opposite, adjacent, and hypotenuse. <div class="bigspace"></div></div>
+<div class="q"><b>3.</b> If the opposite side and hypotenuse are known, which trigonometric ratio is appropriate? <div class="space"></div></div>
+<div class="q"><b>4.</b> Find the semiperimeter of a triangle with sides 7 cm, 8 cm, and 9 cm. <div class="space"></div></div>
+<div class="q"><b>5.</b> State the formula for the area of a triangle when two sides and their included angle are known. <div class="space"></div></div>
+<div class="q"><b>6.</b> What must be true about angle C in A = ½ab sin C? <div class="space"></div></div></div>
+
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> A right triangle has θ = 30° and hypotenuse 12 cm. Find the side opposite θ. <div class="bigspace"></div></div>
+<div class="q"><b>8.</b> A right triangle has θ = 40° and adjacent side 9 m. Find the hypotenuse. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> A right triangle has opposite side 7 cm and adjacent side 10 cm. Find the acute angle θ to the nearest tenth of a degree. <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> Find the area of a triangle with sides 13 m, 14 m, and 15 m using Heron’s Formula. <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> Find the area of a triangle with sides 8 cm and 11 cm and included angle 30°. <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> A triangular garden has two sides 12 m and 15 m with an included angle of 50°. Find its area to the nearest tenth. <div class="bigspace"></div></div></div>
+
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner uses cos θ = opposite/hypotenuse. Identify the error and give the correct ratio. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A learner uses A = ½ab sin 40° when the 40° angle is not between sides a and b. Explain why the method is invalid for the stated information. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> A learner calculates the Heron semiperimeter of sides 9, 10, and 17 as 17. Identify and correct the error. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A 6 m ladder makes a 70° angle with the ground. Find its vertical height to the nearest tenth of a metre. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A triangular land plot has sides 20 m, 21 m, and 29 m. Use Heron’s Formula to find its area. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Explain how you would decide between Heron’s Formula and A = ½ab sin C when solving a triangle-area problem. Give one example of information that points to each method. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Trigonometric Ratios and Areas</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which ratio equals opposite ÷ hypotenuse?<br>A. cosine &nbsp; B. tangent &nbsp; C. sine &nbsp; D. secant<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> A right triangle has opposite side 5 and hypotenuse 10. What is sin θ?<br>A. 0.2 &nbsp; B. 0.5 &nbsp; C. 2 &nbsp; D. 5<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> A 10 m ladder forms a 30° angle with the ground. What vertical height does it reach?<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> For a triangle with sides 13, 14, and 15, what method is appropriate for finding area?<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Find the area of the 13–14–15 triangle.<div class="bigspace"></div></div>
+<div class="q"><b>6. (2 pts)</b> A triangle has sides 8 m and 11 m with included angle 30°. Find its area.<div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> Explain why the angle in A = ½ab sin C must be the included angle between a and b.<div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A triangular support has two sides of 12 m and 15 m with an included angle of 50°. Calculate its area to the nearest tenth and explain whether the result is reasonable.<div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Enrichment and mixed application.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific ratio, formula, or interpretation error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Reteach side identification, formula selection, and one-step calculations before reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Complete solutions are protected by the teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Enter the access code to reveal the complete answer key and scoring guide.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li><b>Hypotenuse.</b> It is opposite the 90° angle.</li>
+<li><b>sin θ = opposite/hypotenuse; cos θ = adjacent/hypotenuse; tan θ = opposite/adjacent.</b></li>
+<li><b>Sine.</b> The known pair is opposite and hypotenuse.</li>
+<li>s = (7+8+9) ÷ 2 = 24 ÷ 2 = <b>12 cm</b>.</li>
+<li><b>A = ½ab sin C.</b></li>
+<li>Angle C must be the <b>included angle between sides a and b</b>.</li>
+<li>sin 30° = opposite/12. Opposite = 12 sin 30° = 12(0.5) = <b>6 cm</b>.</li>
+<li>cos 40° = 9/h. h = 9 ÷ cos 40° ≈ 9 ÷ 0.7660 = <b>11.75 m ≈ 11.7 m</b>.</li>
+<li>tan θ = 7/10. θ = tan⁻¹(0.7) ≈ <b>35.0°</b>.</li>
+<li>s = (13+14+15) ÷ 2 = 21. A = √[21(8)(7)(6)] = √7056 = <b>84 m²</b>.</li>
+<li>A = ½(8)(11)sin 30° = 44(0.5) = <b>22 cm²</b>.</li>
+<li>A = ½(12)(15)sin 50° = 90(0.766044) ≈ <b>68.94 m² ≈ 68.9 m²</b>.</li>
+<li>The learner reversed the sine definition. <b>cos θ = adjacent/hypotenuse</b>, while <b>sin θ = opposite/hypotenuse</b>.</li>
+<li>A = ½ab sin C requires C to be the angle formed by the two sides a and b. If 40° is not between them, the formula cannot be applied with those two sides and that angle as stated.</li>
+<li>s = (9+10+17) ÷ 2 = 36 ÷ 2 = <b>18</b>, not 17.</li>
+<li>sin 70° = h/6. h = 6 sin 70° ≈ 6(0.939693) = <b>5.6 m</b>.</li>
+<li>s = (20+21+29) ÷ 2 = 35. A = √[35(15)(14)(6)] = √44100 = <b>210 m²</b>.</li>
+<li>Use <b>Heron’s Formula</b> when all three side lengths are known. Use <b>A = ½ab sin C</b> when two sides and their included angle are known.</li>
+</ol></div>
+
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>C. Sine.</b> sin θ = opposite/hypotenuse.</li>
+<li><b>B. 0.5.</b> sin θ = 5/10 = 0.5.</li>
+<li>sin 30° = h/10 → h = 10(0.5) = <b>5 m</b>.</li>
+<li><b>Heron’s Formula.</b> Three side lengths are given.</li>
+<li>s = (13+14+15) ÷ 2 = 21. A = √[21(8)(7)(6)] = <b>84 square units</b>.</li>
+<li>A = ½(8)(11)sin 30° = <b>22 m²</b>.</li>
+<li>The formula comes from the geometry of a triangle in which the height relative to side a is b sin C. Therefore C must be the angle between a and b.</li>
+<li>A = ½(12)(15)sin 50° = 90(0.766044) = <b>68.9 m²</b> to the nearest tenth. This is reasonable because a triangle formed by two sides 12 m and 15 m has maximum possible area 90 m² when the included angle is 90°; 50° gives a smaller area.</li>
+</ol></div>
+
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Formula / method selection</td><td>Selects a method that matches the given information and explains why.</td><td>Correct method with limited explanation.</td><td>Method does not match the information.</td></tr><tr><td>Mathematical process</td><td>Correct substitution, computation, rounding, and units.</td><td>Minor arithmetic/rounding error with sound process.</td><td>Major process error or incomplete work.</td></tr><tr><td>Interpretation</td><td>Explains the meaning and reasonableness of the result.</td><td>Basic interpretation.</td><td>Only reports a numerical answer.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Confusing opposite and adjacent because they are relative to the selected angle.</li><li>Calling the hypotenuse the adjacent side.</li><li>Selecting a trig ratio before identifying the known and unknown sides.</li><li>Using the wrong calculator angle mode.</li><li>Using a non-included angle in A = ½ab sin C.</li><li>Forgetting the semiperimeter in Heron’s Formula.</li><li>Using linear rather than square units for area.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a consistent “mark the angle → label O/A/H → choose ratio” routine.</li><li>Provide partially completed triangles before full word problems.</li><li>Use one calculator-mode check at the start of every computation session.</li><li>For Heron, require the sequence “s → four factors → square root → square units.”</li><li>For ½ab sin C, highlight the included angle and the two corresponding sides.</li><li>Use error-analysis tasks before assigning additional repetitive computation.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Estimate the height of a school object using a measured angle and distance.</li><li>Compare two possible methods for finding a triangle area and justify the more efficient method.</li><li>Design a triangular garden or panel and calculate its area using realistic measurements.</li><li>Use a spreadsheet or geometry software to verify selected results and discuss rounding.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>O/A/H identification</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Ratio selection/calculation</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Heron procedure</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Area method/interpretation</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, Second Term, Week 3. The BOW specifies illustrating trigonometric ratios in a right-angled triangle using a real-life object or figure and illustrating the area of oblique triangles using Heron’s Formula and Area = ½ab sin C. fileciteturn35file0L72-L84</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div>
+</section>
+</main>
+
+<footer>Pareja Integrated School • Grade 11 General Mathematics • Term 2 Week 13 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{const t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));window.scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){const c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
