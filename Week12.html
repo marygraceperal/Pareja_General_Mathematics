@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G11 General Mathematics | Term 2 Week 12 | Data and Probability</title>
+<style>
+:root{--p:#1d4ed8;--s:#2563eb;--a:#dbeafe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#eff6ff;--ok:#166534}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#eff6ff,#fff,#dbeafe);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:#1e40af;padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:#1d4ed8;padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.08rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:var(--ok)}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#f8fafc;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #93c5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:95px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid var(--ok);padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Data and Probability</h1>
+<div class="sub">General Mathematics • Term 2 • Week 12 (Term 2 Week 2)</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 2 Blue</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Types, Levels, Measures, and Interpretation of Data</h2><p>Four complete daily Evidence-Informed 4As sessions based directly on BOW Second Term Week 2.</p></div>
+
+<div class="card"><h3>Lesson Information</h3><div class="grid">
+<div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Types of data, levels of measurement, central tendency, variability, technology, and interpretation</div>
+<div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Website Week</b><br>Term 2 • Week 12</div>
+<div class="info"><b>BOW Position</b><br>Second Term • Week 2</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div>
+</div></div>
+
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Second Term, Week 2 — Data and Probability:</b><ul>
+<li>Identify different types of data.</li><li>Classify a given set of data according to its level of measurement.</li><li>Identify the appropriate measure of central tendency and measures of variability of a given data set for different purposes.</li><li>Use appropriate technologies (e.g., calculator, Excel, Jamovi, Geogebra, etc.) to calculate measures of central tendency and variability.</li><li>Interpret the computed measures of central tendency and variability.</li>
+</ul>These are the Week 2 competency elements stated in the provided BOW. fileciteturn32file0L55-L72</div></div>
+
+<div class="card"><h3>Weekly Learning Intentions</h3><ul>
+<li>Distinguish common types of data and identify whether data are qualitative or quantitative.</li>
+<li>Classify variables according to nominal, ordinal, interval, and ratio levels of measurement.</li>
+<li>Select appropriate measures of central tendency and variability according to the purpose and characteristics of a data set.</li>
+<li>Use technology to calculate measures and interpret the results in context.</li>
+</ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve → classify/predict → analyze evidence → explicitly model → guided practice → independent practice → error analysis → targeted response → reassessment.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Types of Data</h3></div><div class="sb"><p><b>Daily objectives:</b> Identify and classify data as qualitative or quantitative, and distinguish discrete from continuous quantitative data.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit</span><p>Present classroom examples: favorite subject, number of siblings, height, section, and daily study time. Learners classify each before formal definitions.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare two classifications. Ask: Is the variable a category or a numerical measurement? If numerical, is it countable or measurable?</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Model the classification tree: data → qualitative/quantitative → for quantitative, discrete/continuous.</p><div class="formula">Discrete = counted values.<br>Continuous = measured values that can take values within a range.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Learners classify 10 school and community variables and justify two classifications in one sentence each.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners classify all numerical data as discrete, contrast “number of books” with “mass of books” and require a count-versus-measurement explanation.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Levels of Measurement</h3></div><div class="sb"><p><b>Daily objectives:</b> Classify variables as nominal, ordinal, interval, or ratio and justify the classification using properties of the scale.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Sort examples such as blood type, satisfaction rating, temperature in °C, and mass into groups based on what comparisons are meaningful.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Ask whether categories have order, equal intervals, and a meaningful zero. Learners explain why “twice as much” is not meaningful for every scale.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Nominal: labels only.<br>Ordinal: ordered categories.<br>Interval: equal intervals, no true zero.<br>Ratio: equal intervals and meaningful zero.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Classify school survey variables and defend each classification using at least one property of the measurement level.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners confuse ordinal and interval, use temperature in °C versus ranked satisfaction and ask what arithmetic statements are justified.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Central Tendency and Variability</h3></div><div class="sb"><p><b>Daily objectives:</b> Calculate and compare mean, median, mode, range, and standard deviation for suitable numerical data, then select an appropriate measure for a stated purpose.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Given a small data set, learners predict which “typical value” would best describe it and identify whether an extreme value might affect their choice.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Compare two data sets with the same mean but different spread. Discuss why center alone does not fully describe data.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Mean = sum of values ÷ number of values.<br>Range = maximum − minimum.<br>Standard deviation describes the spread of values around the mean.</div><p>Model mean, median, mode, range, and interpretation. Treat calculator/software output as evidence to interpret, not merely numbers to copy.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Calculate measures for small data sets and choose the most informative measure of center and variability for each scenario.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners automatically choose the mean, provide a data set with an extreme value and ask them to compare mean and median.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Technology and Interpretation</h3></div><div class="sb"><p><b>Daily objectives:</b> Use an appropriate calculator or spreadsheet to obtain measures of central tendency and variability and interpret the results in a real-world context.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Use a short class data set such as quiz scores or daily study time. Learners identify the variable, measurement level, and likely measures before calculating.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare manually calculated and technology-generated results. Discuss rounding, data entry, and what each statistic means.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><p>Model a complete routine: identify data → identify level/type → choose measure → calculate → inspect center/spread → interpret → check reasonableness.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Interpret a technology-generated summary and make one evidence-based statement about the data. Where technology is unavailable, use a calculator or prepared output.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Classify errors as data classification, measure selection, calculation/data-entry, or interpretation errors, then reteach only the needed component.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Teacher interpretation</th><th>Instructional response</th></tr>
+<tr><td>1</td><td>Type of data classification</td><td>________________</td><td>________________</td></tr><tr><td>2</td><td>Measurement-level classification</td><td>________________</td><td>________________</td></tr><tr><td>3</td><td>Measure selection/calculation</td><td>________________</td><td>________________</td></tr><tr><td>4</td><td>Technology and interpretation</td><td>________________</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Understanding Data</h2><p>From classifying variables to choosing and interpreting statistical measures.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>Types of data.</li><li>Levels of measurement.</li><li>Measures of central tendency.</li><li>Measures of variability.</li><li>How technology can calculate statistics.</li><li>How to interpret statistics rather than merely report them.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Qualitative data</td><td>Data describing categories or qualities.</td></tr><tr><td>Quantitative data</td><td>Numerical data representing counts or measurements.</td></tr><tr><td>Discrete data</td><td>Countable numerical values, commonly whole-number counts.</td></tr><tr><td>Continuous data</td><td>Measured numerical values that can take values within a range.</td></tr><tr><td>Nominal</td><td>Categories or labels without an inherent order.</td></tr><tr><td>Ordinal</td><td>Ordered categories where rank matters but differences are not necessarily equal.</td></tr><tr><td>Interval</td><td>Numerical scale with equal intervals but no meaningful absolute zero.</td></tr><tr><td>Ratio</td><td>Numerical scale with equal intervals and a meaningful zero.</td></tr><tr><td>Variability</td><td>The extent to which values differ or spread out.</td></tr></table></div>
+<div class="card"><h3>Key Ideas & Formulas</h3><div class="formula">Mean = (sum of all values) ÷ (number of values)</div><div class="formula">Range = maximum value − minimum value</div><p><b>Median</b> is the middle value after arranging data. If there are two middle values, the median is their average.</p><p><b>Mode</b> is the value or category occurring most frequently.</p><p><b>Standard deviation</b> summarizes how spread out numerical observations are around the mean. A larger standard deviation indicates greater spread, while a smaller one indicates values are more concentrated around the mean.</p></div>
+<div class="card"><h3>Worked Examples</h3>
+<h4>1. Type of data</h4><p>Number of learners absent today is quantitative and discrete because it is a numerical count. Height is quantitative and continuous because it is measured and can take values within a range.</p>
+<h4>2. Levels of measurement</h4><p>Class section is nominal. Satisfaction level such as poor/fair/good/excellent is ordinal. Temperature in °C is interval. Mass in kilograms is ratio because zero mass represents absence of mass and ratios are meaningful.</p>
+<h4>3. Mean, median, mode, and range</h4><p>For 4, 6, 6, 8, 11: mean = (4+6+6+8+11) ÷ 5 = 35 ÷ 5 = <b>7</b>. Median = <b>6</b>. Mode = <b>6</b>. Range = 11 − 4 = <b>7</b>.</p>
+<h4>4. Why interpretation matters</h4><p>For the data above, saying “the mean is 7” is incomplete. A useful interpretation is: “The average value is 7, while the middle observation is 6 and the values span 7 units from minimum to maximum.”</p>
+<h4>5. Technology</h4><p>A calculator or spreadsheet can compute statistics quickly, but the learner still needs to enter the correct data, select the appropriate statistic, check the output, and explain what the result means.</p></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Calling every numerical variable discrete.</li><li>Assuming ordinal data have equal intervals.</li><li>Using the mean automatically even when an extreme value makes the median more representative.</li><li>Confusing range with standard deviation.</li><li>Reporting a calculator result without interpreting it.</li><li>Entering incorrect or incomplete data into software.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Data classification and summary statistics are used in school monitoring, surveys, business decisions, sports, weather reports, quality control, and research. The appropriate statistic depends on the type of data and the question being asked.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>What is the difference between qualitative and quantitative data?</li><li>Why is a number of siblings discrete?</li><li>What makes ordinal data different from nominal data?</li><li>Why is temperature in °C commonly treated as interval data?</li><li>When might the median be more useful than the mean?</li><li>What does a larger standard deviation indicate?</li><li>Why should technology output still be interpreted?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 12 Practice — Data and Probability</h2><p>Show classification reasoning and interpret numerical answers in context.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> Classify “favorite color” as qualitative or quantitative. <div class="space"></div></div>
+<div class="q"><b>2.</b> Classify “number of siblings” as discrete or continuous. <div class="space"></div></div>
+<div class="q"><b>3.</b> Classify “student rank: 1st, 2nd, 3rd…” by level of measurement. <div class="space"></div></div>
+<div class="q"><b>4.</b> Classify temperature measured in °C by level of measurement. <div class="space"></div></div>
+<div class="q"><b>5.</b> Classify mass measured in kilograms by level of measurement. <div class="space"></div></div>
+<div class="q"><b>6.</b> Find the mean of 5, 7, 8, 10. <div class="space"></div></div></div>
+
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> Find the median and mode of 3, 5, 5, 6, 8, 10, 12. <div class="bigspace"></div></div>
+<div class="q"><b>8.</b> Find the range of 14, 17, 19, 21, 25. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> For 4, 6, 6, 8, 11, calculate the mean, median, mode, and range. <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> A survey records satisfaction as poor, fair, good, and excellent. What is the level of measurement? Explain. <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> A teacher records the time, in minutes, that learners spend studying. Is this discrete or continuous? Explain. <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> A data set has mean 50 and standard deviation 3. Another has mean 50 and standard deviation 12. Which set is more variable? Explain. <div class="bigspace"></div></div></div>
+
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says “temperature in °C is ratio because it has a zero.” Explain the error. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> For 5, 6, 7, 8, 100, a learner says the mean is always the best measure of center. Analyze this claim and identify a more resistant measure. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> Two classes have the same mean quiz score. Class A has standard deviation 2 and Class B has standard deviation 9. Which class has scores more closely clustered around its mean? Explain. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A school survey records favorite learning modality: printed module, online, blended, or face-to-face. Identify the data type and measurement level. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> Use a calculator or spreadsheet to find the mean and standard deviation of 12, 15, 15, 18, 20. Record the values and interpret both statistics. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Create a six-value data set with mean 10 and range at least 10. Then explain how its variability differs from a data set whose values are all close to 10. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Data and Probability</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which is quantitative and discrete?<br>A. favorite color &nbsp; B. number of books &nbsp; C. height &nbsp; D. temperature<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> Which level of measurement describes ordered categories?<br>A. nominal &nbsp; B. ordinal &nbsp; C. interval &nbsp; D. ratio<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Find the mean of 6, 8, 10, 12. <div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> Find the range of 4, 7, 9, 13, 15. <div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Which measure is generally more resistant to an extreme value: mean or median? Explain briefly. <div class="bigspace"></div></div>
+<div class="q"><b>6. (2 pts)</b> Two sets have the same mean. Set X has standard deviation 2; Set Y has standard deviation 8. Which set is more spread out? <div class="space"></div></div>
+<div class="q"><b>7. (3 pts)</b> Classify “student satisfaction: poor, fair, good, excellent” by measurement level and justify. <div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A learner's five study times are 20, 25, 25, 30, and 50 minutes. Calculate the mean, median, mode, and range. Then state which measure of center you would use to describe a typical study time and why. <div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific classification or interpretation error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Reteach data type/measurement level and basic measures before reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Complete solutions are hidden until the teacher enters the access code.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li><b>Qualitative.</b> Favorite color is categorical rather than numerical.</li>
+<li><b>Discrete.</b> Siblings are counted in whole-number values.</li>
+<li><b>Ordinal.</b> Ranks have order, but the difference between ranks is not a measured equal interval.</li>
+<li><b>Interval.</b> Celsius temperature has meaningful equal intervals but 0 °C is not an absolute absence of temperature.</li>
+<li><b>Ratio.</b> Kilograms have equal intervals and a meaningful zero.</li>
+<li>Mean = (5+7+8+10) ÷ 4 = 30 ÷ 4 = <b>7.5</b>.</li>
+<li>Ordered data: 3, 5, 5, 6, 8, 10, 12. Median = <b>6</b>; mode = <b>5</b>.</li>
+<li>Range = 25 − 14 = <b>11</b>.</li>
+<li>Mean = 35 ÷ 5 = <b>7</b>; median = <b>6</b>; mode = <b>6</b>; range = 11 − 4 = <b>7</b>.</li>
+<li><b>Ordinal.</b> The categories have a natural order, but the differences between categories are not necessarily equal.</li>
+<li><b>Continuous.</b> Time is measured and can take values such as 12.5 minutes.</li>
+<li><b>The second set.</b> Standard deviation 12 indicates greater spread than standard deviation 3, assuming the same units and comparable context.</li>
+<li>The zero on the Celsius scale does not represent an absolute absence of temperature; therefore Celsius is treated as interval rather than ratio.</li>
+<li>The value 100 is an extreme value that pulls the mean upward. The <b>median</b> is more resistant and may better represent the typical value.</li>
+<li><b>Class A.</b> Standard deviation 2 indicates scores are more closely clustered around the mean than standard deviation 9.</li>
+<li>The data are <b>qualitative/categorical</b> and the level is <b>nominal</b> because the categories have no inherent ranking.</li>
+<li>Data: 12, 15, 15, 18, 20. Mean = 80 ÷ 5 = <b>16</b>. Population standard deviation ≈ <b>2.83</b>; sample standard deviation ≈ <b>3.54</b>. Accept either only if the learner identifies which convention/calculator setting was used. Interpretation: values are centered at 16 minutes with moderate spread around that center.</li>
+<li>Answers vary. Example: 5, 8, 10, 10, 12, 15 has mean 60 ÷ 6 = <b>10</b> and range 15−5 = <b>10</b>. Greater spread means values are more dispersed than a set such as 9, 10, 10, 10, 10, 11.</li>
+</ol></div>
+
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>B.</b> Number of books is a numerical count, so it is quantitative and discrete.</li>
+<li><b>B. Ordinal.</b> Ordered categories are ordinal.</li>
+<li>Mean = (6+8+10+12) ÷ 4 = 36 ÷ 4 = <b>9</b>.</li>
+<li>Range = 15 − 4 = <b>11</b>.</li>
+<li><b>Median.</b> The median is generally more resistant to extreme values than the mean.</li>
+<li><b>Set Y.</b> Standard deviation 8 indicates more spread than standard deviation 2.</li>
+<li><b>Ordinal.</b> Poor, fair, good, and excellent have a natural order, but the distances between categories are not established as equal.</li>
+<li>Mean = (20+25+25+30+50) ÷ 5 = 150 ÷ 5 = <b>30 minutes</b>. Median = <b>25 minutes</b>. Mode = <b>25 minutes</b>. Range = 50−20 = <b>30 minutes</b>. Because 50 is relatively high compared with the other values, the <b>median of 25 minutes</b> is a reasonable typical value; it is less affected by the extreme value than the mean.</li>
+</ol></div>
+
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Classification</td><td>Correct classification with a valid property-based justification.</td><td>Correct classification but incomplete justification.</td><td>Incorrect classification or no meaningful justification.</td></tr><tr><td>Calculation</td><td>Correct method, computation, and units/context.</td><td>Method is sound with a minor arithmetic or rounding error.</td><td>Major error or incomplete calculation.</td></tr><tr><td>Interpretation</td><td>Clearly explains what the statistic says about the data.</td><td>Partially explains the result.</td><td>Reports a number without meaningful interpretation.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Thinking every numerical variable is discrete.</li><li>Confusing ordinal with interval data.</li><li>Assuming a numerical zero automatically makes a variable ratio.</li><li>Choosing the mean without examining the data distribution or extreme values.</li><li>Confusing range with standard deviation.</li><li>Treating technology output as an answer without interpretation.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a classification decision tree for qualitative/quantitative and discrete/continuous.</li><li>Use the four measurement levels with repeated concrete examples.</li><li>Contrast paired examples: rank vs temperature, temperature vs mass.</li><li>Use small data sets before introducing calculator or spreadsheet output.</li><li>Provide “same mean, different spread” examples to establish the purpose of variability.</li><li>Require every statistical answer to include a number plus a sentence of interpretation.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Collect a small class data set and justify the most appropriate statistics.</li><li>Compare mean and median before and after adding an extreme value.</li><li>Use Excel, Jamovi, or a calculator to verify manual computations.</li><li>Create a short data story in which a statistic supports a practical decision.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Data type</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Measurement level</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Central tendency/variability</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Technology/interpretation</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, Second Term, Week 2. The BOW specifies identifying types of data, classifying data by level of measurement, selecting measures of central tendency and variability for different purposes, using appropriate technologies, and interpreting computed measures. fileciteturn32file0L55-L72</p><p>The Second Term content standard includes statistical variables, and the performance standard emphasizes collecting, analyzing, and interpreting data to make decisions using spreadsheets, graphs, and statistical visualizations. fileciteturn32file0L37-L54</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div>
+</section>
+</main>
+
+<footer>Pareja Integrated School • Grade 11 General Mathematics • Term 2 Week 12 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
