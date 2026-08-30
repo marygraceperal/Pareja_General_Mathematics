@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G11 General Mathematics | Term 2 Week 11 | Piecewise Functions</title>
+<style>
+:root{--p:#1d4ed8;--s:#2563eb;--a:#dbeafe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#eff6ff;--ok:#166534}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#eff6ff,#fff,#dbeafe);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:#1e40af;padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:#1d4ed8;padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.08rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:var(--ok)}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#f8fafc;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #93c5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:95px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid var(--ok);padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Piecewise Functions</h1>
+<div class="sub">General Mathematics • Term 2 • Week 11 (Term 2 Week 1)</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 2 Blue</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Piecewise Functions</h2><p>Four complete daily Evidence-Informed 4As sessions based on the Second Term Week 1 BOW competency.</p></div>
+
+<div class="card"><h3>Lesson Information</h3><div class="grid">
+<div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Piecewise functions in practical contexts</div>
+<div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Website Week</b><br>Term 2 • Week 11</div>
+<div class="info"><b>BOW Position</b><br>Second Term • Week 1</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div>
+</div></div>
+
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Second Term, Week 1 — Number and Algebra:</b><ul><li>Illustrate a piecewise function in practical contexts (i.e., fare rates, purchasing, and income tax).</li><li>Solve practical problems involving piecewise functions.</li></ul>These are the competencies stated in the provided BOW. fileciteturn29file0L12-L18</div></div>
+
+<div class="card"><h3>Weekly Learning Intentions</h3><ul><li>Recognize why one real-world relationship may require different rules for different intervals.</li><li>Represent a piecewise function from a practical situation using rules and conditions.</li><li>Evaluate piecewise functions accurately for given inputs.</li><li>Solve and interpret practical problems involving piecewise functions, including fare rates, purchasing, and income tax.</li></ul>
+<div class="evidence"><b>Evidence-informed cycle:</b> retrieve prior knowledge → elicit intuitive decisions → analyze boundaries and rules → explicitly model representation → guided practice → independent application → error analysis → targeted response → reassessment.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Understanding Piecewise Functions</h3></div><div class="sb"><p><b>Daily objective:</b> Explain why different rules can apply to different intervals and identify the rule and condition represented by each piece.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit</span><p>Present a transport fare that charges a base amount for the first distance and a different rate after a threshold. Learners predict whether one rule can describe the whole fare.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare situations with one rule and multiple rules. Ask: Where does the rule change? What condition tells us which rule to use?</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">A piecewise function uses different rules on specified intervals.<br>f(x) = rule 1, condition 1; rule 2, condition 2; …</div><p>Model how the context becomes a table of intervals, rules, and conditions.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Given a simple fare schedule, learners identify which rule applies for several distances and explain why.</p></div></div><div class="evidence"><b>Teacher response:</b> If learners choose a rule without checking the condition, use color-free interval cards and require them to state the condition before calculating.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Representing Piecewise Functions</h3></div><div class="sb"><p><b>Daily objective:</b> Construct a piecewise function from a practical situation and represent its intervals and conditions correctly.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Examine a purchasing scheme with a lower unit price after a quantity threshold. Learners organize the information into intervals.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Determine whether boundary values belong to the first or second rule. Discuss the meaning of ≤, &lt;, ≥, and &gt; in context.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Model the sequence: define x → identify intervals → write each rule → assign conditions → check boundary coverage → test sample inputs.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Create a piecewise purchasing function from a provided price schedule and evaluate it for selected quantities.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If boundary errors appear, have learners substitute the boundary into both rules and explain which condition accepts it.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Evaluating and Solving Piecewise Problems</h3></div><div class="sb"><p><b>Daily objective:</b> Evaluate piecewise functions and solve practical problems by selecting the correct rule and interpreting the result.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Quick retrieval: identify the applicable interval for five input values from a displayed piecewise rule.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Inspect an incorrect solution in which the learner used the first rule for every input. Identify exactly where the reasoning failed.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">Evaluate: 1. Locate x in an interval. 2. Select its rule. 3. Substitute x. 4. Compute. 5. Interpret in context.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Practice</span><p>Solve fare and purchasing tasks, showing the interval decision before the numerical calculation.</p></div></div><div class="evidence"><b>Teacher response:</b> If computation is correct but rule selection is wrong, reteach interval reading rather than repeating arithmetic drills.</div></div></div>
+
+<div class="session"><div class="sh"><div><h3>SESSION 4 — Income Tax and Real-World Modeling</h3></div></div><div class="sb"><p><b>Daily objective:</b> Model and solve an income-tax-style piecewise problem, justify the selected rule, and explain the reasonableness of the answer.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Discuss why a progressive system may apply different rules to different income brackets. Focus on the mathematical structure rather than memorizing tax policy.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Given several income values, learners identify the bracket and explain why the boundary matters.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><p>Use the routine: <b>Define variable → identify interval → choose rule → calculate → check boundary → interpret.</b></p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Solve an integrated piecewise scenario involving fare, purchasing, or an illustrative income-tax schedule. Explain the result in words.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Use the final task to classify errors as context interpretation, interval selection, substitution, computation, or explanation.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Teacher interpretation</th><th>Response</th></tr>
+<tr><td>1</td><td>Rule/interval identification</td><td>________________</td><td>________________</td></tr><tr><td>2</td><td>Piecewise representation</td><td>________________</td><td>________________</td></tr><tr><td>3</td><td>Evaluation/problem solving</td><td>________________</td><td>________________</td></tr><tr><td>4</td><td>Modeling/mastery</td><td>________________</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Piecewise Functions</h2><p>Understanding functions that use different rules for different conditions.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>What a piecewise function represents.</li><li>How to read intervals and conditions.</li><li>How to construct and evaluate a piecewise function.</li><li>How piecewise functions model fares, purchasing, and income-tax-style situations.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Piecewise function</td><td>A function defined by different rules on different intervals of the domain.</td></tr><tr><td>Piece</td><td>One rule of the function together with the condition where it applies.</td></tr><tr><td>Interval</td><td>A set or range of input values for which a particular rule is used.</td></tr><tr><td>Boundary</td><td>A value where one rule ends or another begins.</td></tr><tr><td>Domain</td><td>The allowable input values of the function.</td></tr></table></div>
+<div class="card"><h3>Key Representation</h3><div class="formula">f(x) = { rule 1, when condition 1; rule 2, when condition 2; … }</div><p>The conditions should tell you exactly when each rule is used. For adjacent intervals, check boundary symbols carefully so that each relevant input is assigned appropriately.</p></div>
+<div class="card"><h3>Worked Examples</h3>
+<h4>1. Simple evaluation</h4><p>Suppose f(x) = 2x + 5 for x &lt; 10, and f(x) = 3x + 1 for x ≥ 10. Find f(7) and f(10).</p><div class="solution">For x = 7, 7 &lt; 10, so use 2x + 5: f(7) = 2(7) + 5 = <b>19</b>.<br>For x = 10, 10 ≥ 10, so use 3x + 1: f(10) = 3(10) + 1 = <b>31</b>.</div>
+<h4>2. Fare model</h4><p>A fare is ₱50 for up to 4 km and ₱50 + ₱12 for every kilometer beyond 4 km. Model the fare for x &gt; 4.</p><div class="solution">For 0 ≤ x ≤ 4, F(x) = 50. For x &gt; 4, F(x) = 50 + 12(x − 4). At x = 6: F(6) = 50 + 12(2) = <b>₱74</b>.</div>
+<h4>3. Purchasing</h4><p>A product costs ₱40 each for the first 5 items and ₱35 each for each item after 5. For 8 items, the total is 5(40) + 3(35) = <b>₱305</b>.</p>
+<h4>4. Illustrative tax structure</h4><p>If an illustrative schedule states that income up to ₱100,000 is taxed at 5%, and income above ₱100,000 is taxed as ₱5,000 plus 10% of the amount above ₱100,000, then an income of ₱130,000 gives ₱5,000 + 0.10(₱30,000) = <b>₱8,000</b>. This is a mathematical illustration, not current tax advice.</p></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Choosing a rule before checking the input interval.</li><li>Misreading ≤, &lt;, ≥, and &gt; at a boundary.</li><li>Using a later rule for an input that belongs to an earlier interval.</li><li>Forgetting fixed/base charges in a practical model.</li><li>Giving a numerical answer without interpreting it in context.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Piecewise functions naturally represent pricing tiers, transportation fares, utility charges, tax brackets, shipping fees, overtime arrangements, and other systems where the rule changes after a threshold.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>Why can one situation require more than one rule?</li><li>For f(x) = x + 2 when x &lt; 5 and 2x when x ≥ 5, which rule is used at x = 5?</li><li>What must you check before substituting an input into a piecewise function?</li><li>Why are boundary symbols important?</li><li>Give one practical situation that can be modeled piecewise.</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 11 Practice — Piecewise Functions</h2><p>Show the interval decision before evaluating whenever appropriate.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> In your own words, define a piecewise function. <div class="space"></div></div>
+<div class="q"><b>2.</b> Identify the boundary in the conditions x &lt; 12 and x ≥ 12. <div class="space"></div></div>
+<div class="q"><b>3.</b> For f(x) = x + 4 when x &lt; 6 and f(x) = 2x when x ≥ 6, state the rule used for x = 6. <div class="space"></div></div>
+<div class="q"><b>4.</b> For the same function, find f(3). <div class="space"></div></div>
+<div class="q"><b>5.</b> For the same function, find f(8). <div class="space"></div></div>
+<div class="q"><b>6.</b> Give one real-life situation that could be represented by a piecewise function. <div class="space"></div></div></div>
+
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> Evaluate f(4) and f(10), where f(x) = 50 for 0 ≤ x ≤ 5 and f(x) = 50 + 10(x − 5) for x &gt; 5. <div class="bigspace"></div></div>
+<div class="q"><b>8.</b> A fare is ₱45 for the first 3 km and ₱8 per additional kilometer. Find the fare for 7 km. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> A notebook costs ₱35 each for the first 4 notebooks and ₱30 each for every notebook beyond 4. Find the cost of 7 notebooks. <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> Write a piecewise function for the pricing in Item 9. <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> Let g(x) = 3x + 2 for x &lt; 5 and 4x − 1 for x ≥ 5. Find g(2), g(5), and g(8). <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> Explain why the condition at x = 5 in Item 11 must be checked before choosing a rule. <div class="bigspace"></div></div></div>
+
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner evaluates g(5) in Item 11 using 3x + 2. Identify the error and give the correct answer. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A fare is ₱60 for x ≤ 4 km and ₱60 + ₱15(x − 4) for x &gt; 4. A learner says the fare for 4 km is ₱60 + ₱15(0). Is the final answer correct? Explain whether the chosen rule is appropriate. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> Create a two-piece purchasing rule with a quantity threshold of 10 items. Use a higher unit price up to 10 and a lower unit price beyond 10. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> Using your model in Item 15, calculate the cost of 14 items and explain each step. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> An illustrative tax model is T(x) = 0.05x for 0 ≤ x ≤ ₱100,000 and T(x) = ₱5,000 + 0.10(x − ₱100,000) for x &gt; ₱100,000. Find T(₱80,000) and T(₱130,000). <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Design a real-life piecewise situation with two or three intervals. Give the rules, conditions, one sample input per interval, and a short interpretation. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Piecewise Functions</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which statement best describes a piecewise function?<br>A. A function with no domain<br>B. A function using one rule for all inputs<br>C. A function using different rules on specified intervals<br>D. A function that is always quadratic<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> If f(x) = x + 3 for x &lt; 4 and f(x) = 2x for x ≥ 4, which rule is used for x = 4?<br>A. x + 3 &nbsp; B. 2x &nbsp; C. both automatically &nbsp; D. neither<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Find f(2) for the function in Item 2. <div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> Find f(6) for the function in Item 2. <div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> A fare is ₱50 for up to 4 km and ₱10 for every kilometer beyond 4 km. Find the fare for 7 km. <div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Explain why the threshold or boundary is important in a piecewise model. <div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> Write a piecewise function for a product costing ₱40 per item for the first 5 items and ₱35 per item after 5 items. <div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> Use the illustrative tax model T(x) = 0.05x for 0 ≤ x ≤ ₱100,000 and T(x) = ₱5,000 + 0.10(x − ₱100,000) for x &gt; ₱100,000. Calculate T(₱120,000) and explain your solution. <div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target interval selection or representation errors.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Reteach intervals, boundaries, and rule selection before reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Complete solutions are hidden until the teacher enters the access code.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li>A piecewise function is a function defined by different rules on different intervals of its domain.</li>
+<li>The boundary is <b>12</b>.</li>
+<li>At x = 6, use <b>2x</b> because 6 ≥ 6.</li>
+<li>Since 3 &lt; 6, f(3) = 3 + 4 = <b>7</b>.</li>
+<li>Since 8 ≥ 6, f(8) = 2(8) = <b>16</b>.</li>
+<li>Accept valid examples such as tiered pricing, transport fares, shipping fees, or tax brackets.</li>
+<li>f(4) = 50 because 0 ≤ 4 ≤ 5. f(10) = 50 + 10(10 − 5) = 50 + 50 = <b>100</b>.</li>
+<li>For x = 7, fare = 45 + 8(7 − 3) = 45 + 32 = <b>₱77</b>.</li>
+<li>Cost = 4(35) + 3(30) = 140 + 90 = <b>₱230</b>.</li>
+<li>C(x) = 35x for 1 ≤ x ≤ 4; C(x) = 140 + 30(x − 4) for x &gt; 4.</li>
+<li>g(2) = 3(2)+2 = <b>8</b>; g(5) = 4(5)−1 = <b>19</b>; g(8) = 4(8)−1 = <b>31</b>.</li>
+<li>At x = 5, the condition x ≥ 5 is true, so the second rule must be used.</li>
+<li>The learner used the first rule even though 5 ≥ 5. Correct: g(5) = 4(5) − 1 = <b>19</b>.</li>
+<li>The learner's final answer is <b>₱60</b>, but the chosen rule is not the appropriate rule for x = 4. The first rule applies directly: ₱60. The learner happened to obtain the same result by substitution into the second expression.</li>
+<li>Answers vary. Example: C(x) = 50x for 1 ≤ x ≤ 10; C(x) = 500 + 45(x − 10) for x &gt; 10.</li>
+<li>Using the example: C(14) = 500 + 45(14−10) = 500 + 180 = <b>₱680</b>.</li>
+<li>T(₱80,000) = 0.05(80,000) = <b>₱4,000</b>. T(₱130,000) = 5,000 + 0.10(30,000) = <b>₱8,000</b>.</li>
+<li>Answers vary. Full credit requires clear intervals, valid rules, sample evaluations, and contextual interpretation.</li>
+</ol></div>
+
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>C.</b> A piecewise function uses different rules on specified intervals.</li>
+<li><b>B. 2x.</b> Because x = 4 satisfies x ≥ 4.</li>
+<li>2 &lt; 4, so f(2) = 2 + 3 = <b>5</b>.</li>
+<li>6 ≥ 4, so f(6) = 2(6) = <b>12</b>.</li>
+<li>For 7 km, 7 &gt; 4. Fare = 50 + 10(7−4) = 50 + 30 = <b>₱80</b>.</li>
+<li>The boundary determines which rule applies and prevents ambiguity or incorrect calculations at the point where the rule changes.</li>
+<li>C(x) = 40x for 1 ≤ x ≤ 5; C(x) = 200 + 35(x − 5) for x &gt; 5.</li>
+<li>Since ₱120,000 &gt; ₱100,000, use the second rule: T(120,000) = 5,000 + 0.10(120,000−100,000) = 5,000 + 2,000 = <b>₱7,000</b>.</li>
+</ol></div>
+
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Model/representation</td><td>Rules and intervals are complete and logically matched.</td><td>Mostly correct with a minor boundary/notation issue.</td><td>Rules or conditions are substantially incorrect.</td></tr><tr><td>Mathematical work</td><td>Correct rule selection, substitution, and computation.</td><td>Sound method with minor error.</td><td>Major error or incomplete solution.</td></tr><tr><td>Contextual interpretation</td><td>Clearly explains what the result means in the situation.</td><td>Partially explains the result.</td><td>No meaningful interpretation.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Thinking every function must have one rule for the entire domain.</li><li>Ignoring the condition attached to each piece.</li><li>Misreading inequality symbols at boundaries.</li><li>Using the correct formula but an incorrect interval.</li><li>Confusing a base/fixed charge with a per-unit rate.</li><li>Solving numerically without interpreting the practical meaning.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Start with concrete schedules before symbolic notation.</li><li>Use an interval → rule → substitute → answer routine.</li><li>Give boundary-focused examples such as x = 4, x = 5, and x = 10.</li><li>Use error-analysis tasks before additional computation practice.</li><li>Ask learners to underline the condition before selecting a rule.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Design a tiered school-store pricing system.</li><li>Model a transport fare with three distance brackets.</li><li>Compare two pricing systems and determine where one becomes more economical.</li><li>Represent a piecewise situation with a table and graph using appropriate technology.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Rule/interval identification</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Representation</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Evaluation/problem solving</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Modeling/mastery</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, Second Term, Week 1. The BOW specifies illustrating piecewise functions in practical contexts such as fare rates, purchasing, and income tax, and solving practical problems involving piecewise functions. fileciteturn29file0L12-L18</p><p>The Second Term content standard includes piecewise functions, and its performance standard emphasizes modeling and representing real-world situations using piecewise functions and solving practical problems while explaining the reasonableness of results. fileciteturn28file0L60-L77</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div>
+</section>
+</main>
+
+<footer>Pareja Integrated School • Grade 11 General Mathematics • Term 2 Week 11 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
