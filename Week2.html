@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Mathematics | Term 1 Week 2 | Salaries, Benefits and Deductions</title>
+<style>
+:root{
+  --primary:#5b21b6;
+  --secondary:#7c3aed;
+  --accent:#ddd6fe;
+  --accent-soft:#f5f3ff;
+  --background:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --success:#15803d;
+  --warning:#b45309;
+  --danger:#b91c1c;
+  --shadow:0 8px 24px rgba(15,23,42,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--background);color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55
+}
+button,input{font:inherit}
+.header{
+  background:linear-gradient(135deg,#faf5ff 0%,#fff 55%,#f5f3ff 100%);
+  border-bottom:1px solid var(--border)
+}
+.header-inner{max-width:1200px;margin:auto;padding:38px 22px 32px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:7px;background:var(--accent);
+  color:var(--primary);border-radius:999px;padding:6px 12px;font-size:.76rem;
+  font-weight:800;letter-spacing:.06em
+}
+.header h1{margin:15px 0 6px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}
+.header h2{margin:0;font-size:1.2rem;color:var(--primary)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:7px 11px;border:1px solid var(--border);background:#fff;border-radius:9px;font-size:.82rem;color:var(--muted)}
+.meta strong{color:var(--text)}
+.header-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{
+  border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer
+}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-secondary{background:#fff;color:var(--primary);border:1px solid var(--accent)}
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border)
+}
+.nav-inner{
+  max-width:1200px;margin:auto;padding:9px 16px;display:flex;gap:7px;overflow-x:auto
+}
+.tab{
+  border:1px solid var(--border);background:#fff;color:var(--text);
+  padding:9px 13px;border-radius:9px;font-size:.82rem;font-weight:800;
+  white-space:nowrap;cursor:pointer
+}
+.tab.active,.tab:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+main{max-width:1200px;margin:auto;padding:28px 18px 65px}
+.section{display:none}.section.active{display:block}
+.section-title{margin-bottom:20px}
+.section-title .label{
+  display:inline-block;background:var(--accent-soft);color:var(--primary);
+  padding:5px 9px;border-radius:7px;font-size:.75rem;font-weight:900;letter-spacing:.05em
+}
+.section-title h2{margin:8px 0 4px;font-size:1.75rem}
+.section-title p{margin:0;color:var(--muted)}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:15px;
+  padding:21px;margin:0 0 18px;box-shadow:var(--shadow)
+}
+.card h3{margin-top:0;color:var(--primary)}
+.card h4{color:var(--secondary);margin-bottom:7px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.info-box{background:#fafafa;border:1px solid var(--border);border-radius:12px;padding:15px}
+.callout{border-left:5px solid var(--secondary);background:var(--accent-soft);padding:14px 16px;border-radius:9px}
+.evidence{border-left:5px solid var(--success);background:#f0fdf4;padding:14px 16px;border-radius:9px}
+.warning{border-left:5px solid var(--warning);background:#fffbeb;padding:14px 16px;border-radius:9px}
+.lock-note{border-left:5px solid var(--primary);background:#faf5ff;padding:14px 16px;border-radius:9px}
+table{width:100%;border-collapse:collapse;margin:10px 0 15px;background:#fff}
+th,td{border:1px solid var(--border);padding:9px 10px;vertical-align:top;text-align:left}
+th{background:var(--accent-soft);color:var(--primary)}
+.formula{
+  background:#f8fafc;border:1px dashed #c4b5fd;border-radius:10px;
+  padding:12px;font-weight:700;margin:9px 0
+}
+.session{
+  border:1px solid var(--border);border-radius:15px;margin-bottom:18px;overflow:hidden
+}
+.session-head{background:var(--accent-soft);padding:15px 18px;border-bottom:1px solid var(--border)}
+.session-head h3{margin:0;color:var(--primary)}
+.session-body{padding:18px}
+.a-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.a-box{border:1px solid var(--border);border-radius:12px;padding:14px;background:#fff}
+.a-box h4{margin:0 0 7px;color:var(--primary)}
+.tag{
+  display:inline-block;font-size:.7rem;font-weight:900;text-transform:uppercase;
+  letter-spacing:.05em;background:#f1f5f9;padding:4px 7px;border-radius:6px;color:#475569
+}
+.objective{padding:10px 12px;border-left:4px solid var(--secondary);background:#fafafa;margin:7px 0;border-radius:7px}
+.student-header{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin-bottom:15px
+}
+.student-header div{border:1px solid var(--border);padding:10px;background:#fff;border-radius:8px}
+.answer-space{min-height:50px;border-bottom:1px solid #94a3b8;margin:8px 0 16px}
+.large-space{min-height:90px;border:1px dashed #cbd5e1;border-radius:8px;margin-top:8px}
+.question{margin-bottom:20px}
+.question strong{color:var(--primary)}
+.choice{margin:5px 0}
+.solution{background:#fafafa;border-left:4px solid var(--success);padding:12px;margin:9px 0;border-radius:7px}
+.level{font-size:.75rem;font-weight:900;color:var(--secondary);letter-spacing:.05em}
+.footer{border-top:1px solid var(--border);padding:25px;text-align:center;color:var(--muted);font-size:.82rem}
+.hidden-print{display:block}
+.answer-locked{display:none!important}
+
+/* Teacher Answer Key Modal */
+.answer-key-modal{
+  position:fixed;inset:0;background:rgba(15,23,42,.58);display:none;
+  align-items:center;justify-content:center;z-index:1000;padding:20px
+}
+.answer-key-modal.show{display:flex}
+.answer-key-box{
+  width:min(440px,100%);background:#fff;border:1px solid var(--accent);
+  border-radius:20px;padding:30px;box-shadow:0 24px 70px rgba(15,23,42,.28);
+  text-align:center
+}
+.lock-icon{font-size:2.3rem;margin-bottom:6px}
+.answer-key-box h3{color:var(--primary);margin:0 0 7px}
+.answer-key-box p{color:var(--muted);margin:0 0 18px}
+.answer-key-box input{
+  width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;
+  text-align:center;font-size:1.05rem;letter-spacing:.3em;outline:none
+}
+.answer-key-box input:focus{border-color:var(--secondary);box-shadow:0 0 0 3px rgba(124,58,237,.12)}
+.answer-key-actions{display:flex;gap:9px;margin-top:14px}
+.answer-key-actions button{flex:1}
+.answer-key-error{min-height:21px;color:var(--danger);font-size:.82rem;font-weight:700;margin-top:9px}
+
+@media(max-width:800px){
+  .grid-2,.grid-3,.a-grid,.student-header{grid-template-columns:1fr}
+  .header-inner{padding:30px 17px}
+  main{padding:22px 13px 50px}
+  .card{padding:17px}
+}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .header-actions,.nav,.hidden-print{display:none!important}
+  .header{background:#fff}
+  .header-inner{padding:15px 0}
+  .header h1{font-size:24pt}
+  main{max-width:none;padding:0}
+  .section{display:block!important}
+  .section:not(:first-child){page-break-before:always}
+  .card{box-shadow:none;break-inside:avoid;border:1px solid #bbb}
+  .session{break-inside:auto}
+  .answer-locked{display:none!important}
+  .answer-key-modal{display:none!important}
+  table{font-size:9.5pt}
+  .print-page{page-break-before:always}
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <span class="eyebrow">📘 EVIDENCE-INFORMED ILAW • 4As</span>
+    <h1>Salaries, Benefits and Deductions</h1>
+    <h2>General Mathematics • Term 1 • Week 2</h2>
+    <div class="meta">
+      <span><strong>Teacher:</strong> Mary Grace M. Peral</span>
+      <span><strong>School:</strong> Pareja Integrated School</span>
+      <span><strong>Grade:</strong> 11 – Magsaysay</span>
+      <span><strong>Sessions:</strong> 4</span>
+      <span><strong>Theme:</strong> Term 1 Purple</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="printEntirePackage()">🖨️ Print Entire Package</button>
+      <button class="btn btn-secondary" onclick="printCurrentView()">🖨️ Print Current View</button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="tab active" data-tab="lesson">📘 LESSON PLAN</button>
+    <button class="tab" data-tab="fact">📖 FACT SHEET</button>
+    <button class="tab" data-tab="activity">📝 ACTIVITY SHEET</button>
+    <button class="tab" data-tab="assessment">✅ ASSESSMENT</button>
+    <button class="tab" data-tab="answers">🔒 ANSWER KEY</button>
+    <button class="tab" data-tab="notes">🧭 TEACHER NOTES</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- LESSON PLAN -->
+<section id="lesson" class="section active">
+  <div class="section-title">
+    <span class="label">ILAW DLP</span>
+    <h2>Evidence-Informed 4As Lesson Plan</h2>
+    <p>Four complete sessions. Every session follows Activity → Analysis → Abstraction → Application.</p>
+  </div>
+
+  <div class="card">
+    <h3>Lesson Information</h3>
+    <div class="grid-2">
+      <div><strong>Learning Area:</strong><br>General Mathematics</div>
+      <div><strong>Lesson:</strong><br>Salaries, Benefits and Deductions</div>
+      <div><strong>Grade & Section:</strong><br>Grade 11 – Magsaysay</div>
+      <div><strong>Number of Sessions:</strong><br>4 sessions</div>
+      <div><strong>Teacher:</strong><br>Mary Grace M. Peral</div>
+      <div><strong>School:</strong><br>Pareja Integrated School</div>
+    </div>
+    <div class="callout" style="margin-top:15px">
+      <strong>BOW Learning Competency:</strong><br>
+      Solve problems involving salaries, wages, benefits, and deductions (tax computations, overtime pay, and gross and net incomes) using appropriate technology.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Intentions</h3>
+    <p><strong>Overall learning intention:</strong> Learners will interpret payroll information, calculate earnings and deductions, determine gross and net income, and use appropriate technology to check and communicate results.</p>
+    <h4>Observable objectives for the week</h4>
+    <ul>
+      <li>Identify and distinguish salary, wage, overtime pay, benefits, deductions, gross income, and net income.</li>
+      <li>Calculate regular earnings, overtime earnings, benefits, gross income, specified deductions, and net income.</li>
+      <li>Apply a stated instructional tax schedule correctly and verify computations using a calculator or spreadsheet.</li>
+      <li>Analyze payroll errors and explain whether a calculated net income is reasonable.</li>
+    </ul>
+    <div class="warning">
+      Tax examples in this package use a clearly stated <strong>instructional tax schedule</strong> created for classroom computation practice. It is not a current legal tax table.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Evidence-Informed Teaching Cycle</h3>
+    <table>
+      <tr><th>Evidence</th><th>What the teacher looks for</th><th>Instructional response</th></tr>
+      <tr><td>Entry check</td><td>Can learners distinguish salary, wage, benefit and deduction?</td><td>Re-teach vocabulary and use concrete payroll examples.</td></tr>
+      <tr><td>Worked example responses</td><td>Can learners select the correct rate, base, time period and operation?</td><td>Model the decision process and use partially completed examples.</td></tr>
+      <tr><td>Guided practice</td><td>Can learners compute accurately without copying the model?</td><td>Give immediate feedback and vary the numbers.</td></tr>
+      <tr><td>Error analysis</td><td>Can learners locate and explain an incorrect payroll step?</td><td>Use comparison, discussion and correction.</td></tr>
+      <tr><td>Mastery task</td><td>Can learners integrate earnings, benefits, deductions and net income?</td><td>Classify evidence as Not Yet Mastered, Developing, or Mastered; provide targeted next steps.</td></tr>
+    </table>
+  </div>
+
+  <div class="session">
+    <div class="session-head"><h3>SESSION 1 — Salary, Wage and Gross Earnings</h3></div>
+    <div class="session-body">
+      <div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will classify salary and wage information and calculate regular earnings and gross earnings from given payroll data.</div>
+      <div class="a-grid">
+        <div class="a-box"><h4>A1 • ACTIVITY</h4><span class="tag">Retrieval + Context</span>
+          <p>Display four short payroll situations: monthly salary, hourly wage, daily wage, and piece-based earning. Learners identify the time or work basis and estimate which worker earns more for the stated period.</p>
+          <p><strong>Evidence:</strong> 4-item quick sort and one estimation.</p>
+        </div>
+        <div class="a-box"><h4>A2 • ANALYSIS</h4><span class="tag">Formative Check</span>
+          <p>Pairs compare answers and explain why the time basis matters. Teacher probes: “What information is fixed? What information changes?” Address common confusion between monthly salary and monthly gross income.</p>
+          <p><strong>Evidence:</strong> Oral justification + corrected sort.</p>
+        </div>
+        <div class="a-box"><h4>A3 • ABSTRACTION</h4><span class="tag">Explicit Modeling</span>
+          <p>Teacher models: annual → monthly; monthly → weekly using the stated assumptions; hourly rate × regular hours; gross earnings = regular earnings + specified additional earnings/benefits.</p>
+          <div class="formula">Gross income = Regular earnings + Overtime pay + Applicable benefits/allowances</div>
+        </div>
+        <div class="a-box"><h4>A4 • APPLICATION</h4><span class="tag">Guided → Independent</span>
+          <p>Learners solve a payroll card with a monthly salary, one allowance and regular work hours. They verify using a calculator or spreadsheet and write one sentence interpreting the result.</p>
+          <p><strong>Exit evidence:</strong> one independent payroll computation.</p>
+        </div>
+      </div>
+      <div class="evidence" style="margin-top:14px"><strong>Ways Forward:</strong> Learners below the agreed accuracy threshold receive a partially completed payroll table next session; learners who demonstrate mastery receive a reverse problem where they determine a missing salary component.</div>
+    </div>
+  </div>
+
+  <div class="session">
+    <div class="session-head"><h3>SESSION 2 — Overtime Pay and Benefits</h3></div>
+    <div class="session-body">
+      <div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will calculate overtime pay and specified benefits and integrate them into gross income.</div>
+      <div class="a-grid">
+        <div class="a-box"><h4>A1 • ACTIVITY</h4><span class="tag">Worked-example comparison</span>
+          <p>Learners compare two overtime computations, one correct and one using the regular hourly rate for overtime hours. They decide which is reasonable and explain why.</p>
+          <p><strong>Evidence:</strong> Error-selection response.</p>
+        </div>
+        <div class="a-box"><h4>A2 • ANALYSIS</h4><span class="tag">Error Analysis</span>
+          <p>Teacher guides learners to identify the base hourly rate, overtime multiplier, overtime hours, and overtime pay. Learners annotate each quantity in a sample payroll.</p>
+          <p><strong>Evidence:</strong> Annotated computation.</p>
+        </div>
+        <div class="a-box"><h4>A3 • ABSTRACTION</h4><span class="tag">Explicit Modeling</span>
+          <div class="formula">Overtime rate = Regular hourly rate × stated overtime multiplier</div>
+          <div class="formula">Overtime pay = Overtime rate × Overtime hours</div>
+          <p>Benefits/allowances are added to gross income only when the problem states that they form part of the gross earnings.</p>
+        </div>
+        <div class="a-box"><h4>A4 • APPLICATION</h4><span class="tag">Collaborative → Independent</span>
+          <p>Teams complete a payroll scenario containing regular hours, overtime hours and a stated allowance. Each learner then completes a parallel problem independently and checks the result with technology.</p>
+        </div>
+      </div>
+      <div class="evidence" style="margin-top:14px"><strong>Ways Forward:</strong> If learners confuse rate and total pay, reteach using a “rate × quantity = amount” frame. If accurate, extend to a reverse problem finding missing overtime hours.</div>
+    </div>
+  </div>
+
+  <div class="session">
+    <div class="session-head"><h3>SESSION 3 — Deductions, Instructional Tax and Net Income</h3></div>
+    <div class="session-body">
+      <div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will calculate stated deductions and use the instructional tax schedule to determine net income.</div>
+      <div class="a-grid">
+        <div class="a-box"><h4>A1 • ACTIVITY</h4><span class="tag">Prior Knowledge</span>
+          <p>Give a sample payslip with gross income and several deductions. Learners predict whether net income should be greater or less than gross income and identify which values must be subtracted.</p>
+          <p><strong>Evidence:</strong> Prediction + deduction sort.</p>
+        </div>
+        <div class="a-box"><h4>A2 • ANALYSIS</h4><span class="tag">Formative Check</span>
+          <p>Pairs compare two net-income calculations. One subtracts a deduction twice. Learners identify the error and explain the effect on net income.</p>
+          <p><strong>Evidence:</strong> Written error explanation.</p>
+        </div>
+        <div class="a-box"><h4>A3 • ABSTRACTION</h4><span class="tag">Explicit Modeling</span>
+          <p>Teacher models a stated instructional tax schedule and emphasizes the sequence: determine taxable base according to the problem → compute tax → total deductions → subtract deductions from gross income.</p>
+          <div class="formula">Net income = Gross income − Total deductions</div>
+        </div>
+        <div class="a-box"><h4>A4 • APPLICATION</h4><span class="tag">Technology-supported practice</span>
+          <p>Learners compute net income from a payslip using a calculator or spreadsheet. They compare their result with a peer and explain one reason the result is reasonable.</p>
+        </div>
+      </div>
+      <div class="evidence" style="margin-top:14px"><strong>Ways Forward:</strong> Provide a deduction checklist for learners who omit deductions. Learners who demonstrate mastery compare two payslips and determine which worker has the higher net income and why.</div>
+    </div>
+  </div>
+
+  <div class="session">
+    <div class="session-head"><h3>SESSION 4 — Integrated Payroll Problem and Mastery</h3></div>
+    <div class="session-body">
+      <div class="objective"><strong>Daily objective:</strong> By the end of the session, learners will solve and explain an integrated payroll problem involving regular earnings, overtime, benefits, deductions, instructional tax, gross income and net income.</div>
+      <div class="a-grid">
+        <div class="a-box"><h4>A1 • ACTIVITY</h4><span class="tag">Retrieval</span>
+          <p>Four quick prompts: identify the gross-income components, identify deductions, select the overtime formula, and state the relationship between gross and net income.</p>
+          <p><strong>Evidence:</strong> 4-item retrieval check.</p>
+        </div>
+        <div class="a-box"><h4>A2 • ANALYSIS</h4><span class="tag">Metacognitive Check</span>
+          <p>Learners inspect a deliberately flawed payroll and mark each step as correct/incorrect. They justify the correction rather than simply giving a new answer.</p>
+          <p><strong>Evidence:</strong> Error-analysis table.</p>
+        </div>
+        <div class="a-box"><h4>A3 • ABSTRACTION</h4><span class="tag">Synthesis</span>
+          <p>Class builds a payroll flow:</p>
+          <div class="formula">Regular earnings → Overtime/benefits → Gross income → Tax/deductions → Net income</div>
+          <p>Teacher emphasizes that the order and stated assumptions must be followed.</p>
+        </div>
+        <div class="a-box"><h4>A4 • APPLICATION</h4><span class="tag">Mastery Task</span>
+          <p>Individual integrated payroll case. Learners compute, use technology to verify, and write a short interpretation of the net income.</p>
+          <p><strong>Mastery evidence:</strong> accurate computation + explanation + reasonableness check.</p>
+        </div>
+      </div>
+      <div class="evidence" style="margin-top:14px"><strong>Ways Forward:</strong> Classify evidence as Not Yet Mastered, Developing, or Mastered. Provide targeted remediation on the specific failed step; provide a transfer task for learners who demonstrate mastery.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Assessment Plan Across the Four Sessions</h3>
+    <table>
+      <tr><th>Session</th><th>Diagnostic/Formative Evidence</th><th>Decision Rule</th></tr>
+      <tr><td>1</td><td>Classification + regular/gross earnings</td><td>Reteach time basis if errors persist.</td></tr>
+      <tr><td>2</td><td>Overtime + benefits computation</td><td>Use rate × quantity scaffold when needed.</td></tr>
+      <tr><td>3</td><td>Deductions + instructional tax + net income</td><td>Use deduction checklist and worked example.</td></tr>
+      <tr><td>4</td><td>Integrated mastery task</td><td>Remediate, consolidate or enrich from evidence.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- FACT SHEET -->
+<section id="fact" class="section">
+  <div class="section-title">
+    <span class="label">LEARNER GUIDE</span>
+    <h2>Salaries, Benefits and Deductions</h2>
+    <p>Four-session discussion and study guide.</p>
+  </div>
+
+  <div class="card">
+    <h3>What You Will Learn</h3>
+    <ul>
+      <li>Distinguish salary, wage, overtime pay, benefits, deductions, gross income and net income.</li>
+      <li>Calculate regular and overtime earnings.</li>
+      <li>Combine specified earnings and benefits to obtain gross income.</li>
+      <li>Calculate stated deductions and instructional tax.</li>
+      <li>Determine and interpret net income.</li>
+      <li>Use a calculator or spreadsheet to verify computations.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Essential Definitions</h3>
+    <table>
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td>Salary</td><td>A stated amount of pay for a specified period, commonly monthly or annually.</td></tr>
+      <tr><td>Wage</td><td>Pay commonly based on time worked or units completed.</td></tr>
+      <tr><td>Overtime pay</td><td>Additional pay for hours worked beyond the stated regular hours, using the multiplier given in the problem.</td></tr>
+      <tr><td>Benefit/Allowance</td><td>An additional employment-related amount included only when the problem states how it contributes to earnings.</td></tr>
+      <tr><td>Deduction</td><td>An amount subtracted from applicable earnings.</td></tr>
+      <tr><td>Gross income</td><td>Total applicable earnings before the stated deductions.</td></tr>
+      <tr><td>Net income</td><td>Amount remaining after the applicable deductions are subtracted.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Key Ideas and Formulas</h3>
+    <div class="formula">Regular earnings = Regular rate × Regular hours</div>
+    <div class="formula">Overtime rate = Regular hourly rate × Overtime multiplier</div>
+    <div class="formula">Overtime pay = Overtime rate × Overtime hours</div>
+    <div class="formula">Gross income = Regular earnings + Overtime pay + Applicable benefits/allowances</div>
+    <div class="formula">Total deductions = Tax + Other stated deductions</div>
+    <div class="formula">Net income = Gross income − Total deductions</div>
+    <div class="callout">Always use the assumptions given in the problem. Do not substitute a real-world payroll rule unless it is explicitly provided.</div>
+  </div>
+
+  <div class="card">
+    <h3>Instructional Tax Schedule Used in This Package</h3>
+    <p>This simplified schedule is for mathematics practice only.</p>
+    <table>
+      <tr><th>Taxable Gross Income</th><th>Instructional Tax</th></tr>
+      <tr><td>₱0–₱10,000</td><td>0%</td></tr>
+      <tr><td>₱10,001–₱20,000</td><td>5% of gross income</td></tr>
+      <tr><td>₱20,001–₱30,000</td><td>10% of gross income</td></tr>
+      <tr><td>Above ₱30,000</td><td>15% of gross income</td></tr>
+    </table>
+    <div class="warning">This table is intentionally simplified and must not be used for actual tax filing or payroll compliance.</div>
+  </div>
+
+  <div class="card">
+    <h3>Worked Examples</h3>
+    <h4>Example 1 — Regular Earnings</h4>
+    <p>A worker earns ₱120 per hour and works 40 regular hours.</p>
+    <div class="solution">Regular earnings = ₱120 × 40 = <strong>₱4,800</strong>.</div>
+
+    <h4>Example 2 — Overtime</h4>
+    <p>The regular hourly rate is ₱150. Overtime is paid at 125% of the regular rate for 4 hours.</p>
+    <div class="solution">
+      Overtime rate = ₱150 × 1.25 = ₱187.50<br>
+      Overtime pay = ₱187.50 × 4 = <strong>₱750</strong>.
+    </div>
+
+    <h4>Example 3 — Gross Income</h4>
+    <p>Regular earnings are ₱12,000, overtime pay is ₱1,000, and an applicable allowance is ₱500.</p>
+    <div class="solution">Gross income = ₱12,000 + ₱1,000 + ₱500 = <strong>₱13,500</strong>.</div>
+
+    <h4>Example 4 — Net Income</h4>
+    <p>Gross income is ₱18,000. Under the instructional tax schedule, tax is 5% of gross income. Other stated deductions total ₱600.</p>
+    <div class="solution">
+      Tax = ₱18,000 × 0.05 = ₱900<br>
+      Total deductions = ₱900 + ₱600 = ₱1,500<br>
+      Net income = ₱18,000 − ₱1,500 = <strong>₱16,500</strong>.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Common Mistakes and Pitfalls</h3>
+    <ol>
+      <li>Using regular pay for overtime hours instead of the stated overtime multiplier.</li>
+      <li>Adding a deduction to gross income instead of subtracting it.</li>
+      <li>Calling gross income the same as net income.</li>
+      <li>Applying tax to the wrong amount when the problem provides a specific base.</li>
+      <li>Rounding too early.</li>
+      <li>Trusting a calculator output without checking whether the operation and units are sensible.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>Real-World Connection</h3>
+    <p>Understanding payroll helps a person interpret a payslip, plan spending, compare employment offers, check computations and identify questions that should be clarified with an employer or payroll office.</p>
+  </div>
+
+  <div class="card">
+    <h3>Quick Self-Check</h3>
+    <ol>
+      <li>What is the difference between gross and net income?</li>
+      <li>Why is an overtime multiplier applied to the regular hourly rate?</li>
+      <li>Which direction should deductions move net income?</li>
+      <li>What should you do when a calculator result seems unreasonable?</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ACTIVITY -->
+<section id="activity" class="section">
+  <div class="section-title">
+    <span class="label">PRINTABLE ACTIVITY SHEET</span>
+    <h2>Week 2 Practice: Salaries, Benefits and Deductions</h2>
+    <p>Work independently unless your teacher assigns a collaborative item.</p>
+  </div>
+
+  <div class="student-header">
+    <div><strong>Name:</strong> __________________________________</div>
+    <div><strong>Grade/Section:</strong> 11 – Magsaysay</div>
+    <div><strong>Date:</strong> __________________</div>
+    <div><strong>Score:</strong> ______ / 20</div>
+  </div>
+
+  <div class="card">
+    <h3>Part 1 — Recall and Basic Understanding</h3>
+    <p class="level">LEVEL 1–2</p>
+
+    <div class="question"><strong>1.</strong> A fixed amount paid monthly to an employee is commonly called a __________.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>2.</strong> Which is normally subtracted when determining net income: a benefit or a deduction?
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>3.</strong> Write the formula for net income.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>4.</strong> Find the regular earnings of a worker paid ₱110 per hour for 40 regular hours.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>5.</strong> A worker earns ₱12,000 regular pay and ₱800 allowance. Find the gross income.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>6.</strong> A regular hourly rate is ₱160. Overtime is paid at 125%. Find the overtime rate.
+      <div class="answer-space"></div></div>
+  </div>
+
+  <div class="card">
+    <h3>Part 2 — Application and Problem Solving</h3>
+    <p class="level">LEVEL 3</p>
+
+    <div class="question"><strong>7.</strong> Maria earns ₱135 per hour and works 38 regular hours. Find her regular earnings.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>8.</strong> Ben earns ₱150 per hour. He works 4 overtime hours paid at 125%. Find his overtime pay.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>9.</strong> Ana has regular earnings of ₱14,500, overtime pay of ₱1,200, and an allowance of ₱700. Find her gross income.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>10.</strong> A worker has gross income of ₱16,000. Under the instructional tax schedule, tax is 5% of gross income. Other deductions total ₱500. Find the net income.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>11.</strong> A worker has gross income of ₱24,000. Use the instructional tax schedule and subtract other deductions of ₱750. Find the net income.
+      <div class="answer-space"></div></div>
+    <div class="question"><strong>12.</strong> A worker's regular pay is ₱18,000. Overtime pay is ₱900 and an applicable benefit is ₱1,100. Tax is 5% of gross income and another deduction is ₱600. Find gross income, tax, total deductions and net income.
+      <div class="large-space"></div></div>
+  </div>
+
+  <div class="card">
+    <h3>Part 3 — Analysis, Error Analysis and Challenge</h3>
+    <p class="level">LEVEL 4–5</p>
+
+    <div class="question"><strong>13.</strong> A learner computed a worker's overtime rate as ₱150 because the regular rate is ₱150. The problem states that overtime is paid at 125%. Identify the error and give the correct overtime rate.
+      <div class="large-space"></div></div>
+
+    <div class="question"><strong>14.</strong> A payroll record shows gross income of ₱20,000, tax of ₱1,000, and other deductions of ₱700. A learner says net income is ₱21,700. Explain the error and calculate the correct net income.
+      <div class="large-space"></div></div>
+
+    <div class="question"><strong>15.</strong> Worker A has gross income of ₱18,000 and total deductions of ₱1,500. Worker B has gross income of ₱20,000 and total deductions of ₱3,000. Which worker has the higher net income? Show your reasoning.
+      <div class="large-space"></div></div>
+
+    <div class="question"><strong>16.</strong> Create a simple spreadsheet or calculator procedure for computing net income. Your procedure must include gross income, tax, other deductions and net income. Write the sequence of operations.
+      <div class="large-space"></div></div>
+
+    <div class="question"><strong>17.</strong> A worker has net income of ₱17,100 after ₱900 tax and ₱500 other deductions. Find the gross income.
+      <div class="answer-space"></div></div>
+
+    <div class="question"><strong>18.</strong> CHALLENGE: Two workers have the same regular pay of ₱15,000. Worker A has ₱1,000 overtime pay and ₱500 allowance. Worker B has ₱2,000 overtime pay but no allowance. Both have 5% instructional tax and ₱600 other deductions. Compare their net incomes and explain why one is higher.
+      <div class="large-space"></div></div>
+  </div>
+</section>
+
+<!-- ASSESSMENT -->
+<section id="assessment" class="section">
+  <div class="section-title">
+    <span class="label">WEEKLY ASSESSMENT</span>
+    <h2>Mastery Check — Salaries, Benefits and Deductions</h2>
+    <p>Use the instructional tax schedule provided in the Fact Sheet.</p>
+  </div>
+
+  <div class="student-header">
+    <div><strong>Name:</strong> __________________________________</div>
+    <div><strong>Grade/Section:</strong> 11 – Magsaysay</div>
+    <div><strong>Date:</strong> __________________</div>
+    <div><strong>Score:</strong> ______ / 20</div>
+  </div>
+
+  <div class="card">
+    <div class="question"><strong>1. (2 points)</strong> Which expression represents net income?
+      <div class="choice">A. Gross income + deductions</div>
+      <div class="choice">B. Gross income − total deductions</div>
+      <div class="choice">C. Gross income × deductions</div>
+      <div class="choice">D. Deductions − gross income</div>
+      <div class="answer-space"></div>
+    </div>
+
+    <div class="question"><strong>2. (2 points)</strong> A worker earns ₱140 per hour for 40 regular hours. What are the regular earnings?
+      <div class="choice">A. ₱4,600</div><div class="choice">B. ₱5,200</div>
+      <div class="choice">C. ₱5,600</div><div class="choice">D. ₱6,000</div>
+      <div class="answer-space"></div>
+    </div>
+
+    <div class="question"><strong>3. (2 points)</strong> A regular hourly rate is ₱160 and overtime is paid at 125%. What is the overtime rate?
+      <div class="choice">A. ₱180</div><div class="choice">B. ₱190</div>
+      <div class="choice">C. ₱200</div><div class="choice">D. ₱210</div>
+      <div class="answer-space"></div>
+    </div>
+
+    <div class="question"><strong>4. (2 points)</strong> Regular earnings are ₱12,000, overtime pay is ₱1,000, and an applicable allowance is ₱500. What is gross income?
+      <div class="choice">A. ₱11,500</div><div class="choice">B. ₱12,500</div>
+      <div class="choice">C. ₱13,000</div><div class="choice">D. ₱13,500</div>
+      <div class="answer-space"></div>
+    </div>
+
+    <div class="question"><strong>5. (2 points)</strong> Gross income is ₱18,000. Instructional tax is 5% and other deductions are ₱600. What is net income?
+      <div class="choice">A. ₱16,500</div><div class="choice">B. ₱16,900</div>
+      <div class="choice">C. ₱17,100</div><div class="choice">D. ₱17,400</div>
+      <div class="answer-space"></div>
+    </div>
+
+    <div class="question"><strong>6. (3 points)</strong> A worker has regular earnings of ₱15,000, overtime pay of ₱1,250 and an applicable benefit of ₱750. Find gross income.
+      <div class="large-space"></div>
+    </div>
+
+    <div class="question"><strong>7. (3 points)</strong> A worker has gross income of ₱22,000. Under the instructional tax schedule, tax is 10% of gross income. Other deductions total ₱800. Find net income.
+      <div class="large-space"></div>
+    </div>
+
+    <div class="question"><strong>8. (4 points)</strong> A worker earns ₱150 per hour and works 40 regular hours plus 5 overtime hours. Overtime is paid at 125%. The worker also receives a ₱500 applicable allowance. Tax is 5% of gross income and other deductions total ₱700. Calculate: (a) regular earnings, (b) overtime rate, (c) overtime pay, (d) gross income, (e) tax, and (f) net income. Show complete work.
+      <div class="large-space"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Scoring Guide</h3>
+    <table>
+      <tr><th>Evidence</th><th>Interpretation</th></tr>
+      <tr><td>18–20</td><td>Mastered — accurate and independent application with clear reasoning.</td></tr>
+      <tr><td>14–17</td><td>Developing — generally understands the process but needs targeted correction.</td></tr>
+      <tr><td>0–13</td><td>Not Yet Mastered — requires focused remediation on the specific payroll steps.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ANSWER KEY -->
+<section id="answers" class="section answer-locked">
+  <div class="section-title">
+    <span class="label">TEACHER-ONLY</span>
+    <h2>Answer Key and Scoring Guide</h2>
+    <p>Unlocked only after teacher access is granted.</p>
+  </div>
+
+  <div class="lock-note"><strong>Teacher property:</strong> This section contains complete solutions, scoring information and instructional answers.</div>
+
+  <div class="card">
+    <h3>Activity Sheet — Complete Answers</h3>
+    <ol>
+      <li><strong>Salary.</strong></li>
+      <li><strong>Deduction.</strong></li>
+      <li><strong>Net income = Gross income − Total deductions.</strong></li>
+      <li>₱110 × 40 = <strong>₱4,400</strong>.</li>
+      <li>₱12,000 + ₱800 = <strong>₱12,800</strong>.</li>
+      <li>₱160 × 1.25 = <strong>₱200/hour</strong>.</li>
+      <li>₱135 × 38 = <strong>₱5,130</strong>.</li>
+      <li>Overtime rate = ₱150 × 1.25 = ₱187.50; overtime pay = ₱187.50 × 4 = <strong>₱750</strong>.</li>
+      <li>₱14,500 + ₱1,200 + ₱700 = <strong>₱16,400</strong>.</li>
+      <li>Tax = ₱16,000 × 0.05 = ₱800; total deductions = ₱800 + ₱500 = ₱1,300; net = ₱16,000 − ₱1,300 = <strong>₱14,700</strong>.</li>
+      <li>Tax = ₱24,000 × 0.10 = ₱2,400; total deductions = ₱2,400 + ₱750 = ₱3,150; net = ₱24,000 − ₱3,150 = <strong>₱20,850</strong>.</li>
+      <li>Gross = ₱18,000 + ₱900 + ₱1,100 = <strong>₱20,000</strong>. Tax = ₱20,000 × 0.05 = <strong>₱1,000</strong>. Total deductions = ₱1,000 + ₱600 = <strong>₱1,600</strong>. Net = ₱20,000 − ₱1,600 = <strong>₱18,400</strong>.</li>
+      <li>Error: the overtime multiplier was omitted. Correct rate = ₱150 × 1.25 = <strong>₱187.50/hour</strong>.</li>
+      <li>Net cannot exceed gross when deductions are subtracted. Correct net = ₱20,000 − ₱1,000 − ₱700 = <strong>₱18,300</strong>.</li>
+      <li>Worker A net = ₱18,000 − ₱1,500 = <strong>₱16,500</strong>. Worker B net = ₱20,000 − ₱3,000 = <strong>₱17,000</strong>. Worker B is higher by <strong>₱500</strong>.</li>
+      <li>Example sequence: enter gross income → calculate tax → add tax and other deductions → subtract total deductions from gross income. A spreadsheet can use: <strong>Net = Gross − (Tax + Other Deductions)</strong>.</li>
+      <li>Gross = Net + tax + other deductions = ₱17,100 + ₱900 + ₱500 = <strong>₱18,500</strong>.</li>
+      <li>Worker A gross = ₱15,000 + ₱1,000 + ₱500 = ₱16,500. Tax = ₱825. Net = ₱16,500 − ₱825 − ₱600 = <strong>₱15,075</strong>. Worker B gross = ₱17,000. Tax = ₱850. Net = ₱17,000 − ₱850 − ₱600 = <strong>₱15,550</strong>. Worker B is higher by <strong>₱475</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>Assessment — Complete Answers</h3>
+    <ol>
+      <li><strong>B</strong> — Gross income − total deductions.</li>
+      <li><strong>C</strong> — ₱140 × 40 = ₱5,600.</li>
+      <li><strong>C</strong> — ₱160 × 1.25 = ₱200.</li>
+      <li><strong>D</strong> — ₱12,000 + ₱1,000 + ₱500 = ₱13,500.</li>
+      <li><strong>A</strong> — Tax = ₱900; total deductions = ₱1,500; net = ₱16,500.</li>
+      <li>Gross = ₱15,000 + ₱1,250 + ₱750 = <strong>₱17,000</strong>.</li>
+      <li>Tax = ₱22,000 × 0.10 = ₱2,200; total deductions = ₱3,000; net = <strong>₱19,000</strong>.</li>
+      <li>
+        Regular earnings = ₱150 × 40 = <strong>₱6,000</strong>.<br>
+        Overtime rate = ₱150 × 1.25 = <strong>₱187.50/hour</strong>.<br>
+        Overtime pay = ₱187.50 × 5 = <strong>₱937.50</strong>.<br>
+        Gross = ₱6,000 + ₱937.50 + ₱500 = <strong>₱7,437.50</strong>.<br>
+        Since gross is within ₱0–₱10,000, instructional tax = <strong>₱0</strong>.<br>
+        Total deductions = ₱0 + ₱700 = <strong>₱700</strong>.<br>
+        Net income = ₱7,437.50 − ₱700 = <strong>₱6,737.50</strong>.
+      </li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>Open-Ended Scoring Rubric</h3>
+    <table>
+      <tr><th>Criterion</th><th>4 — Excellent</th><th>3 — Proficient</th><th>2 — Developing</th><th>1 — Beginning</th></tr>
+      <tr><td>Mathematical accuracy</td><td>All computations accurate.</td><td>Minor error with sound process.</td><td>Several errors but some correct steps.</td><td>Major misunderstanding.</td></tr>
+      <tr><td>Process</td><td>Complete, logical and organized.</td><td>Mostly complete.</td><td>Some missing steps.</td><td>Process unclear.</td></tr>
+      <tr><td>Reasoning</td><td>Clearly explains and checks reasonableness.</td><td>Explanation is adequate.</td><td>Limited explanation.</td><td>No meaningful explanation.</td></tr>
+      <tr><td>Technology use</td><td>Uses technology appropriately to verify.</td><td>Uses technology with minor support.</td><td>Needs guidance.</td><td>Does not use it appropriately.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- TEACHER NOTES -->
+<section id="notes" class="section">
+  <div class="section-title">
+    <span class="label">TEACHER NOTES</span>
+    <h2>Instructional Support and Ways Forward</h2>
+    <p>Use evidence from the four sessions to adjust the next learning experience.</p>
+  </div>
+
+  <div class="card">
+    <h3>Common Learner Misconceptions</h3>
+    <ul>
+      <li>Confusing salary with gross income.</li>
+      <li>Using the regular hourly rate for overtime without the stated multiplier.</li>
+      <li>Adding deductions instead of subtracting them.</li>
+      <li>Applying tax before determining the required income base.</li>
+      <li>Assuming every benefit is automatically taxable or deductible without checking the problem's stated assumptions.</li>
+      <li>Accepting calculator output without checking whether the answer is reasonable.</li>
+    </ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Remediation</h3>
+      <ol>
+        <li>Use a payroll vocabulary matching activity.</li>
+        <li>Provide a color-coded payroll flow: earnings → gross → deductions → net.</li>
+        <li>Use “rate × quantity = amount” for overtime.</li>
+        <li>Start with one deduction before adding multiple deductions.</li>
+        <li>Use partially completed examples before independent problems.</li>
+        <li>Reassess the exact failed step rather than repeating the entire worksheet.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Enrichment</h3>
+      <ol>
+        <li>Ask learners to design a simplified payslip.</li>
+        <li>Compare two workers with different gross income and deductions.</li>
+        <li>Reverse a payroll problem to find a missing value.</li>
+        <li>Create a spreadsheet formula that automates net-income calculation.</li>
+        <li>Ask learners to explain why a higher gross income does not always guarantee a proportionally higher net income.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Cross-Curricular Connections</h3>
+    <table>
+      <tr><th>Area</th><th>Connection</th></tr>
+      <tr><td>Financial Literacy</td><td>Interpreting payslips, budgeting and comparing income.</td></tr>
+      <tr><td>ICT</td><td>Using spreadsheets, formulas and calculator verification.</td></tr>
+      <tr><td>English</td><td>Explaining a computation clearly and interpreting payroll information.</td></tr>
+      <tr><td>Values Education</td><td>Accuracy, honesty and responsibility when handling financial information.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Teacher Evidence Record</h3>
+    <table>
+      <tr><th>Session</th><th>Evidence Collected</th><th>Observed Need</th><th>Response</th></tr>
+      <tr><td>1</td><td>Classification / gross earnings</td><td>________________</td><td>________________</td></tr>
+      <tr><td>2</td><td>Overtime / benefits</td><td>________________</td><td>________________</td></tr>
+      <tr><td>3</td><td>Deductions / net income</td><td>________________</td><td>________________</td></tr>
+      <tr><td>4</td><td>Integrated mastery task</td><td>________________</td><td>________________</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>AI-Assisted Instructional Design Declaration</h3>
+    <p>This weekly learning package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, mathematical accuracy, assessment decisions, learner data interpretation, and final instructional use.</p>
+  </div>
+
+  <div class="card">
+    <h3>References</h3>
+    <ul>
+      <li>Department of Education. Grade 11 General Mathematics curriculum materials and learning competencies.</li>
+      <li>School-level Grade 11 General Mathematics Three-Term Budget of Work, Term 1, Week 2.</li>
+      <li>Teacher-developed evidence-informed ILAW 4As instructional sequence.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  General Mathematics • Term 1 • Week 2 • Evidence-Informed ILAW 4As
+  <br>Pareja Integrated School • School Year 2026–2027
+</footer>
+
+<!-- Teacher Access Modal -->
+<div class="answer-key-modal" id="answerKeyModal" aria-hidden="true">
+  <div class="answer-key-box" role="dialog" aria-modal="true" aria-labelledby="answerKeyTitle">
+    <div class="lock-icon">🔒</div>
+    <h3 id="answerKeyTitle">Teacher Access Required</h3>
+    <p>The Answer Key is reserved for teacher use.</p>
+    <input id="answerKeyCode" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="Enter 6-digit code" aria-label="Teacher access code">
+    <div class="answer-key-actions">
+      <button class="btn btn-secondary" onclick="closeAnswerKeyModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="unlockAnswerKey()">Unlock</button>
+    </div>
+    <div class="answer-key-error" id="answerKeyError"></div>
+  </div>
+</div>
+
+<script>
+const ANSWER_KEY_CODE = "010203";
+let answerKeyUnlocked = false;
+let currentSection = "lesson";
+
+const tabs = document.querySelectorAll(".tab");
+const sections = document.querySelectorAll(".section");
+
+tabs.forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    const target = tab.dataset.tab;
+    if(target === "answers" && !answerKeyUnlocked){
+      openAnswerKeyModal();
+      return;
+    }
+    activateSection(target,tab);
+  });
+});
+
+function activateSection(target,selectedTab){
+  currentSection = target;
+  tabs.forEach(t=>t.classList.remove("active"));
+  if(selectedTab) selectedTab.classList.add("active");
+  sections.forEach(section=>{
+    section.classList.toggle("active",section.id===target);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function openAnswerKeyModal(){
+  const modal=document.getElementById("answerKeyModal");
+  const input=document.getElementById("answerKeyCode");
+  const error=document.getElementById("answerKeyError");
+  error.textContent="";
+  input.value="";
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden","false");
+  setTimeout(()=>input.focus(),50);
+}
+
+function closeAnswerKeyModal(){
+  const modal=document.getElementById("answerKeyModal");
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden","true");
+}
+
+function unlockAnswerKey(){
+  const input=document.getElementById("answerKeyCode");
+  const error=document.getElementById("answerKeyError");
+  if(input.value === ANSWER_KEY_CODE){
+    answerKeyUnlocked=true;
+    const answerSection=document.getElementById("answers");
+    answerSection.classList.remove("answer-locked");
+    closeAnswerKeyModal();
+    const answerTab=document.querySelector('[data-tab="answers"]');
+    activateSection("answers",answerTab);
+  }else{
+    error.textContent="Incorrect code. The Answer Key remains locked.";
+    input.select();
+  }
+}
+
+document.getElementById("answerKeyCode").addEventListener("keydown",e=>{
+  if(e.key==="Enter") unlockAnswerKey();
+  if(e.key==="Escape") closeAnswerKeyModal();
+});
+
+document.getElementById("answerKeyModal").addEventListener("click",e=>{
+  if(e.target.id==="answerKeyModal") closeAnswerKeyModal();
+});
+
+function printCurrentView(){
+  if(currentSection==="answers" && !answerKeyUnlocked){
+    openAnswerKeyModal();
+    return;
+  }
+  const previous=document.querySelector(".section.active");
+  document.body.dataset.printSection=currentSection;
+  window.print();
+  delete document.body.dataset.printSection;
+}
+
+function printEntirePackage(){
+  if(!answerKeyUnlocked){
+    alert("The Answer Key is excluded until Teacher Access is granted.");
+  }
+  window.print();
+}
+</script>
+</body>
+</html>
