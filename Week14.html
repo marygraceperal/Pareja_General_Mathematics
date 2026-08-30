@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Mathematics | Term 2 Week 14 | Practical Problems with Triangles, Elevation, Depression and Bearings</title>
+<style>
+:root{--primary:#1d4ed8;--secondary:#2563eb;--accent:#dbeafe;--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--soft:#eff6ff;--good:#166534;--warn:#b45309}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#eff6ff,#fff,#dbeafe);border-bottom:1px solid var(--border)}.wrap,main{max-width:1180px;margin:auto}.wrap{padding:28px 18px}.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--accent);color:#1e40af;padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--primary);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.1;margin:12px 0 6px}.sub{color:var(--primary);font-weight:750}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--border);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--border);background:#fff}.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+main{padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--muted)}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--primary);margin-top:0}.card h4{color:var(--secondary);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--border);padding:12px;border-radius:9px}.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--secondary)}.evidence{background:#f0fdf4;border-color:var(--good)}.warn{background:#fffbeb;border-color:var(--warn)}.lock{background:#f8fafc;border-color:var(--primary)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--primary)}
+.session{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--primary)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--border);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--primary)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #93c5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--border);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:90px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--primary)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--border);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}footer{text-align:center;color:var(--muted);padding:22px;border-top:1px solid var(--border);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Practical Problems Involving Right & Oblique Triangles, Elevation, Depression and Bearings</h1>
+<div class="sub">General Mathematics • Term 2 • Week 14 (BOW Second Term Week 4)</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 2 Blue</span></div>
+<div class="actions"><button class="btn primary" onclick="window.print()">🖨️ Print Entire Package</button><button class="btn" onclick="window.print()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Practical Triangle Problems</h2><p>Four complete daily Evidence-Informed 4As sessions. Each session follows Activity → Analysis → Abstraction → Application.</p></div>
+<div class="card"><h3>Lesson Information</h3><div class="grid">
+<div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Right and oblique triangles; angles of elevation and depression; bearings in navigation</div>
+<div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Website Week</b><br>Term 2 • Week 14</div>
+<div class="info"><b>BOW Position</b><br>Second Term • Week 4</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div></div></div>
+
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Second Term, Week 4 — Measurement and Geometry:</b><ul>
+<li>Solve practical problems involving right and oblique triangles.</li>
+<li>Solve practical problems involving angles of elevation and depression.</li>
+<li>Solve practical problems involving the use of bearings in navigation.</li>
+</ul>The BOW lists these three Week 4 competency elements. fileciteturn37file8L1411-L1417</div></div>
+
+<div class="card"><h3>Weekly Learning Intentions</h3><ul>
+<li>Represent a practical situation with an appropriate triangle and identify known and unknown quantities.</li>
+<li>Choose and apply an appropriate trigonometric or triangle-area relationship to solve a practical problem.</li>
+<li>Interpret angles of elevation and depression from a real-life line-of-sight situation.</li>
+<li>Read, represent, and use three-figure bearings in navigation problems.</li>
+<li>Check whether the numerical result is reasonable in its context.</li></ul>
+<div class="evidence"><b>Evidence-informed cycle:</b> retrieve → represent → predict → explicitly model → guided practice → error analysis → independent application → mastery check → targeted response.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Practical Problems with Right and Oblique Triangles</h3></div><div class="sb"><p><b>Daily objectives:</b> Represent a practical situation with a triangle, identify the information given, select an appropriate relationship, and solve a contextual problem.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Represent</span><p>Present a triangular support with two known sides and an included angle. Learners sketch the situation and mark the known quantities before choosing a formula.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Pairs compare diagrams. Discuss why a correct diagram can prevent choosing an inappropriate formula.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model a decision routine: sketch → identify known/unknown → classify right/oblique → choose relationship → substitute → calculate → interpret. Review A = ½ab sin C and Heron’s Formula where appropriate.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Solve practical triangle problems involving ladders, supports, triangular land, and distances. Require a labeled representation and final contextual statement.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> If learners select formulas before interpreting the diagram, require a “What is known? What is unknown?” table before the next problem.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Angles of Elevation and Depression</h3></div><div class="sb"><p><b>Daily objectives:</b> Distinguish angles of elevation and depression, construct a right-triangle model, and solve a height or distance problem using trigonometric ratios.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Use a school-building or tree scenario. Learners identify the horizontal line, line of sight, observer, object, and angle shown in the situation.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Concept check</span><p>Compare an observer looking upward with one looking downward. Learners explain the difference between elevation and depression and locate the corresponding angle.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model a labeled right triangle. Select sine, cosine, or tangent from the known/unknown sides, solve, round appropriately, and state the contextual answer.</p><div class="formula">tan θ = opposite ÷ adjacent</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Solve a tower/tree height problem and a line-of-sight distance problem. Learners must draw the horizontal reference line.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> If learners place the angle incorrectly, return to the horizontal reference line and have them redraw before calculating.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Bearings in Navigation</h3></div><div class="sb"><p><b>Daily objectives:</b> Interpret three-figure bearings, represent a navigation situation diagrammatically, and use trigonometric relationships to determine a missing distance or direction.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Give routes such as 060°, 135°, 225°, and 315°. Learners sketch each direction from a north reference and describe the general direction.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error analysis</span><p>Compare a correct bearing diagram with one measured from the wrong reference direction. Discuss why bearings are measured clockwise from north.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model three-figure bearing notation, north reference, clockwise direction, conversion to a useful acute angle when appropriate, and construction of a triangle for calculation.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Solve navigation problems involving two points, a route bearing, and a known distance. Require a compass-style sketch before computation.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> If learners reverse a bearing, require them to draw N–E–S–W first and trace the clockwise turn from north.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Integrated Triangle, Elevation/Depression and Bearing Problems</h3></div><div class="sb"><p><b>Daily objectives:</b> Select an appropriate mathematical model for a mixed practical situation, solve it accurately, justify the method, and evaluate the reasonableness of the result.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Sort mixed problem cards into: right/oblique triangle, elevation/depression, or bearing. Learners explain the clue that led to each classification.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Strategy comparison</span><p>Examine two solution paths for one problem. Identify which diagram, formula, and unit statement are supported by the given information.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><p>Build a universal problem-solving routine: read → sketch → label → select relationship → calculate → check → interpret. Emphasize that the diagram is part of the mathematical evidence.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Complete an integrated navigation/line-of-sight problem independently. Use the result to make a practical statement about distance, height, or direction.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> Use the assessment evidence to classify learners for targeted reteaching, guided practice, or enrichment.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence collected</th><th>Observed need</th><th>Instructional response</th></tr>
+<tr><td>1</td><td>Triangle representation / method choice</td><td>________________</td><td>________________</td></tr><tr><td>2</td><td>Elevation/depression model</td><td>________________</td><td>________________</td></tr><tr><td>3</td><td>Bearing interpretation</td><td>________________</td><td>________________</td></tr><tr><td>4</td><td>Integrated application</td><td>________________</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Practical Applications of Triangles</h2><p>Use diagrams and relationships to turn real situations into solvable mathematical models.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>Solve practical right- and oblique-triangle problems.</li><li>Model angles of elevation and depression.</li><li>Interpret three-figure bearings.</li><li>Use diagrams to select appropriate trigonometric relationships.</li><li>Check whether answers make sense in context.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Angle of elevation</td><td>The angle formed when the line of sight is above the horizontal line from the observer.</td></tr>
+<tr><td>Angle of depression</td><td>The angle formed when the line of sight is below the horizontal line from the observer.</td></tr>
+<tr><td>Bearing</td><td>A direction measured clockwise from north, commonly written as a three-figure angle.</td></tr>
+<tr><td>Line of sight</td><td>The straight path from an observer to the object being observed.</td></tr>
+<tr><td>Right triangle</td><td>A triangle containing a 90° angle.</td></tr>
+<tr><td>Oblique triangle</td><td>A triangle that is not a right triangle.</td></tr></table></div>
+<div class="card"><h3>Key Ideas & Formulas</h3>
+<div class="formula">sin θ = opposite ÷ hypotenuse</div><div class="formula">cos θ = adjacent ÷ hypotenuse</div><div class="formula">tan θ = opposite ÷ adjacent</div>
+<div class="formula">A = ½ab sin C</div><div class="formula">Heron: A = √[s(s−a)(s−b)(s−c)], where s = (a+b+c) ÷ 2</div>
+<p><b>Bearing convention:</b> begin at North and measure clockwise. Write the bearing with three digits, such as 060°, 135°, or 315°.</p>
+<p><b>Problem-solving routine:</b> Read → Sketch → Label → Select relationship → Substitute → Calculate → Check → Interpret.</p></div>
+<div class="card"><h3>Worked Examples</h3>
+<h4>Example 1 — Right triangle</h4><p>A 10 m ladder makes a 30° angle with the ground. The vertical height h is opposite the angle.</p><div class="formula">sin 30° = h/10<br>h = 10(0.5) = <b>5 m</b></div>
+<h4>Example 2 — Angle of elevation</h4><p>An observer is 20 m from the base of a vertical pole. The angle of elevation to the top is 35°. Let h be the height.</p><div class="formula">tan 35° = h/20<br>h = 20 tan 35° ≈ 20(0.7002) = <b>14.0 m</b></div>
+<h4>Example 3 — Bearing</h4><p>A boat travels on a bearing of 060°. From north, it turns 60° clockwise toward east. The bearing is therefore represented as <b>060°</b>. A bearing must be read from the north reference, not from the east-west axis.</p>
+<h4>Example 4 — Oblique triangle</h4><p>A triangular panel has sides 8 m and 11 m with included angle 30°.</p><div class="formula">A = ½(8)(11)sin 30° = 44(0.5) = <b>22 m²</b></div></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Drawing a triangle without labeling the known information.</li><li>Choosing a trigonometric ratio before identifying the side relationships.</li><li>Placing an elevation/depression angle away from the correct horizontal reference.</li><li>Reading a bearing from east instead of clockwise from north.</li><li>Writing 60° instead of the required three-figure bearing 060°.</li><li>Using an angle that is not included in A = ½ab sin C.</li><li>Forgetting units or reporting an unreasonable result without checking.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>These ideas support surveying, construction, map reading, navigation, engineering, aviation, outdoor route planning, and estimating heights or distances that cannot be measured directly.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>What is the first reference line used for a bearing?</li><li>In which direction are bearings measured?</li><li>What is an angle of elevation?</li><li>What is an angle of depression?</li><li>Which ratio connects opposite and adjacent?</li><li>What should you draw before solving a practical triangle problem?</li><li>Why should a final answer be checked for reasonableness?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 14 Practice</h2><p>Show your diagram, formula or relationship, computation, units, and interpretation.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> What direction is the starting reference for a bearing? <div class="space"></div></div>
+<div class="q"><b>2.</b> In what direction are bearings measured from north? <div class="space"></div></div>
+<div class="q"><b>3.</b> State the three basic trigonometric ratios. <div class="bigspace"></div></div>
+<div class="q"><b>4.</b> What is an angle of elevation? <div class="space"></div></div>
+<div class="q"><b>5.</b> What is an angle of depression? <div class="space"></div></div>
+<div class="q"><b>6.</b> Write 60° as a three-figure bearing when measured clockwise from north toward east. <div class="space"></div></div></div>
+
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> A 12 m ladder makes a 40° angle with the ground. Find the vertical height to the nearest tenth of a metre. <div class="bigspace"></div></div>
+<div class="q"><b>8.</b> A student stands 25 m from a tree. The angle of elevation to the top is 32°. Find the tree’s height to the nearest tenth of a metre. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> A boat travels 18 km on a bearing of 135°. Describe the general direction of travel and sketch the bearing. <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> A triangular plot has sides 13 m, 14 m, and 15 m. Find its area using Heron’s Formula. <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> A triangular panel has sides 9 m and 12 m with an included angle of 40°. Find its area to the nearest tenth. <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> An observer sees the top of a building at an angle of elevation of 28°. The observer is 30 m from the building. Find the building height, assuming eye level is at ground level. <div class="bigspace"></div></div></div>
+
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says that a bearing of 225° means 45° east of north. Explain the error and give the correct general direction. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A learner draws an angle of depression from the vertical side of a building instead of from a horizontal line. Explain why the model is incorrect. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> A learner solves a height problem using sine when the known sides are the opposite height and adjacent horizontal distance. Which ratio should be used? Explain. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A hiker walks 10 km on a bearing of 060°. Explain how you would construct the direction diagram before calculating any additional distance. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A triangular field has sides 10 m and 14 m with an included angle of 65°. Find its area to the nearest tenth. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Design a practical navigation or surveying problem that requires a triangle model and either an angle of elevation/depression or a bearing. State the given information, draw a labeled diagram, and explain which relationship you would use. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Practical Triangle Applications</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Bearings are measured clockwise from which direction?<br>A. East &nbsp; B. South &nbsp; C. North &nbsp; D. West<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> Which ratio connects opposite and adjacent?<br>A. sine &nbsp; B. cosine &nbsp; C. tangent &nbsp; D. Heron<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> A 15 m ladder makes a 35° angle with the ground. Find its vertical height to the nearest tenth.<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> An observer is 20 m from a pole and sees its top at 40°. Find the height, to the nearest tenth.<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> What is the correct three-figure bearing for 45° clockwise from north?<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Find the area of a triangle with sides 10 m and 14 m and included angle 65°, to the nearest tenth.<div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> Explain the difference between an angle of elevation and an angle of depression and identify the horizontal reference used for both.<div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A rescue team is 35 m from the base of a tower. The angle of elevation to a point on the tower is 52°. Calculate the height to the nearest tenth and explain why your result is reasonable.<div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Enrichment using mixed navigation and surveying contexts.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific representation, ratio, or interpretation error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Reteach diagram construction and one-step triangle applications before reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Complete solutions are protected by the teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Enter the access code to reveal the complete answer key and scoring guide.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li><b>North.</b></li>
+<li><b>Clockwise.</b></li>
+<li><b>sin θ = opposite/hypotenuse; cos θ = adjacent/hypotenuse; tan θ = opposite/adjacent.</b></li>
+<li>An angle formed by a line of sight above the observer’s horizontal line.</li>
+<li>An angle formed by a line of sight below the observer’s horizontal line.</li>
+<li><b>060°.</b></li>
+<li>sin 40° = h/12 → h = 12 sin 40° ≈ 12(0.642788) = <b>7.7 m</b>.</li>
+<li>tan 32° = h/25 → h = 25 tan 32° ≈ 25(0.624869) = <b>15.6 m</b>.</li>
+<li>135° lies between east and south; it represents a <b>southeast</b> direction. The ray is 45° south of east (or 45° east of south). Sketch from north, clockwise to 135°.</li>
+<li>s = (13+14+15) ÷ 2 = 21. A = √[21(8)(7)(6)] = <b>84 m²</b>.</li>
+<li>A = ½(9)(12)sin 40° = 54(0.642788) ≈ <b>34.7 m²</b>.</li>
+<li>tan 28° = h/30 → h = 30 tan 28° ≈ 30(0.531709) = <b>16.0 m</b>.</li>
+<li>225° is southwest. It is <b>45° south of west</b>, not east of north.</li>
+<li>The angle of depression is measured from the observer’s horizontal line to the downward line of sight. The vertical side is not the correct reference line.</li>
+<li>Use <b>tangent</b>, because tan θ = opposite/adjacent and the height is opposite while the horizontal distance is adjacent.</li>
+<li>Draw a north reference line at the starting point, measure 060° clockwise from north, and draw the 10 km route along that ray.</li>
+<li>A = ½(10)(14)sin 65° = 70(0.906308) ≈ <b>63.4 m²</b>.</li>
+<li>Answers vary. Full-credit response must include a realistic situation, labeled known/unknown quantities, a correct triangle representation, an appropriate relationship, and a clear explanation.</li>
+</ol></div>
+
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>C. North.</b> Bearings are measured clockwise from north.</li>
+<li><b>C. Tangent.</b> tan θ = opposite/adjacent.</li>
+<li>sin 35° = h/15 → h = 15 sin 35° ≈ 15(0.573576) = <b>8.6 m</b>.</li>
+<li>tan 40° = h/20 → h = 20 tan 40° ≈ 20(0.839100) = <b>16.8 m</b>.</li>
+<li><b>045°.</b></li>
+<li>A = ½(10)(14)sin 65° = 70(0.906308) ≈ <b>63.4 m²</b>.</li>
+<li>Elevation is measured upward from the horizontal; depression is measured downward from the horizontal. The horizontal line through the observer is the reference for the line-of-sight angle.</li>
+<li>tan 52° = h/35 → h = 35 tan 52° ≈ 35(1.279942) = <b>44.8 m</b>. This is reasonable because a 52° line of sight is fairly steep, so the height is greater than the horizontal distance of 35 m.</li>
+</ol></div>
+
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Representation</td><td>Correct labeled diagram/reference lines.</td><td>Mostly correct with minor labeling issue.</td><td>Diagram does not represent the situation.</td></tr><tr><td>Method & computation</td><td>Correct relationship, substitution, computation, rounding and units.</td><td>Sound method with minor computational error.</td><td>Incorrect or incomplete method.</td></tr><tr><td>Interpretation</td><td>Explains the result and its reasonableness in context.</td><td>Basic interpretation.</td><td>No meaningful interpretation.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Choosing a formula before drawing the situation.</li><li>Confusing elevation and depression.</li><li>Measuring a bearing from east or another direction instead of north.</li><li>Reading bearings counterclockwise.</li><li>Failing to write three-figure bearings.</li><li>Using sine/cosine/tangent without identifying side relationships.</li><li>Accepting a numerical answer without checking its contextual meaning.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a fixed “sketch → label → identify O/A/H → choose ratio” routine.</li><li>Provide partially labeled elevation/depression diagrams.</li><li>Practice bearings with a compass cross before introducing full navigation problems.</li><li>Use short error-analysis items to diagnose representation errors separately from calculation errors.</li><li>Require every learner to write a final answer with number, unit, and context.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Design a simple school-site surveying task involving a building height.</li><li>Create a navigation route using two or more bearings.</li><li>Compare two solution methods and justify the more efficient one.</li><li>Use a spreadsheet or geometry tool to verify selected trigonometric calculations.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Triangle modeling</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Elevation/depression</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Bearing interpretation</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Integrated problem solving</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, Second Term, Week 4. The BOW specifies practical problems involving right and oblique triangles, angles of elevation and depression, and bearings in navigation. fileciteturn37file8L1411-L1417</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div>
+</section>
+</main>
+
+<footer>Pareja Integrated School • Grade 11 General Mathematics • Term 2 Week 14 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));window.scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+</script>
+</body>
+</html>
