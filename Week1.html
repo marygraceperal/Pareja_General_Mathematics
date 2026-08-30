@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>General Mathematics | Week 1 | Salaries, Wages, Benefits, and Deductions</title>
+
+<style>
+:root{
+  --primary:#5b21b6;
+  --secondary:#7c3aed;
+  --accent:#ddd6fe;
+  --accent-soft:#f5f3ff;
+  --background:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --success:#15803d;
+  --warning:#b45309;
+  --danger:#b91c1c;
+  --shadow:0 8px 24px rgba(15,23,42,.06);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--background);
+  color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+
+button{
+  font:inherit;
+}
+
+.header{
+  background:
+    linear-gradient(135deg,#faf5ff 0%,#ffffff 55%,#f5f3ff 100%);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:38px 22px 32px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  background:var(--accent);
+  color:var(--primary);
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+
+.header h1{
+  margin:15px 0 6px;
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.08;
+  color:var(--text);
+}
+
+.header h2{
+  margin:0;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--primary);
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:20px;
+}
+
+.meta span{
+  padding:7px 11px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:9px;
+  font-size:.82rem;
+  color:var(--muted);
+}
+
+.meta strong{
+  color:var(--text);
+}
+
+.header-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+
+.btn{
+  border:0;
+  border-radius:10px;
+  padding:11px 15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+
+.btn-secondary{
+  background:#fff;
+  color:var(--primary);
+  border:1px solid var(--accent);
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  opacity:.93;
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:9px 16px;
+  display:flex;
+  gap:7px;
+  overflow-x:auto;
+}
+
+.tab{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+  padding:9px 13px;
+  border-radius:9px;
+  font-size:.82rem;
+  font-weight:800;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.tab.active,
+.tab:hover{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
+
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:28px 18px 65px;
+}
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+.section-title{
+  margin-bottom:20px;
+}
+
+.section-title .label{
+  display:inline-block;
+  background:var(--accent-soft);
+  color:var(--primary);
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.section-title h2{
+  margin:9px 0 5px;
+  font-size:1.9rem;
+}
+
+.section-title p{
+  margin:0;
+  color:var(--muted);
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:21px;
+  margin-bottom:17px;
+  box-shadow:var(--shadow);
+}
+
+.card h3{
+  margin:0 0 12px;
+  font-size:1.15rem;
+}
+
+.card h4{
+  margin:18px 0 8px;
+  color:var(--primary);
+}
+
+.card p:last-child{
+  margin-bottom:0;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+
+.info-box{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:14px;
+}
+
+.info-box .small{
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.info-box strong{
+  display:block;
+  margin-top:3px;
+}
+
+.callout{
+  border-left:5px solid var(--primary);
+  background:var(--accent-soft);
+  padding:15px 17px;
+  border-radius:0 10px 10px 0;
+  margin:14px 0;
+}
+
+.callout strong{
+  color:var(--primary);
+}
+
+.evidence{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#ede9fe;
+  color:var(--primary);
+  font-size:.7rem;
+  font-weight:900;
+  margin:2px;
+}
+
+.strategy{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#f1f5f9;
+  color:#475569;
+  font-size:.7rem;
+  font-weight:800;
+  margin:2px;
+}
+
+.session{
+  border-top:6px solid var(--primary);
+}
+
+.session-header{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+
+.session-number{
+  color:var(--primary);
+  font-weight:900;
+  font-size:.78rem;
+  letter-spacing:.08em;
+}
+
+.session h3{
+  margin:3px 0 4px;
+  font-size:1.35rem;
+}
+
+.session-focus{
+  color:var(--muted);
+  margin:0;
+}
+
+.a-box{
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin:13px 0;
+  overflow:hidden;
+}
+
+.a-head{
+  padding:10px 13px;
+  background:var(--accent-soft);
+  color:var(--primary);
+  font-weight:900;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.a-body{
+  padding:15px;
+}
+
+.a-body h4{
+  margin-top:0;
+}
+
+ol,ul{
+  padding-left:22px;
+}
+
+li{
+  margin-bottom:6px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+  background:#fff;
+}
+
+th,td{
+  border:1px solid var(--border);
+  padding:10px 11px;
+  text-align:left;
+  vertical-align:top;
+}
+
+th{
+  background:var(--accent-soft);
+  color:var(--primary);
+  font-size:.82rem;
+}
+
+td{
+  font-size:.9rem;
+}
+
+.formula{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  padding:13px;
+  border-radius:9px;
+  font-weight:800;
+  margin:10px 0;
+}
+
+.example{
+  border:1px solid #ddd6fe;
+  background:#fcfaff;
+  padding:15px;
+  border-radius:11px;
+  margin:12px 0;
+}
+
+.example-title{
+  color:var(--primary);
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.question{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.workspace{
+  min-height:70px;
+  border-bottom:1px dashed #cbd5e1;
+  margin-top:12px;
+}
+
+.print-header{
+  display:none;
+}
+
+.student-header{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.field{
+  border-bottom:1px solid #64748b;
+  min-height:28px;
+}
+
+.score-box{
+  border:1px solid var(--border);
+  padding:10px;
+  border-radius:8px;
+  text-align:center;
+}
+
+.answer{
+  border-left:4px solid var(--success);
+  background:#f0fdf4;
+  padding:13px 15px;
+  margin:11px 0;
+  border-radius:0 9px 9px 0;
+}
+
+.warning{
+  border-left:4px solid var(--warning);
+  background:#fffbeb;
+  padding:13px 15px;
+  margin:11px 0;
+  border-radius:0 9px 9px 0;
+}
+
+.reflection{
+  border:1px solid var(--border);
+  background:#fff;
+  min-height:100px;
+  border-radius:10px;
+  padding:15px;
+  margin:10px 0;
+}
+
+.checklist label{
+  display:block;
+  margin:7px 0;
+}
+
+.footer{
+  border-top:1px solid var(--border);
+  padding:25px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.hidden-print{
+  display:block;
+}
+
+@media(max-width:800px){
+  .grid-2,
+  .grid-3,
+  .student-header{
+    grid-template-columns:1fr;
+  }
+
+  .header-inner{
+    padding:30px 17px;
+  }
+
+  main{
+    padding:22px 13px 50px;
+  }
+
+  .card{
+    padding:17px;
+  }
+}
+
+@media print{
+  body{
+    background:#fff;
+    color:#000;
+    font-size:10.5pt;
+  }
+
+  .header-actions,
+  .nav,
+  .hidden-print{
+    display:none!important;
+  }
+
+  .header{
+    background:#fff;
+  }
+
+  .header-inner{
+    padding:15px 0;
+  }
+
+  .header h1{
+    font-size:24pt;
+  }
+
+  main{
+    max-width:none;
+    padding:0;
+  }
+
+  .section{
+    display:block!important;
+  }
+
+  .section:not(:first-child){
+    page-break-before:always;
+  }
+
+  .card{
+    box-shadow:none;
+    break-inside:avoid;
+    border:1px solid #bbb;
+  }
+
+  .session{
+    break-inside:auto;
+  }
+
+  .a-box{
+    break-inside:avoid;
+  }
+
+  table{
+    break-inside:auto;
+  }
+
+  tr{
+    break-inside:avoid;
+  }
+
+  .print-header{
+    display:block;
+  }
+
+  a{
+    color:#000;
+    text-decoration:none;
+  }
+
+  .footer{
+    display:none;
+  }
+}
+
+body.print-current .section{
+  display:none!important;
+}
+
+body.print-current .section.print-target{
+  display:block!important;
+}
+
+@media print{
+  body.print-current .section:not(.print-target){
+    display:none!important;
+  }
+
+  body.print-current .section.print-target{
+    display:block!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <span class="eyebrow">TERM 1 • PURPLE THEME • WEEK 1</span>
+
+    <h1>General Mathematics</h1>
+
+    <h2>Weekly Evidence-Informed Learning Package</h2>
+
+    <div class="meta">
+      <span><strong>School:</strong> Pareja Integrated School</span>
+      <span><strong>Teacher:</strong> Mary Grace M. Peral</span>
+      <span><strong>Grade:</strong> 11</span>
+      <span><strong>Section:</strong> Magsaysay</span>
+      <span><strong>SY:</strong> 2026–2027</span>
+      <span><strong>Sessions:</strong> 4</span>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="printEntire()">Print Entire Package</button>
+      <button class="btn btn-secondary" onclick="printCurrent()">Print Current View</button>
+    </div>
+
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="tab active" data-tab="lesson">LESSON PLAN</button>
+    <button class="tab" data-tab="fact">FACT SHEET</button>
+    <button class="tab" data-tab="activity">ACTIVITY SHEET</button>
+    <button class="tab" data-tab="assessment">ASSESSMENT</button>
+    <button class="tab" data-tab="answers">ANSWER KEY</button>
+    <button class="tab" data-tab="notes">TEACHER NOTES</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- =========================================================
+     LESSON PLAN
+========================================================= -->
+
+<section id="lesson" class="section active">
+
+  <div class="section-title">
+    <span class="label">ILAW • EVIDENCE-INFORMED 4As</span>
+    <h2>Salaries, Wages, Benefits, and Deductions</h2>
+    <p>Four complete daily ILAW 4As sessions based on the Week 1 learning focus.</p>
+  </div>
+
+  <div class="card">
+    <h3>Lesson Information</h3>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <span class="small">Learning Area</span>
+        <strong>General Mathematics</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">Weekly Topic</span>
+        <strong>Salaries, Wages, Benefits, and Deductions</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">Grade & Section</span>
+        <strong>Grade 11 – Magsaysay</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">School</span>
+        <strong>Pareja Integrated School</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">Term</span>
+        <strong>Term 1 • Week 1</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">Number of Sessions</span>
+        <strong>4 Sessions</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Curriculum Alignment</h3>
+
+    <p><strong>Content Domain:</strong> Numbers and Algebra — Business and Finance</p>
+
+    <p><strong>Content Standard:</strong> The learners demonstrate knowledge and understanding of business and finance through problems involving earning money, buying, and selling.</p>
+
+    <p><strong>Performance Standard:</strong> The learners are able to conduct a case study on payrolls to compute salaries, wages, deductions, and income for different employee profiles.</p>
+
+    <p><strong>Week 1 Competency Focus:</strong></p>
+
+    <ol>
+      <li>Calculate weekly or monthly wage from an annual salary, wages from an hourly rate including situations involving overtime and other allowances, and earnings based on commission or piecework.</li>
+      <li>Solve problems involving salaries, wages, benefits, and deductions, including gross and net incomes, using appropriate technology.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>Curriculum note:</strong>
+      The competency wording above is aligned with the current DepEd General Mathematics curriculum material available for Grade 11. The teacher should still check the school's adopted BOW for the exact weekly distribution and wording used locally.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Weekly Learning Target</h3>
+
+    <p>
+      By the end of the four-session sequence, learners will be able to interpret common payroll situations and accurately calculate salaries, wages, overtime and allowances, commission or piecework earnings, benefits, deductions, gross income, and net income in realistic employment contexts.
+    </p>
+
+    <h3>Weekly Success Criteria</h3>
+
+    <ul>
+      <li>I can distinguish salary from wage and identify the information needed for a payroll computation.</li>
+      <li>I can convert an annual salary into an appropriate weekly or monthly amount.</li>
+      <li>I can calculate hourly earnings, overtime pay, allowances, commission, and piecework earnings.</li>
+      <li>I can distinguish earnings, benefits, and deductions and determine gross and net income.</li>
+      <li>I can explain whether a payroll computation is reasonable.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Four-Session Overview</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Session</th>
+          <th>Daily Focus</th>
+          <th>Daily Objectives</th>
+          <th>Main Evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong><br>Salary & Wage Foundations</td>
+          <td>Salary, wage, annual-to-monthly/weekly conversion</td>
+          <td>Define, distinguish, calculate, interpret</td>
+          <td>Payroll sorting task, calculations, exit ticket</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong><br>Hourly Work</td>
+          <td>Hourly wage, overtime, allowances</td>
+          <td>Calculate, compare, explain</td>
+          <td>Payroll case, guided computation, error analysis</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong><br>Performance Earnings</td>
+          <td>Commission and piecework</td>
+          <td>Determine, compare, apply</td>
+          <td>Sales/piecework scenarios</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong><br>Benefits & Deductions</td>
+          <td>Benefits, deductions, gross and net income</td>
+          <td>Classify, calculate, interpret, evaluate</td>
+          <td>Complete payroll case and mastery assessment</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SESSION 1 -->
+
+  <div class="card session">
+    <div class="session-header">
+      <div>
+        <div class="session-number">SESSION 1</div>
+        <h3>Salary and Wage Foundations</h3>
+        <p class="session-focus">From employment information to weekly and monthly earnings.</p>
+      </div>
+      <span class="evidence">FORMATIVE EVIDENCE</span>
+    </div>
+
+    <h4>Daily Objectives</h4>
+    <ul>
+      <li>Define and distinguish salary and wage in employment contexts.</li>
+      <li>Calculate monthly and weekly earnings from an annual salary using stated assumptions.</li>
+      <li>Interpret the meaning of a calculated wage in a simple payroll situation.</li>
+    </ul>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>1. ACTIVITY</span>
+        <span>[Prior Knowledge] [Diagnostic Evidence]</span>
+      </div>
+      <div class="a-body">
+        <h4>Payroll Information Sort</h4>
+        <p>
+          Present learners with short employment cards showing examples such as:
+          "₱360,000 per year," "₱650 per day," "₱80 per hour," and
+          "₱25,000 monthly."
+        </p>
+
+        <p><strong>Learner task:</strong> In pairs, classify the information as salary-based, hourly wage, daily wage, or monthly salary. Learners explain what additional information would be needed to determine earnings for a particular pay period.</p>
+
+        <p><strong>Teacher evidence:</strong> Listen for whether learners recognize the difference between a stated annual salary and a rate of pay.</p>
+
+        <p>
+          <span class="strategy">Retrieval Practice</span>
+          <span class="strategy">Diagnostic Questioning</span>
+          <span class="strategy">Collaborative Learning</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>2. ANALYSIS</span>
+        <span>[Questioning] [Misconception Check]</span>
+      </div>
+      <div class="a-body">
+        <ol>
+          <li>What information tells us that an amount is an annual salary?</li>
+          <li>Why can we not call ₱80 per hour an annual salary?</li>
+          <li>If two workers have the same annual salary, will they always receive the same amount every pay period?</li>
+          <li>What assumption must we make when converting an annual salary to a monthly amount?</li>
+          <li>What assumption must we make when estimating a weekly amount from an annual salary?</li>
+        </ol>
+
+        <div class="callout">
+          <strong>Likely misconception:</strong>
+          Learners may treat every pay amount as interchangeable without identifying the time period represented by the number.
+        </div>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>3. ABSTRACTION</span>
+        <span>[Explicit Modeling] [Worked Example]</span>
+      </div>
+      <div class="a-body">
+
+        <p><strong>Salary</strong> is commonly stated as a fixed amount for a longer period, such as a year. A wage is commonly expressed according to a time or work basis such as an hour or day.</p>
+
+        <div class="formula">
+          Monthly salary = Annual salary ÷ 12
+        </div>
+
+        <div class="formula">
+          Weekly equivalent = Annual salary ÷ 52
+        </div>
+
+        <div class="example">
+          <div class="example-title">Worked Example</div>
+
+          <p><strong>Given:</strong> Annual salary = ₱360,000</p>
+
+          <p><strong>Monthly salary:</strong></p>
+          <p>₱360,000 ÷ 12 = ₱30,000</p>
+
+          <p><strong>Weekly equivalent:</strong></p>
+          <p>₱360,000 ÷ 52 ≈ ₱6,923.08</p>
+
+          <p><strong>Interpretation:</strong> Under these assumptions, the annual salary corresponds to ₱30,000 per month and approximately ₱6,923.08 per week.</p>
+        </div>
+
+        <span class="strategy">Explicit Modeling</span>
+        <span class="strategy">Worked Example</span>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>4. APPLICATION</span>
+        <span>[Guided Practice] [Transfer]</span>
+      </div>
+      <div class="a-body">
+        <p>
+          A worker earns an annual salary of ₱468,000.
+        </p>
+
+        <ol>
+          <li>Determine the monthly salary.</li>
+          <li>Determine the weekly equivalent using 52 weeks.</li>
+          <li>Explain why the weekly figure is an equivalent rather than necessarily the exact amount appearing on every payslip.</li>
+        </ol>
+
+        <p><strong>Expected evidence:</strong> Correct setup, computation, rounding, and explanation.</p>
+      </div>
+    </div>
+
+    <h4>Evidence-to-Action</h4>
+
+    <table>
+      <tr>
+        <th>Evidence</th>
+        <th>What It Shows</th>
+        <th>Teacher Response</th>
+        <th>Next-Session Implication</th>
+      </tr>
+      <tr>
+        <td>Classification and conversion responses</td>
+        <td>Whether learners understand pay periods and basic conversion.</td>
+        <td>Clarify time-period language or model another conversion if needed.</td>
+        <td>Begin Session 2 with a short retrieval check before hourly and overtime calculations.</td>
+      </tr>
+    </table>
+
+    <h4>Exit Evidence</h4>
+    <p>
+      Exit ticket: "A worker earns ₱312,000 annually. What is the monthly salary? What operation did you use and why?"
+    </p>
+  </div>
+
+  <!-- SESSION 2 -->
+
+  <div class="card session">
+    <div class="session-header">
+      <div>
+        <div class="session-number">SESSION 2</div>
+        <h3>Hourly Wages, Overtime, and Allowances</h3>
+        <p class="session-focus">Using rates and additional work information to determine earnings.</p>
+      </div>
+      <span class="evidence">FORMATIVE EVIDENCE</span>
+    </div>
+
+    <h4>Daily Objectives</h4>
+    <ul>
+      <li>Calculate regular earnings from an hourly rate and number of hours worked.</li>
+      <li>Calculate overtime earnings using a stated overtime rate.</li>
+      <li>Determine total earnings when regular pay, overtime pay, and allowances are combined.</li>
+    </ul>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>1. ACTIVITY</span>
+        <span>[Retrieval] [Contextualized Problem]</span>
+      </div>
+      <div class="a-body">
+        <h4>Who Earned More?</h4>
+
+        <p>
+          Worker A earns ₱80 per hour and works 40 regular hours.
+          Worker B earns ₱75 per hour, works 40 regular hours, and receives a ₱500 allowance.
+        </p>
+
+        <p>
+          Learners calculate the earnings of each worker and discuss what information is necessary before saying which worker earned more.
+        </p>
+
+        <span class="strategy">Retrieval Practice</span>
+        <span class="strategy">Comparison</span>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>2. ANALYSIS</span>
+        <span>[Reasoning] [Error Analysis]</span>
+      </div>
+      <div class="a-body">
+        <ol>
+          <li>How did you calculate regular earnings?</li>
+          <li>Why is an allowance added to earnings?</li>
+          <li>What makes overtime different from regular work?</li>
+          <li>If the overtime rate is 1.25 times the regular hourly rate, what does that mean?</li>
+          <li>A learner says: "Overtime pay means adding 25 pesos to the hourly rate." Is this always correct? Explain.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>3. ABSTRACTION</span>
+        <span>[Explicit Modeling] [Worked Example]</span>
+      </div>
+      <div class="a-body">
+
+        <div class="formula">
+          Regular earnings = Regular hourly rate × Regular hours
+        </div>
+
+        <div class="formula">
+          Overtime rate = Regular hourly rate × Overtime multiplier
+        </div>
+
+        <div class="formula">
+          Overtime earnings = Overtime rate × Overtime hours
+        </div>
+
+        <div class="formula">
+          Total earnings = Regular earnings + Overtime earnings + Allowances
+        </div>
+
+        <div class="example">
+          <div class="example-title">Worked Example</div>
+
+          <p>Regular rate = ₱100/hour</p>
+          <p>Regular hours = 40</p>
+          <p>Overtime hours = 5</p>
+          <p>Overtime multiplier = 1.25</p>
+          <p>Allowance = ₱500</p>
+
+          <p><strong>Regular earnings:</strong></p>
+          <p>₱100 × 40 = ₱4,000</p>
+
+          <p><strong>Overtime rate:</strong></p>
+          <p>₱100 × 1.25 = ₱125/hour</p>
+
+          <p><strong>Overtime earnings:</strong></p>
+          <p>₱125 × 5 = ₱625</p>
+
+          <p><strong>Total earnings:</strong></p>
+          <p>₱4,000 + ₱625 + ₱500 = ₱5,125</p>
+        </div>
+
+        <div class="warning">
+          <strong>Important:</strong> Overtime rules and rates depend on the applicable employment rules and the problem's stated assumptions. Use the rate supplied in the learning task rather than assuming one universal rate.
+        </div>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>4. APPLICATION</span>
+        <span>[Problem Solving] [Error Analysis]</span>
+      </div>
+      <div class="a-body">
+        <p>
+          Maria earns ₱95 per hour. She works 40 regular hours and 4 overtime hours.
+          Her overtime multiplier is 1.25. She also receives a ₱300 allowance.
+        </p>
+
+        <ol>
+          <li>Calculate her regular earnings.</li>
+          <li>Calculate her overtime rate.</li>
+          <li>Calculate her overtime earnings.</li>
+          <li>Calculate her total earnings.</li>
+          <li>Explain why the allowance is included in total earnings in this example.</li>
+        </ol>
+
+        <p><strong>Support:</strong> Provide a partially completed computation table to learners who need scaffolding.</p>
+        <p><strong>Extension:</strong> Ask learners to compare the total earnings with a worker who receives no overtime but has a higher hourly rate.</p>
+      </div>
+    </div>
+
+    <h4>Evidence-to-Action</h4>
+
+    <table>
+      <tr>
+        <th>Evidence</th>
+        <th>What It Shows</th>
+        <th>Teacher Response</th>
+        <th>Next-Session Implication</th>
+      </tr>
+      <tr>
+        <td>Overtime computation and explanation</td>
+        <td>Whether learners can distinguish rate, hours, multiplier, and total earnings.</td>
+        <td>Model the rate calculation again if learners add the multiplier incorrectly.</td>
+        <td>Session 3 begins with a short comparison between time-based earnings and performance-based earnings.</td>
+      </tr>
+    </table>
+
+    <h4>Exit Evidence</h4>
+    <p>
+      A worker earns ₱90/hour and works 3 overtime hours at 1.25 times the regular rate. Determine the overtime earnings.
+    </p>
+  </div>
+
+  <!-- SESSION 3 -->
+
+  <div class="card session">
+    <div class="session-header">
+      <div>
+        <div class="session-number">SESSION 3</div>
+        <h3>Commission and Piecework Earnings</h3>
+        <p class="session-focus">Understanding earnings based on sales or units completed.</p>
+      </div>
+      <span class="evidence">FORMATIVE EVIDENCE</span>
+    </div>
+
+    <h4>Daily Objectives</h4>
+    <ul>
+      <li>Calculate commission earnings from a stated sales amount and commission rate.</li>
+      <li>Calculate piecework earnings from a stated rate per unit and quantity completed.</li>
+      <li>Compare different earning arrangements and justify a calculation.</li>
+    </ul>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>1. ACTIVITY</span>
+        <span>[Comparison] [Collaborative Learning]</span>
+      </div>
+      <div class="a-body">
+
+        <p>
+          Present three earning arrangements:
+        </p>
+
+        <ul>
+          <li>Worker A: ₱600 per day</li>
+          <li>Worker B: 5% commission on ₱12,000 sales</li>
+          <li>Worker C: ₱15 per completed item and 500 items completed</li>
+        </ul>
+
+        <p>
+          Learners estimate and calculate the earnings under each arrangement.
+        </p>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>2. ANALYSIS</span>
+        <span>[Reasoning] [Concept Formation]</span>
+      </div>
+      <div class="a-body">
+        <ol>
+          <li>What quantity determines commission earnings?</li>
+          <li>What quantity determines piecework earnings?</li>
+          <li>Why is the commission rate written as a percentage?</li>
+          <li>Why is a piecework rate multiplied by the number of completed units?</li>
+          <li>Which arrangement produces the greatest earning in the examples? What evidence supports your conclusion?</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>3. ABSTRACTION</span>
+        <span>[Explicit Modeling] [Worked Example]</span>
+      </div>
+      <div class="a-body">
+
+        <div class="formula">
+          Commission = Sales × Commission rate
+        </div>
+
+        <div class="formula">
+          Piecework earnings = Rate per unit × Number of units completed
+        </div>
+
+        <div class="example">
+          <div class="example-title">Commission Example</div>
+
+          <p>Sales = ₱24,000</p>
+          <p>Commission rate = 5%</p>
+
+          <p>5% = 0.05</p>
+
+          <p>Commission = ₱24,000 × 0.05</p>
+
+          <p><strong>Commission = ₱1,200</strong></p>
+        </div>
+
+        <div class="example">
+          <div class="example-title">Piecework Example</div>
+
+          <p>Rate = ₱18 per completed item</p>
+          <p>Completed items = 350</p>
+
+          <p>Piecework earnings = ₱18 × 350</p>
+
+          <p><strong>Piecework earnings = ₱6,300</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>4. APPLICATION</span>
+        <span>[Transfer] [Decision Making]</span>
+      </div>
+      <div class="a-body">
+
+        <p>
+          A salesperson receives 4% commission on sales. During one period,
+          the salesperson makes ₱35,000 in sales.
+        </p>
+
+        <p>
+          Another worker earns ₱20 for every completed item and completes 1,500 items.
+        </p>
+
+        <ol>
+          <li>Calculate the salesperson's commission.</li>
+          <li>Calculate the piecework worker's earnings.</li>
+          <li>Compare the two amounts.</li>
+          <li>Explain why the calculation method is different for the two workers.</li>
+        </ol>
+
+        <p><strong>Extension:</strong> Ask learners to determine the sales amount needed for a 4% commission to equal ₱2,000.</p>
+      </div>
+    </div>
+
+    <h4>Evidence-to-Action</h4>
+
+    <table>
+      <tr>
+        <th>Evidence</th>
+        <th>What It Shows</th>
+        <th>Teacher Response</th>
+        <th>Next-Session Implication</th>
+      </tr>
+      <tr>
+        <td>Commission and piecework solutions</td>
+        <td>Whether learners select the correct base quantity and operation.</td>
+        <td>Reteach the meaning of "rate" and "base" if learners multiply by the wrong quantity.</td>
+        <td>Session 4 integrates earnings with benefits and deductions to construct a fuller payroll picture.</td>
+      </tr>
+    </table>
+
+    <h4>Exit Evidence</h4>
+    <p>
+      A worker receives 6% commission on ₱18,000 sales. Calculate the commission and explain the operation used.
+    </p>
+  </div>
+
+  <!-- SESSION 4 -->
+
+  <div class="card session">
+    <div class="session-header">
+      <div>
+        <div class="session-number">SESSION 4</div>
+        <h3>Benefits, Deductions, Gross Income, and Net Income</h3>
+        <p class="session-focus">Putting the week's learning together in a payroll case.</p>
+      </div>
+      <span class="evidence">MASTERY EVIDENCE</span>
+    </div>
+
+    <h4>Daily Objectives</h4>
+    <ul>
+      <li>Distinguish earnings, benefits, and deductions in a simplified payroll scenario.</li>
+      <li>Calculate gross income and net income using the amounts provided in a payroll case.</li>
+      <li>Evaluate a payroll computation and explain whether the final amount is reasonable.</li>
+    </ul>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>1. ACTIVITY</span>
+        <span>[Integration] [Diagnostic Review]</span>
+      </div>
+      <div class="a-body">
+
+        <h4>Build the Payslip</h4>
+
+        <p>Provide the following simplified payroll information:</p>
+
+        <ul>
+          <li>Basic earnings: ₱18,000</li>
+          <li>Overtime earnings: ₱1,500</li>
+          <li>Allowance: ₱1,000</li>
+          <li>Benefit included in the problem: ₱500</li>
+          <li>Deduction A: ₱900</li>
+          <li>Deduction B: ₱600</li>
+        </ul>
+
+        <p>
+          Learners sort the amounts into earnings, benefits, and deductions before calculating the final amounts.
+        </p>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>2. ANALYSIS</span>
+        <span>[Classification] [Reasoning]</span>
+      </div>
+      <div class="a-body">
+        <ol>
+          <li>Which amounts increase the worker's total earnings?</li>
+          <li>Which amounts reduce the amount received after deductions?</li>
+          <li>Why should we identify the role of each amount before adding or subtracting?</li>
+          <li>What is the difference between gross income and net income?</li>
+          <li>Why might the amount received by a worker be lower than gross income?</li>
+        </ol>
+
+        <div class="callout">
+          <strong>Important:</strong>
+          Actual payroll treatment of benefits and deductions depends on the applicable employment and tax rules. In classroom problems, use the classification and assumptions explicitly provided by the task.
+        </div>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>3. ABSTRACTION</span>
+        <span>[Explicit Modeling] [Worked Example]</span>
+      </div>
+      <div class="a-body">
+
+        <div class="formula">
+          Gross income = Earnings + applicable benefits/allowances included by the problem
+        </div>
+
+        <div class="formula">
+          Total deductions = Deduction 1 + Deduction 2 + ...
+        </div>
+
+        <div class="formula">
+          Net income = Gross income − Total deductions
+        </div>
+
+        <div class="example">
+          <div class="example-title">Worked Payroll Example</div>
+
+          <p>Basic earnings = ₱18,000</p>
+          <p>Overtime = ₱1,500</p>
+          <p>Allowance = ₱1,000</p>
+          <p>Included benefit = ₱500</p>
+          <p>Deductions = ₱900 + ₱600 = ₱1,500</p>
+
+          <p><strong>Gross income:</strong></p>
+          <p>₱18,000 + ₱1,500 + ₱1,000 + ₱500 = ₱21,000</p>
+
+          <p><strong>Net income:</strong></p>
+          <p>₱21,000 − ₱1,500 = ₱19,500</p>
+
+          <p><strong>Interpretation:</strong> Under the simplified assumptions of the problem, the worker's gross income is ₱21,000 and the amount after the stated deductions is ₱19,500.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-box">
+      <div class="a-head">
+        <span>4. APPLICATION</span>
+        <span>[Authentic Application] [Mastery Check]</span>
+      </div>
+      <div class="a-body">
+
+        <p>
+          A worker has basic earnings of ₱20,000, overtime earnings of ₱1,200,
+          an allowance of ₱800, and a benefit of ₱700 included in the problem.
+          The worker has deductions of ₱1,000 and ₱750.
+        </p>
+
+        <ol>
+          <li>Determine the gross income.</li>
+          <li>Determine total deductions.</li>
+          <li>Determine net income.</li>
+          <li>Explain the difference between gross and net income.</li>
+          <li>State one reason why checking the classification of each payroll item is important.</li>
+        </ol>
+
+        <p>
+          <strong>Mastery evidence:</strong> Learners accurately classify, compute, and explain the payroll information without relying on a fully worked example.
+        </p>
+      </div>
+    </div>
+
+    <h4>Evidence-to-Action</h4>
+
+    <table>
+      <tr>
+        <th>Evidence</th>
+        <th>What It Shows</th>
+        <th>Teacher Response</th>
+        <th>Next Step</th>
+      </tr>
+      <tr>
+        <td>Mastery task and weekly assessment</td>
+        <td>Whether learners can integrate salary/wage, additional earnings, benefits, deductions, gross income, and net income.</td>
+        <td>Classify learners as Not Yet Mastered, Developing, or Mastered based on evidence.</td>
+        <td>Provide targeted remediation or enrichment and reassess where necessary.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Weekly Evidence Cycle</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Evidence</th>
+          <th>Teacher Interpretation</th>
+          <th>Instructional Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Session 1</td>
+          <td>Salary/wage classification and conversions</td>
+          <td>Can learners identify the time basis of earnings?</td>
+          <td>Clarify time periods and conversion procedures.</td>
+        </tr>
+        <tr>
+          <td>Session 2</td>
+          <td>Hourly and overtime computations</td>
+          <td>Can learners distinguish rate, hours, multiplier, and total?</td>
+          <td>Model rate calculation and provide guided practice.</td>
+        </tr>
+        <tr>
+          <td>Session 3</td>
+          <td>Commission and piecework</td>
+          <td>Can learners select the correct base quantity?</td>
+          <td>Use comparison and error analysis.</td>
+        </tr>
+        <tr>
+          <td>Session 4</td>
+          <td>Integrated payroll problem</td>
+          <td>Can learners transfer the week's learning independently?</td>
+          <td>Remediate, extend, or reassess based on evidence.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>AI-Assisted Instructional Design Declaration</h3>
+    <p>
+      This learning package was developed with AI-assisted instructional design support.
+      The teacher remains responsible for curriculum alignment, contextualization,
+      validation of content, mathematical accuracy, assessment decisions, and final instructional use.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>References</h3>
+    <ul>
+      <li>Department of Education. General Mathematics Curriculum Guide / Strengthened Senior High School General Mathematics curriculum materials.</li>
+      <li>Department of Education. General Mathematics Lesson Exemplar, Grade 11, First Quarter, Unit 1.</li>
+      <li>School-level Budget of Work for Grade 11 General Mathematics, Term 1, Week 1.</li>
+    </ul>
+    <p class="warning">
+      Curriculum references should be checked against the school's currently adopted official BOW and curriculum documents before final classroom use.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FACT SHEET
+========================================================= -->
+
+<section id="fact" class="section">
+
+  <div class="section-title">
+    <span class="label">LEARNER GUIDE</span>
+    <h2>Salaries, Wages, Benefits, and Deductions</h2>
+    <p>A four-session study guide for Week 1.</p>
+  </div>
+
+  <div class="card">
+    <h3>What You Will Learn</h3>
+    <ul>
+      <li>How salary and wage information is expressed.</li>
+      <li>How to convert an annual salary into monthly and weekly equivalents.</li>
+      <li>How to calculate regular and overtime earnings.</li>
+      <li>How to calculate commission and piecework earnings.</li>
+      <li>How to work with benefits, allowances, and deductions in simplified payroll situations.</li>
+      <li>How to calculate and interpret gross and net income.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Essential Definitions</h3>
+
+    <table>
+      <tr>
+        <th>Term</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td>A stated amount of pay for a specified period, commonly expressed annually or monthly.</td>
+      </tr>
+      <tr>
+        <td>Wage</td>
+        <td>Pay commonly expressed according to a time basis such as an hour or day, or according to work completed.</td>
+      </tr>
+      <tr>
+        <td>Allowance</td>
+        <td>An additional amount provided for a specified purpose or condition, according to the stated employment arrangement.</td>
+      </tr>
+      <tr>
+        <td>Commission</td>
+        <td>Earnings calculated from a stated percentage of a sales amount or other specified base.</td>
+      </tr>
+      <tr>
+        <td>Piecework</td>
+        <td>Earnings based on a rate for each completed unit of work.</td>
+      </tr>
+      <tr>
+        <td>Benefit</td>
+        <td>An employment-related benefit or compensation item. Its payroll treatment depends on the applicable rules and the problem's assumptions.</td>
+      </tr>
+      <tr>
+        <td>Deduction</td>
+        <td>An amount subtracted from applicable earnings according to the stated payroll arrangement.</td>
+      </tr>
+      <tr>
+        <td>Gross income</td>
+        <td>The total income before the deductions specified by the problem.</td>
+      </tr>
+      <tr>
+        <td>Net income</td>
+        <td>The amount remaining after the applicable deductions are subtracted.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Key Ideas and Formulas</h3>
+
+    <div class="formula">Monthly salary = Annual salary ÷ 12</div>
+
+    <div class="formula">Weekly equivalent = Annual salary ÷ 52</div>
+
+    <div class="formula">Regular earnings = Hourly rate × Regular hours</div>
+
+    <div class="formula">Overtime rate = Regular hourly rate × Overtime multiplier</div>
+
+    <div class="formula">Overtime earnings = Overtime rate × Overtime hours</div>
+
+    <div class="formula">Commission = Sales × Commission rate</div>
+
+    <div class="formula">Piecework earnings = Rate per unit × Units completed</div>
+
+    <div class="formula">Total deductions = Sum of applicable deductions</div>
+
+    <div class="formula">Net income = Gross income − Total deductions</div>
+
+    <div class="callout">
+      Always identify the time period, rate, base quantity, and type of payroll item before calculating.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Step-by-Step Worked Examples</h3>
+
+    <div class="example">
+      <div class="example-title">Example 1 — Annual to Monthly Salary</div>
+      <p>Annual salary = ₱420,000</p>
+      <p>Monthly salary = ₱420,000 ÷ 12</p>
+      <p><strong>Answer: ₱35,000 per month</strong></p>
+    </div>
+
+    <div class="example">
+      <div class="example-title">Example 2 — Annual to Weekly Equivalent</div>
+      <p>Annual salary = ₱420,000</p>
+      <p>Weekly equivalent = ₱420,000 ÷ 52</p>
+      <p><strong>Answer: approximately ₱8,076.92 per week</strong></p>
+    </div>
+
+    <div class="example">
+      <div class="example-title">Example 3 — Regular and Overtime Earnings</div>
+      <p>Hourly rate = ₱120</p>
+      <p>Regular hours = 40</p>
+      <p>Overtime hours = 4</p>
+      <p>Overtime multiplier = 1.25</p>
+
+      <p>Regular earnings = ₱120 × 40 = ₱4,800</p>
+      <p>Overtime rate = ₱120 × 1.25 = ₱150</p>
+      <p>Overtime earnings = ₱150 × 4 = ₱600</p>
+
+      <p><strong>Total = ₱5,400</strong></p>
+    </div>
+
+    <div class="example">
+      <div class="example-title">Example 4 — Commission</div>
+      <p>Sales = ₱30,000</p>
+      <p>Commission = 4%</p>
+      <p>Commission = ₱30,000 × 0.04</p>
+      <p><strong>Answer: ₱1,200</strong></p>
+    </div>
+
+    <div class="example">
+      <div class="example-title">Example 5 — Piecework</div>
+      <p>Rate = ₱25 per item</p>
+      <p>Items completed = 280</p>
+      <p>Piecework earnings = ₱25 × 280</p>
+      <p><strong>Answer: ₱7,000</strong></p>
+    </div>
+
+    <div class="example">
+      <div class="example-title">Example 6 — Gross and Net Income</div>
+      <p>Basic earnings = ₱20,000</p>
+      <p>Overtime = ₱1,000</p>
+      <p>Allowance = ₱500</p>
+      <p>Deductions = ₱900 + ₱600</p>
+
+      <p>Gross income = ₱20,000 + ₱1,000 + ₱500 = ₱21,500</p>
+      <p>Total deductions = ₱900 + ₱600 = ₱1,500</p>
+      <p>Net income = ₱21,500 − ₱1,500</p>
+
+      <p><strong>Answer: ₱20,000</strong></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Common Mistakes and Pitfalls</h3>
+
+    <ul>
+      <li>Dividing an annual salary by the wrong number of periods.</li>
+      <li>Forgetting to convert a percentage into decimal form when appropriate.</li>
+      <li>Multiplying the overtime multiplier by the wrong quantity.</li>
+      <li>Using sales as piecework units or units as a commission base.</li>
+      <li>Adding deductions instead of subtracting them from gross income.</li>
+      <li>Assuming every allowance or benefit has the same payroll treatment.</li>
+      <li>Giving a numerical answer without interpreting what the amount represents.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Real-World Connections</h3>
+
+    <p>
+      Payroll mathematics helps workers understand employment offers, payslips,
+      overtime, commissions, allowances, deductions, and take-home income.
+      Understanding the mathematics can help a person check whether a payroll
+      computation is reasonable and make informed financial decisions.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Quick Self-Check</h3>
+
+    <div class="checklist">
+      <label>□ I can distinguish salary and wage.</label>
+      <label>□ I can convert an annual salary into a monthly amount.</label>
+      <label>□ I can calculate a weekly equivalent using 52 weeks.</label>
+      <label>□ I can calculate regular earnings.</label>
+      <label>□ I can calculate overtime earnings when the multiplier is given.</label>
+      <label>□ I can calculate commission.</label>
+      <label>□ I can calculate piecework earnings.</label>
+      <label>□ I can identify deductions.</label>
+      <label>□ I can calculate gross and net income.</label>
+      <label>□ I can explain whether a payroll answer is reasonable.</label>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACTIVITY SHEET
+========================================================= -->
+
+<section id="activity" class="section">
+
+  <div class="section-title">
+    <span class="label">PRINTABLE PRACTICE</span>
+    <h2>Weekly Activity Sheet</h2>
+    <p>Progressive practice across the four-session learning sequence.</p>
+  </div>
+
+  <div class="card">
+    <div class="student-header">
+      <div><strong>Name:</strong><div class="field"></div></div>
+      <div><strong>Grade & Section:</strong><div class="field"></div></div>
+      <div><strong>Date:</strong><div class="field"></div></div>
+    </div>
+
+    <div class="score-box">
+      <strong>Score: ______ / 20</strong>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Part 1 — Recall and Basic Understanding</h3>
+    <p><span class="evidence">LEVEL 1–2</span></p>
+
+    <div class="question">
+      <strong>1. [Session 1]</strong> Which amount is an annual salary?
+      <br>A. ₱80 per hour &nbsp; B. ₱650 per day &nbsp; C. ₱360,000 per year &nbsp; D. ₱5,000 per week
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>2. [Session 1]</strong> Define salary in your own words.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>3. [Session 1]</strong> An employee earns ₱480,000 annually. Find the monthly salary.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>4. [Session 1]</strong> An employee earns ₱260,000 annually. Find the weekly equivalent using 52 weeks. Round to the nearest centavo.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>5. [Session 2]</strong> An employee earns ₱100 per hour and works 35 hours. Find the regular earnings.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>6. [Session 3]</strong> A salesperson earns 5% commission on ₱10,000 sales. Find the commission.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>7. [Session 3]</strong> A worker earns ₱12 per completed item and completes 400 items. Find the piecework earnings.
+      <div class="workspace"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Part 2 — Application and Problem Solving</h3>
+    <p><span class="evidence">LEVEL 3</span></p>
+
+    <div class="question">
+      <strong>8. [Session 1]</strong> Ana earns ₱390,000 annually. Determine her monthly salary and weekly equivalent using 52 weeks.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>9. [Session 2]</strong> Ben earns ₱110 per hour. He works 40 regular hours and 5 overtime hours. The overtime multiplier is 1.25. Find his total earnings before deductions.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>10. [Session 2]</strong> Carla earns ₱90 per hour, works 40 regular hours, and receives a ₱600 allowance. She has no overtime. Find her total earnings.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>11. [Session 3]</strong> Daniel earns 4% commission on ₱45,000 sales. Find his commission.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>12. [Session 3]</strong> Elena earns ₱22 per completed item. She completes 750 items. Find her piecework earnings.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>13. [Session 4]</strong> A worker has basic earnings of ₱17,000, overtime earnings of ₱1,200, and an allowance of ₱800. Find the total earnings before deductions.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>14. [Session 4]</strong> A worker's gross income is ₱21,500. Deductions are ₱850 and ₱650. Find the net income.
+      <div class="workspace"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Part 3 — Analysis, Error Analysis, and Challenge</h3>
+    <p><span class="evidence">LEVEL 4–5</span></p>
+
+    <div class="question">
+      <strong>15. [Session 2] Error Analysis.</strong>
+      A learner calculates the overtime rate for a ₱120/hour worker with a 1.25 multiplier as ₱121.25. Identify the error and calculate the correct overtime rate.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>16. [Session 3] Compare.</strong>
+      Worker A earns ₱800 per day for 20 days. Worker B receives 4% commission on ₱400,000 sales. Determine each worker's earnings for the period and compare them.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>17. [Session 4] Payroll Analysis.</strong>
+      A worker has basic earnings of ₱22,000, overtime earnings of ₱1,500, an allowance of ₱800, and deductions of ₱1,200 and ₱900. Calculate gross and net income.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>18. [Session 4] Reasoning.</strong>
+      A learner says, "Net income is always the same as basic salary." Do you agree? Explain using a payroll example.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>19. [Session 4] Challenge.</strong>
+      A salesperson earns 5% commission. How much sales must be made to earn ₱3,000 commission? Show your reasoning.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>20. [Session 4] Transfer.</strong>
+      Create a simple payroll computation for a fictional worker using at least three income items and two deductions. Calculate gross and net income and explain each step.
+      <div class="workspace" style="min-height:120px"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ASSESSMENT
+========================================================= -->
+
+<section id="assessment" class="section">
+
+  <div class="section-title">
+    <span class="label">WEEKLY MASTERY ASSESSMENT</span>
+    <h2>Assessment</h2>
+    <p>Competency-aligned evidence of weekly mastery.</p>
+  </div>
+
+  <div class="card">
+    <div class="student-header">
+      <div><strong>Name:</strong><div class="field"></div></div>
+      <div><strong>Grade & Section:</strong><div class="field"></div></div>
+      <div><strong>Date:</strong><div class="field"></div></div>
+    </div>
+
+    <div class="score-box">
+      <strong>Score: ______ / 20</strong>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question">
+      <strong>1. Multiple Choice — 2 points</strong><br>
+      An employee earns ₱480,000 annually. What is the monthly salary?
+      <br><br>
+      A. ₱30,000<br>
+      B. ₱35,000<br>
+      C. ₱40,000<br>
+      D. ₱45,000
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>2. Computation — 2 points</strong><br>
+      A worker earns ₱125 per hour and works 40 regular hours. The worker also works 4 overtime hours at 1.25 times the regular rate. Determine total earnings before deductions.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>3. Commission — 2 points</strong><br>
+      A salesperson earns 6% commission on ₱50,000 sales. Determine the commission.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>4. Piecework — 2 points</strong><br>
+      A worker earns ₱24 for every completed unit and completes 600 units. Determine the total piecework earnings.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>5. Payroll — 3 points</strong><br>
+      A worker has basic earnings of ₱19,000, overtime earnings of ₱1,400, and an allowance of ₱600. Determine gross income before the stated deductions.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>6. Net Income — 3 points</strong><br>
+      Using the gross income from Item 5, if deductions are ₱900 and ₱500, determine the net income.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>7. Error Analysis — 3 points</strong><br>
+      A learner computes 5% commission on ₱40,000 as ₱40,005. Explain the error and give the correct answer.
+      <div class="workspace"></div>
+    </div>
+
+    <div class="question">
+      <strong>8. Real-World Scenario — 3 points</strong><br>
+      A worker receives basic earnings of ₱20,000, overtime earnings of ₱1,000, an allowance of ₱500, and deductions of ₱800 and ₱700. Calculate gross income and net income. Then explain why net income is lower than gross income.
+      <div class="workspace" style="min-height:120px"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Mastery Interpretation</h3>
+
+    <table>
+      <tr>
+        <th>Evidence Level</th>
+        <th>Interpretation</th>
+        <th>Recommended Response</th>
+      </tr>
+      <tr>
+        <td>Mastered</td>
+        <td>Accurately calculates and explains the major payroll concepts with limited support.</td>
+        <td>Provide transfer or enrichment tasks.</td>
+      </tr>
+      <tr>
+        <td>Developing</td>
+        <td>Demonstrates partial mastery but has errors in one or more major processes.</td>
+        <td>Provide targeted practice and error analysis.</td>
+      </tr>
+      <tr>
+        <td>Not Yet Mastered</td>
+        <td>Shows substantial difficulty identifying the correct quantities, operations, or payroll relationships.</td>
+        <td>Reteach prerequisite concepts, model, guide, and reassess.</td>
+      </tr>
+    </table>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ANSWER KEY
+========================================================= -->
+
+<section id="answers" class="section">
+
+  <div class="section-title">
+    <span class="label">SOLUTIONS & SCORING GUIDE</span>
+    <h2>Answer Key</h2>
+    <p>Complete solutions for the Activity Sheet and Assessment.</p>
+  </div>
+
+  <div class="card">
+    <h3>Activity Sheet Solutions</h3>
+
+    <div class="answer">
+      <strong>1.</strong> C. ₱360,000 per year.
+    </div>
+
+    <div class="answer">
+      <strong>2.</strong> Salary is a stated amount of pay for a specified period, commonly expressed annually or monthly.
+    </div>
+
+    <div class="answer">
+      <strong>3.</strong>
+      ₱480,000 ÷ 12 = <strong>₱40,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>4.</strong>
+      ₱260,000 ÷ 52 = ₱5,000.
+      <br><strong>Answer: ₱5,000 per week.</strong>
+    </div>
+
+    <div class="answer">
+      <strong>5.</strong>
+      ₱100 × 35 = <strong>₱3,500</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>6.</strong>
+      ₱10,000 × 0.05 = <strong>₱500</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>7.</strong>
+      ₱12 × 400 = <strong>₱4,800</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>8.</strong>
+      Monthly = ₱390,000 ÷ 12 = <strong>₱32,500</strong>.
+      <br>
+      Weekly = ₱390,000 ÷ 52 = <strong>₱7,500</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>9.</strong>
+      Regular earnings = ₱110 × 40 = ₱4,400.
+      <br>
+      Overtime rate = ₱110 × 1.25 = ₱137.50.
+      <br>
+      Overtime earnings = ₱137.50 × 5 = ₱687.50.
+      <br>
+      Total = ₱4,400 + ₱687.50 = <strong>₱5,087.50</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>10.</strong>
+      Regular earnings = ₱90 × 40 = ₱3,600.
+      <br>
+      Total = ₱3,600 + ₱600 = <strong>₱4,200</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>11.</strong>
+      ₱45,000 × 0.04 = <strong>₱1,800</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>12.</strong>
+      ₱22 × 750 = <strong>₱16,500</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>13.</strong>
+      ₱17,000 + ₱1,200 + ₱800 = <strong>₱19,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>14.</strong>
+      Total deductions = ₱850 + ₱650 = ₱1,500.
+      <br>
+      Net income = ₱21,500 − ₱1,500 = <strong>₱20,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>15.</strong>
+      The learner treated 1.25 as if it meant adding ₱1.25.
+      <br>
+      Correct overtime rate = ₱120 × 1.25 = <strong>₱150/hour</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>16.</strong>
+      Worker A = ₱800 × 20 = <strong>₱16,000</strong>.
+      <br>
+      Worker B = ₱400,000 × 0.04 = <strong>₱16,000</strong>.
+      <br>
+      Therefore, both earn <strong>₱16,000</strong> under the stated conditions.
+    </div>
+
+    <div class="answer">
+      <strong>17.</strong>
+      Gross = ₱22,000 + ₱1,500 + ₱800 = <strong>₱24,300</strong>.
+      <br>
+      Deductions = ₱1,200 + ₱900 = ₱2,100.
+      <br>
+      Net = ₱24,300 − ₱2,100 = <strong>₱22,200</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>18.</strong>
+      No. Net income is determined by gross income and deductions. It may be higher or lower than basic salary depending on additional earnings and deductions. For example, if basic salary is ₱20,000 and gross income is ₱22,000 with ₱1,500 deductions, net income is ₱20,500.
+    </div>
+
+    <div class="answer">
+      <strong>19.</strong>
+      Commission = Sales × 0.05.
+      <br>
+      ₱3,000 = Sales × 0.05.
+      <br>
+      Sales = ₱3,000 ÷ 0.05 = <strong>₱60,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>20.</strong>
+      Answers will vary. A complete response must include at least three income items, two deductions, a correctly calculated gross income, a correctly calculated net income, and an explanation of the process.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Assessment Solutions</h3>
+
+    <div class="answer">
+      <strong>1.</strong>
+      ₱480,000 ÷ 12 = <strong>₱40,000</strong>.
+      <br>
+      Answer: <strong>C</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>2.</strong>
+      Regular earnings = ₱125 × 40 = ₱5,000.
+      <br>
+      Overtime rate = ₱125 × 1.25 = ₱156.25.
+      <br>
+      Overtime earnings = ₱156.25 × 4 = ₱625.
+      <br>
+      Total = ₱5,000 + ₱625 = <strong>₱5,625</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>3.</strong>
+      ₱50,000 × 0.06 = <strong>₱3,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>4.</strong>
+      ₱24 × 600 = <strong>₱14,400</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>5.</strong>
+      Gross income = ₱19,000 + ₱1,400 + ₱600 = <strong>₱21,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>6.</strong>
+      Total deductions = ₱900 + ₱500 = ₱1,400.
+      <br>
+      Net income = ₱21,000 − ₱1,400 = <strong>₱19,600</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>7.</strong>
+      The learner added the percentage incorrectly to the sales amount.
+      <br>
+      Commission = ₱40,000 × 0.05 = <strong>₱2,000</strong>.
+    </div>
+
+    <div class="answer">
+      <strong>8.</strong>
+      Gross income = ₱20,000 + ₱1,000 + ₱500 = <strong>₱21,500</strong>.
+      <br>
+      Total deductions = ₱800 + ₱700 = ₱1,500.
+      <br>
+      Net income = ₱21,500 − ₱1,500 = <strong>₱20,000</strong>.
+      <br>
+      Net income is lower because the stated deductions are subtracted from gross income.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Rubric for Open-Ended Payroll Task</h3>
+
+    <table>
+      <tr>
+        <th>Criterion</th>
+        <th>4 — Excellent</th>
+        <th>3 — Proficient</th>
+        <th>2 — Developing</th>
+        <th>1 — Beginning</th>
+      </tr>
+      <tr>
+        <td>Accuracy</td>
+        <td>All calculations are accurate.</td>
+        <td>Minor computational error.</td>
+        <td>Several errors but process is partly evident.</td>
+        <td>Major errors prevent a valid solution.</td>
+      </tr>
+      <tr>
+        <td>Process</td>
+        <td>Clear and complete mathematical process.</td>
+        <td>Mostly complete process.</td>
+        <td>Some steps missing.</td>
+        <td>Little or no valid process.</td>
+      </tr>
+      <tr>
+        <td>Reasoning</td>
+        <td>Clearly explains why each operation is used.</td>
+        <td>Explanation is generally clear.</td>
+        <td>Explanation is incomplete.</td>
+        <td>Explanation is absent or unclear.</td>
+      </tr>
+      <tr>
+        <td>Interpretation</td>
+        <td>Correctly interprets the payroll result.</td>
+        <td>Mostly correct interpretation.</td>
+        <td>Partially correct.</td>
+        <td>No meaningful interpretation.</td>
+      </tr>
+    </table>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TEACHER NOTES
+========================================================= -->
+
+<section id="notes" class="section">
+
+  <div class="section-title">
+    <span class="label">TEACHER IMPLEMENTATION GUIDE</span>
+    <h2>Teacher Notes</h2>
+    <p>Evidence-informed decisions, remediation, enrichment, and reflection.</p>
+  </div>
+
+  <div class="card">
+    <h3>Expected Learner Difficulties</h3>
+
+    <ul>
+      <li>Confusing salary, wage, rate, and total earnings.</li>
+      <li>Forgetting the time period represented by an amount.</li>
+      <li>Incorrectly applying percentage rates.</li>
+      <li>Confusing overtime rate with overtime earnings.</li>
+      <li>Using the wrong base for commission.</li>
+      <li>Confusing piecework rate with total piecework earnings.</li>
+      <li>Adding deductions instead of subtracting them.</li>
+      <li>Failing to distinguish gross income from net income.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Evidence-Informed Remediation</h3>
+
+    <table>
+      <tr>
+        <th>If the learner...</th>
+        <th>Evidence suggests...</th>
+        <th>Teacher response</th>
+      </tr>
+      <tr>
+        <td>Cannot identify annual/monthly/hourly information</td>
+        <td>Prerequisite vocabulary or time-period understanding is weak.</td>
+        <td>Use a classification activity and visual timeline of pay periods.</td>
+      </tr>
+      <tr>
+        <td>Computes overtime incorrectly</td>
+        <td>Rate and multiplier are being confused.</td>
+        <td>Model: regular rate → overtime rate → overtime earnings.</td>
+      </tr>
+      <tr>
+        <td>Computes commission incorrectly</td>
+        <td>The percentage base is unclear.</td>
+        <td>Underline the sales base before calculating the percentage.</td>
+      </tr>
+      <tr>
+        <td>Gets gross/net income confused</td>
+        <td>Learner does not recognize addition versus subtraction roles.</td>
+        <td>Use a simple income-to-deduction flow diagram and one worked example.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Suggested Differentiation</h3>
+
+    <div class="grid-3">
+      <div class="info-box">
+        <span class="small">Support</span>
+        <strong>Use partially completed examples, vocabulary cards, formula guides, and structured computation tables.</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">Core</span>
+        <strong>Use contextualized payroll problems with gradually reduced scaffolding.</strong>
+      </div>
+
+      <div class="info-box">
+        <span class="small">Extension</span>
+        <strong>Use comparison, reverse problems, error analysis, and payroll decision-making tasks.</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Suggested Questioning</h3>
+
+    <ul>
+      <li>"What information in the problem tells you the time period?"</li>
+      <li>"What quantity is the rate based on?"</li>
+      <li>"Why did you multiply rather than divide?"</li>
+      <li>"What does this percentage represent?"</li>
+      <li>"What would happen if the number of hours changed?"</li>
+      <li>"How can you check whether your answer is reasonable?"</li>
+      <li>"Where did this amount come from in the payroll?"</li>
+      <li>"Should this amount be added or subtracted? Why?"</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Technology Integration</h3>
+
+    <ul>
+      <li>Use a spreadsheet to organize payroll information.</li>
+      <li>Allow learners to verify calculations using a calculator after showing their mathematical process.</li>
+      <li>Use the class learning website for asynchronous review and additional practice.</li>
+      <li>Use digital exit tickets when available to rapidly identify misconceptions.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Cross-Curricular Connections</h3>
+
+    <ul>
+      <li><strong>Financial Literacy:</strong> understanding earnings and take-home income.</li>
+      <li><strong>ICT:</strong> organizing and calculating payroll data in spreadsheets.</li>
+      <li><strong>English:</strong> interpreting employment and payroll information accurately.</li>
+      <li><strong>Entrepreneurship:</strong> understanding commission and performance-based earnings.</li>
+      <li><strong>Career Guidance:</strong> interpreting compensation information in employment contexts.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Evidence to Retain for Professional Documentation</h3>
+
+    <ul>
+      <li>Selected learner diagnostic responses.</li>
+      <li>Samples of guided and independent mathematical work.</li>
+      <li>Exit tickets showing learning progression.</li>
+      <li>Activity Sheet outputs.</li>
+      <li>Assessment results or summary of mastery levels.</li>
+      <li>Examples of remediation or enrichment provided.</li>
+      <li>Teacher reflection and instructional adjustments.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Learner Reflection</h3>
+
+    <p>1. What can I calculate now that I could not calculate before?</p>
+    <div class="reflection"></div>
+
+    <p>2. Which part of payroll mathematics is still difficult for me?</p>
+    <div class="reflection"></div>
+
+    <p>3. What mistake helped me understand the topic better?</p>
+    <div class="reflection"></div>
+
+    <p>4. How can understanding payroll mathematics help me in real life?</p>
+    <div class="reflection"></div>
+  </div>
+
+  <div class="card">
+    <h3>Teacher Reflection</h3>
+
+    <p>What evidence showed that learners understood the concept?</p>
+    <div class="reflection"></div>
+
+    <p>Which misconception appeared most frequently?</p>
+    <div class="reflection"></div>
+
+    <p>Which instructional strategy produced the strongest learner evidence?</p>
+    <div class="reflection"></div>
+
+    <p>Which learners require remediation?</p>
+    <div class="reflection"></div>
+
+    <p>Which learners are ready for enrichment?</p>
+    <div class="reflection"></div>
+
+    <p>What should be reinforced or adjusted in the next learning sequence?</p>
+    <div class="reflection"></div>
+  </div>
+
+  <div class="card">
+    <h3>Weekly Mastery Decision</h3>
+
+    <table>
+      <tr>
+        <th>Level</th>
+        <th>Evidence Pattern</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td><strong>NOT YET MASTERED</strong></td>
+        <td>Needs substantial support with identifying quantities, selecting operations, or interpreting payroll relationships.</td>
+        <td>Targeted remediation → guided practice → reassessment.</td>
+      </tr>
+      <tr>
+        <td><strong>DEVELOPING</strong></td>
+        <td>Can solve routine problems but still makes errors in multi-step or unfamiliar situations.</td>
+        <td>Focused practice → error analysis → reassessment.</td>
+      </tr>
+      <tr>
+        <td><strong>MASTERED</strong></td>
+        <td>Accurately solves and explains routine and varied payroll problems independently.</td>
+        <td>Transfer problem → enrichment → real-world application.</td>
+      </tr>
+    </table>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  General Mathematics • Term 1 • Week 1 • Evidence-Informed ILAW 4As
+  <br>
+  Pareja Integrated School • School Year 2026–2027
+</footer>
+
+<script>
+const tabs = document.querySelectorAll(".tab");
+const sections = document.querySelectorAll(".section");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    const target = tab.dataset.tab;
+
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    sections.forEach(section => {
+      section.classList.toggle(
+        "active",
+        section.id === target
+      );
+    });
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+  });
+});
+
+function printEntire(){
+  document.body.classList.remove("print-current");
+  sections.forEach(section => {
+    section.classList.remove("print-target");
+  });
+  window.print();
+}
+
+function printCurrent(){
+  const active = document.querySelector(".section.active");
+
+  if(!active) return;
+
+  document.body.classList.add("print-current");
+
+  sections.forEach(section => {
+    section.classList.remove("print-target");
+  });
+
+  active.classList.add("print-target");
+
+  window.print();
+}
+
+window.addEventListener("afterprint", () => {
+  document.body.classList.remove("print-current");
+
+  sections.forEach(section => {
+    section.classList.remove("print-target");
+  });
+});
+</script>
+
+</body>
+</html>
