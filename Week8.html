@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G11 General Mathematics | Term 1 Week 8 | Scale, Currency and Time</title>
+<style>
+:root{--p:#5b21b6;--s:#7c3aed;--a:#ddd6fe;--bg:#f8fafc;--c:#fff;--t:#1e293b;--m:#64748b;--l:#e2e8f0;--soft:#f5f3ff;--ok:#166534}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#faf5ff,#fff,#f5f3ff);border-bottom:1px solid var(--l)}.wrap{max-width:1180px;margin:auto;padding:28px 18px}
+.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:var(--a);color:var(--p);padding:6px 10px;border-radius:999px;font-size:.75rem}.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 4px}.sub{color:var(--p);font-weight:700;font-size:1.08rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--l);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--m)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--l);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--l);backdrop-filter:blur(8px)}.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--l);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{max-width:1180px;margin:auto;padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--s);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--l);padding:12px;border-radius:9px}
+.callout,.evidence,.warn,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--s)}.evidence{background:#f0fdf4;border-color:var(--ok)}.warn{background:#fffbeb;border-color:#b45309}.lock{background:#faf5ff;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--l);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--l);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--l);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #c4b5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--l);padding:8px;border-radius:7px;background:#fff}.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:95px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}.solution{background:#fafafa;border-left:4px solid var(--ok);padding:9px 11px;border-radius:6px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--l);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--m);padding:22px;border-top:1px solid var(--l);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Scale, Currency, and Time Conversions</h1>
+<div class="sub">General Mathematics • Term 1 • Week 8</div>
+<div class="meta"><span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span><span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 1 Purple</span></div>
+<div class="actions"><button class="btn primary" onclick="printAll()">🖨️ Print Entire Package</button><button class="btn" onclick="printCurrent()">🖨️ Print Current View</button></div>
+</div></header>
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button><button class="tab" data-t="fact">FACT SHEET</button><button class="tab" data-t="activity">ACTIVITY SHEET</button><button class="tab" data-t="assessment">ASSESSMENT</button><button class="tab" data-t="answers">🔒 ANSWER KEY</button><button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+<main>
+
+<section id="lesson" class="section active">
+<div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Scale, Currency, and Time Conversions</h2><p>Four complete daily Evidence-Informed 4As sessions based directly on BOW Week 8.</p></div>
+<div class="card"><h3>Lesson Information</h3><div class="grid"><div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Scale, currency, and time conversions</div><div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Week</b><br>Term 1 • Week 8</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div><div class="info"><b>Teacher</b><br>Mary Grace M. Peral</div></div></div>
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Week 8 — Measurement and Geometry:</b><ul><li>Use a scale to interpret and compare distances on maps, blueprints, and sketches.</li><li>Solve problems involving the conversion of currencies.</li><li>Apply time conversions in real-world scenarios such as travel planning, project management, daily routine schedules, and personal and business transactions.</li></ul><p>The three competency strands above are taken directly from the provided Grade 11 General Mathematics BOW. fileciteturn24file3L210-L214</p></div></div>
+<div class="card"><h3>Weekly Learning Intentions</h3><ul><li>Interpret a stated scale and use it to determine real distances from map, blueprint, or sketch measurements.</li><li>Compare distances represented using the same scale and explain which real distance is greater.</li><li>Convert amounts between currencies using a stated exchange rate.</li><li>Convert time units and solve practical elapsed-time, schedule, and travel problems.</li></ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve prior unit-conversion knowledge → represent the situation visually → explicitly model the relationship → guided practice → independent application → analyze errors → provide targeted remediation or extension.</div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 1 — Scale on Maps, Blueprints, and Sketches</h3></div><div class="sb"><p><b>Daily objective:</b> Interpret a scale and calculate real distances from map, blueprint, and sketch measurements.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Elicit</span><p>Show a simple map and a room sketch. Ask: “If 1 cm on the drawing represents 2 m in reality, what does 5 cm represent?” Learners estimate before calculating.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare scale statements such as 1 cm : 2 m and 1 cm : 5 m. Discuss what the scale means and why the same drawing measurement can represent different real distances under different scales.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Write the scale as a ratio or statement. Keep units consistent, then multiply or divide according to the known-to-unknown relationship.</p><div class="formula">Example: 1 cm represents 2 m.<br>6 cm × 2 m/cm = 12 m.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Solve map, blueprint, and sketch problems. Learners record drawing measurement, scale, calculation, and real distance. Compare two represented routes or rooms.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners reverse the scale, use a two-column “drawing distance → real distance” organizer. If units are mixed, require unit matching before calculation.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Currency Conversion</h3></div><div class="sb"><p><b>Daily objective:</b> Convert amounts between currencies using a stated exchange rate and interpret the result in a real-life transaction.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Present a travel-budget scenario. For example, if ₱1 = US$0.017, estimate how many US dollars ₱10,000 would represent.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error Analysis</span><p>Compare multiplying and dividing by an exchange rate. Ask which operation produces an answer that is sensible for the direction of conversion. Emphasize that the stated rate determines the operation.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><p>Use a conversion factor with units so the original currency cancels.</p><div class="formula">If ₱1 = US$0.017:<br>₱10,000 × (US$0.017/₱1) = US$170.</div><p>Exchange rates can change; use the rate supplied in the problem.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Practice</span><p>Convert Philippine pesos to US dollars and US dollars to Philippine pesos using stated rates. Apply the conversions to travel budgets and purchasing scenarios.</p></div></div><div class="evidence"><b>Teacher response:</b> When learners reverse the rate, have them write the conversion factor with currency units and check whether the original currency cancels.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Time Conversions and Real-World Schedules</h3></div><div class="sb"><p><b>Daily objective:</b> Convert between common time units and solve elapsed-time and schedule problems in real-world contexts.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Quick conversion relay: seconds ↔ minutes, minutes ↔ hours, hours ↔ days. Then read a short travel or school schedule and identify start time, end time, and duration.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative Check</span><p>Compare 2.5 hours with 2 hours 30 minutes. Discuss why decimal hours and clock notation are not interchangeable without conversion.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit Modeling</span><div class="formula">1 minute = 60 seconds<br>1 hour = 60 minutes<br>1 day = 24 hours<br>Elapsed time = end time − start time, accounting for crossing hour/day boundaries.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → Independent</span><p>Solve travel duration, work/project schedule, daily routine, and transaction-duration problems. Convert decimal hours into hours and minutes where required.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners struggle across midnight, draw a timeline. If decimal-hour conversion is difficult, separate the whole-hour and fractional-hour parts.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Integrated Scale, Currency, and Time Problems</h3></div><div class="sb"><p><b>Daily objective:</b> Select and apply an appropriate conversion strategy to integrated real-world problems involving scale, currency, and time.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieval</span><p>Formula/conversion-factor sort: learners classify situations as scale, currency, or time and choose the needed relationship before calculating.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Analyze incorrect solutions and identify whether the error is in reading the scale, direction of currency conversion, unit conversion, or elapsed-time reasoning.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><p>Use the routine: <b>Understand → Represent → Choose relationship → Calculate → Check units → Interpret.</b></p><div class="formula">A correct numerical answer is not enough: the unit and context must also make sense.</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Complete a mini travel-planning task combining map distance, currency budget, and travel duration. Learners justify each conversion and communicate the final decision.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Use the mastery evidence to identify the exact failed process. Reteach only the needed step, then provide a parallel problem for reassessment.</div></div></div>
+
+<div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Competency</th><th>Evidence</th><th>What It Shows</th><th>Response</th></tr>
+<tr><td>Scale interpretation</td><td>Session 1 task</td><td>Can learners move correctly between drawing and real distance?</td><td>________________</td></tr>
+<tr><td>Currency conversion</td><td>Session 2 task</td><td>Can learners use the stated exchange rate in the correct direction?</td><td>________________</td></tr>
+<tr><td>Time conversion</td><td>Session 3 task</td><td>Can learners convert units and calculate duration?</td><td>________________</td></tr>
+<tr><td>Integrated transfer</td><td>Session 4 mastery task</td><td>Can learners select and justify an appropriate conversion strategy?</td><td>________________</td></tr></table></div>
+</section>
+
+<section id="fact" class="section">
+<div class="title"><span class="label">LEARNER GUIDE</span><h2>Scale, Currency, and Time Conversions</h2><p>A practical guide for interpreting measurements and making real-world conversion decisions.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>How to interpret scales on maps, blueprints, and sketches.</li><li>How to compare real distances represented by drawings.</li><li>How to convert currencies using a stated exchange rate.</li><li>How to convert time units and calculate elapsed time.</li><li>How to check whether a conversion result makes sense.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Scale</td><td>A relationship between a measurement on a drawing or map and the corresponding real measurement.</td></tr><tr><td>Map distance</td><td>The measured distance between locations on a map.</td></tr><tr><td>Real distance</td><td>The actual distance represented by a map, blueprint, or sketch.</td></tr><tr><td>Exchange rate</td><td>The stated value relationship used to convert one currency into another.</td></tr><tr><td>Conversion factor</td><td>A ratio equal to 1 that allows a quantity to be expressed in another unit.</td></tr><tr><td>Elapsed time</td><td>The amount of time between a starting event and an ending event.</td></tr></table></div>
+<div class="card"><h3>Key Relationships</h3><table><tr><th>Situation</th><th>Useful relationship</th></tr><tr><td>Scale</td><td>Real distance = drawing distance × real-distance-per-drawing-unit, when the scale is stated that way.</td></tr><tr><td>Currency</td><td>Converted amount = original amount × stated exchange-rate factor.</td></tr><tr><td>Time</td><td>1 min = 60 s; 1 h = 60 min; 1 day = 24 h.</td></tr><tr><td>Elapsed time</td><td>End time − start time, using a timeline when the interval crosses an hour or day boundary.</td></tr></table></div>
+<div class="card"><h3>Step-by-Step Worked Examples</h3>
+<h4>1. Scale</h4><p>A map uses the scale 1 cm represents 4 km. Two towns are 7 cm apart on the map.</p><div class="solution">Real distance = 7 cm × 4 km/cm = <b>28 km</b>.</div>
+<h4>2. Compare Scale Distances</h4><p>On the same map, Route A measures 5 cm and Route B measures 8 cm. The scale is 1 cm : 4 km.</p><div class="solution">A = 5×4 = 20 km.<br>B = 8×4 = 32 km.<br>Difference = 32 − 20 = <b>12 km</b>. Route B is longer.</div>
+<h4>3. Currency</h4><p>Suppose the stated rate is ₱1 = US$0.017. Convert ₱10,000 to US dollars.</p><div class="solution">₱10,000 × US$0.017/₱1 = <b>US$170</b>.</div>
+<h4>4. Reverse Currency Conversion</h4><p>Using the same stated rate, convert US$255 to pesos.</p><div class="solution">US$255 ÷ US$0.017 per ₱1 = <b>₱15,000</b>.</div>
+<h4>5. Time</h4><p>A trip starts at 8:35 AM and ends at 11:20 AM.</p><div class="solution">8:35 → 10:35 = 2 h; 10:35 → 11:20 = 45 min. Total = <b>2 h 45 min</b>.</div>
+<h4>6. Decimal Hours</h4><p>A project takes 2.5 hours.</p><div class="solution">2.5 h = 2 h + 0.5 h. Since 0.5×60 = 30, the duration is <b>2 h 30 min</b>.</div></div>
+<div class="card"><h3>Common Mistakes & Pitfalls</h3><ul><li>Reversing the scale relationship.</li><li>Mixing centimetres, metres, and kilometres without converting or using a consistent scale.</li><li>Using an exchange rate in the wrong direction.</li><li>Assuming a currency rate is universal instead of using the rate stated in the problem.</li><li>Treating 2.5 hours as 2 hours 5 minutes instead of 2 hours 30 minutes.</li><li>Forgetting that time intervals can cross noon, midnight, or a date boundary.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Scale is used in maps, building plans, floor plans, engineering drawings, and sketches. Currency conversion is useful in travel, online purchasing, budgeting, and international transactions. Time conversion is used in travel planning, project management, work schedules, school routines, and business transactions.</p></div>
+<div class="card"><h3>Quick Self-Check</h3><ol><li>A map scale is 1 cm : 3 km. What real distance does 6 cm represent?</li><li>If ₱1 = US$0.02, how many US dollars is ₱5,000?</li><li>Convert 3.25 hours into hours and minutes.</li><li>A meeting begins at 1:40 PM and ends at 3:15 PM. What is its duration?</li><li>Why should the conversion factor include units when converting currencies?</li></ol></div>
+</section>
+
+<section id="activity" class="section">
+<div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 8 Practice — Scale, Currency, and Time</h2><p>Show the relationship, calculation, units, and interpretation.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> A scale says 1 cm represents 5 km. What real distance does 4 cm represent? <div class="space"></div></div>
+<div class="q"><b>2.</b> On a map, which is longer in reality under the same scale: 3 cm or 7 cm? Explain briefly. <div class="space"></div></div>
+<div class="q"><b>3.</b> If ₱1 = US$0.02, how many US dollars is ₱1,000? <div class="space"></div></div>
+<div class="q"><b>4.</b> Convert 2 hours to minutes. <div class="space"></div></div>
+<div class="q"><b>5.</b> Convert 180 seconds to minutes. <div class="space"></div></div>
+<div class="q"><b>6.</b> Convert 2.5 hours to hours and minutes. <div class="space"></div></div></div>
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> A blueprint uses 1 cm : 2 m. A room is 6.5 cm long on the blueprint. Find its actual length. <div class="space"></div></div>
+<div class="q"><b>8.</b> A map uses 1 cm : 4 km. Route A is 5 cm and Route B is 8 cm. Find the real distance of each and their difference. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> Using the stated rate ₱1 = US$0.017, convert ₱12,000 to US dollars. <div class="space"></div></div>
+<div class="q"><b>10.</b> Using the same rate, convert US$204 to Philippine pesos. <div class="space"></div></div>
+<div class="q"><b>11.</b> A trip begins at 7:45 AM and ends at 10:30 AM. Find the elapsed time. <div class="space"></div></div>
+<div class="q"><b>12.</b> A work task lasts 3.75 hours. Express the duration in hours and minutes. <div class="bigspace"></div></div></div>
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says that 1 cm : 5 km means 10 cm represents 2 km. Identify the error and give the correct distance. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A learner converts ₱10,000 to US dollars by dividing by 0.017. Is that correct when ₱1 = US$0.017? Explain and correct the calculation. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> A meeting starts at 11:40 PM and ends at 1:15 AM the next day. Find the elapsed time. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A blueprint scale is 1 cm : 1.5 m. A rectangular room is 8 cm by 6 cm on the blueprint. Find the actual dimensions. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A traveller has ₱25,000. The stated exchange rate is ₱1 = US$0.017. Find the US-dollar equivalent and determine whether the traveller can afford an item costing US$400 using only this amount. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Create a mini travel plan that includes a map distance, a currency conversion using a stated rate, and a travel duration. Show all calculations and explain why each conversion is reasonable. <div class="bigspace"></div></div></div>
+</section>
+
+<section id="assessment" class="section">
+<div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Scale, Currency, and Time</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> A map scale is 1 cm : 3 km. A road measures 9 cm on the map. What is its real distance?<br>A. 3 km &nbsp; B. 12 km &nbsp; C. 27 km &nbsp; D. 30 km<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> If ₱1 = US$0.02, what is the US-dollar equivalent of ₱8,000?<br>A. US$40 &nbsp; B. US$160 &nbsp; C. US$400 &nbsp; D. US$16,000<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Convert 2.75 hours to hours and minutes.<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> A meeting begins at 9:35 AM and ends at 12:10 PM. What is the elapsed time?<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Why is it useful to write units in a currency conversion factor?<br>A. It makes the number larger.<br>B. It helps show the direction of conversion and cancel the original currency.<br>C. It removes the exchange rate.<br>D. It makes every currency equal.<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Explain how you would compare two real distances shown on a map using the same scale. <div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> A blueprint uses 1 cm : 2.5 m. A hallway measures 7.2 cm on the blueprint. Find its actual length. <div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A traveller has ₱20,000. The stated exchange rate is ₱1 = US$0.017. The trip takes 2 hours 45 minutes, and a map scale of 1 cm : 5 km shows a route measuring 6 cm. Determine the US-dollar equivalent of the budget and the real route distance. Then explain what additional information would be needed to decide whether the budget is sufficient for the trip. <div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Transfer/enrichment.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target the specific scale, currency, or time error.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Explicit reteaching + scaffolded reassessment.</td></tr></table></div>
+</section>
+
+<section id="answers" class="section locked">
+<div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Protected with teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Complete solutions are hidden until the teacher enters the access code.</div>
+<div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li>4 cm × 5 km/cm = <b>20 km</b>.</li>
+<li>7 cm is longer. Under the same scale, the larger map measurement represents the larger real distance.</li>
+<li>₱1,000 × US$0.02/₱1 = <b>US$20</b>.</li>
+<li>2×60 = <b>120 minutes</b>.</li>
+<li>180÷60 = <b>3 minutes</b>.</li>
+<li>2.5 h = 2 h + 0.5 h; 0.5×60 = 30 min. Answer: <b>2 h 30 min</b>.</li>
+<li>6.5 cm × 2 m/cm = <b>13 m</b>.</li>
+<li>A = 5×4 = <b>20 km</b>. B = 8×4 = <b>32 km</b>. Difference = <b>12 km</b>.</li>
+<li>₱12,000 × US$0.017/₱1 = <b>US$204</b>.</li>
+<li>US$204 ÷ US$0.017 per ₱1 = <b>₱12,000</b>.</li>
+<li>7:45 → 10:30 = <b>2 h 45 min</b>.</li>
+<li>3.75 h = 3 h + 0.75 h; 0.75×60 = 45 min. Answer: <b>3 h 45 min</b>.</li>
+<li>The learner reversed the scale relationship. 10 cm × 5 km/cm = <b>50 km</b>, not 2 km.</li>
+<li>Dividing ₱10,000 by 0.017 is incorrect for this stated direction. ₱10,000 × US$0.017/₱1 = <b>US$170</b>.</li>
+<li>11:40 PM → midnight = 20 min; midnight → 1:15 AM = 1 h 15 min. Total = <b>1 h 35 min</b>.</li>
+<li>Length = 8×1.5 = <b>12 m</b>. Width = 6×1.5 = <b>9 m</b>.</li>
+<li>₱25,000 × US$0.017/₱1 = <b>US$425</b>. Since US$425 ≥ US$400, the stated amount is sufficient for the US$400 item, leaving <b>US$25</b>, before considering any other costs or fees.</li>
+<li>Answers vary. A valid response must state a scale and map measurement, an exchange rate and conversion, a travel duration, correct calculations with units, and a reasonable interpretation.</li>
+</ol></div>
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>C. 27 km</b>. 9×3 = 27 km.</li>
+<li><b>B. US$160</b>. ₱8,000×0.02 = US$160.</li>
+<li>2.75 h = 2 h + 0.75 h; 0.75×60 = 45 min. Answer: <b>2 h 45 min</b>.</li>
+<li>9:35 → 11:35 = 2 h; 11:35 → 12:10 = 35 min. Answer: <b>2 h 35 min</b>.</li>
+<li><b>B.</b> Units show the direction of conversion and allow the original currency to cancel.</li>
+<li>Use the same scale for both measurements, convert each map distance to its real distance, then compare the real distances. If the map scale is 1 cm : k km, multiply each map measurement in centimetres by k km/cm.</li>
+<li>7.2 cm × 2.5 m/cm = <b>18 m</b>.</li>
+<li>Currency: ₱20,000×US$0.017/₱1 = <b>US$340</b>. Route: 6 cm×5 km/cm = <b>30 km</b>. The 2 h 45 min duration is already expressed in a useful time unit. To decide whether the budget is sufficient, information such as transportation, accommodation, food, entrance fees, other expenses, and any applicable exchange fees would be needed.</li>
+</ol></div>
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Relationship/strategy</td><td>Correct scale, rate, or time relationship selected.</td><td>Mostly correct with minor omission.</td><td>Incorrect or unsupported.</td></tr><tr><td>Calculation and units</td><td>Accurate computation with appropriate units.</td><td>Minor error that does not obscure method.</td><td>Major calculation/unit error.</td></tr><tr><td>Reasoning/interpretation</td><td>Clearly explains whether the result is reasonable and what it means.</td><td>Explanation is incomplete.</td><td>Missing or incorrect explanation.</td></tr></table></div>
+</div>
+</section>
+
+<section id="notes" class="section">
+<div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid">
+<div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Reading a scale backward.</li><li>Failing to maintain consistent units in scale problems.</li><li>Multiplying or dividing by an exchange rate without checking its stated direction.</li><li>Assuming a sample exchange rate is a current market rate rather than the rate supplied by the problem.</li><li>Confusing decimal hours with hours-and-minutes notation.</li><li>Failing to account for crossing midnight.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a two-column conversion table for map and real measurements.</li><li>Write currency conversion factors with units before calculating.</li><li>Use number lines/timelines for elapsed-time problems.</li><li>Begin with one-step conversions before integrated problems.</li><li>Use error-analysis cards: identify the exact step where the solution went wrong.</li><li>Require learners to state the unit and meaning of the final answer.</li></ul></div>
+</div>
+<div class="card"><h3>Enrichment</h3><ul><li>Design a scaled floor plan of a familiar room.</li><li>Create a travel budget using a teacher-provided exchange rate and compare two destinations.</li><li>Plan a one-day itinerary and calculate total travel and activity time.</li><li>Create a spreadsheet that automatically converts scale distances, currencies, or time units.</li></ul></div>
+<div class="card"><h3>Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Scale interpretation task</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Currency conversion task</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Time conversion/schedule task</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Integrated mastery task</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Three-Term Budget of Work, First Term, Week 8, Measurement and Geometry. The BOW specifies scale interpretation/comparison, currency conversion, and time conversions in real-world scenarios. fileciteturn24file3L210-L214</p><p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div>
+</section>
+</main>
+<footer>Pareja Integrated School • General Mathematics • Term 1 Week 8 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div><h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p><input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code"><div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div><div class="err" id="err"></div></div></div>
+<script>
+const CODE="010203";let unlocked=false,current="lesson";
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{let t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){current=t;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){let c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+function printAll(){window.print()}function printCurrent(){if(current==="answers"&&!unlocked){openModal();return}window.print()}
+</script>
+</body>
+</html>
