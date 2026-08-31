@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>General Mathematics | Term 2 Week 19 | Normal Distribution Probabilities</title>
+<style>
+:root{--p:#1d4ed8;--p2:#2563eb;--soft:#eff6ff;--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#eff6ff,#fff,#dbeafe);border-bottom:1px solid var(--border)}
+.wrap,main{max-width:1180px;margin:auto}.wrap{padding:28px 18px}.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:#dbeafe;color:#1e40af;padding:6px 10px;border-radius:999px;font-size:.75rem}
+.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;margin:12px 0 6px}.sub{color:var(--p);font-weight:750}
+.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--border);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--border);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--p2);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--border);padding:12px;border-radius:9px}
+.callout,.evidence,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--p2)}.evidence{background:#f0fdf4;border-color:#166534}.lock{background:#f8fafc;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}
+.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--border);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #93c5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}
+.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--border);padding:8px;border-radius:7px;background:#fff}
+.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:90px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}
+.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--border);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--muted);padding:22px;border-top:1px solid var(--border);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Normal Distribution: Probabilities, Percentiles, and Applications</h1>
+<div class="sub">General Mathematics • Term 2 • Week 19 (BOW Second Term Week 9)</div>
+<div class="meta">
+<span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span>
+<span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 2 Blue</span>
+</div>
+<div class="actions"><button class="btn primary" onclick="window.print()">🖨️ Print Entire Package</button><button class="btn" onclick="window.print()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button>
+<button class="tab" data-t="fact">FACT SHEET</button>
+<button class="tab" data-t="activity">ACTIVITY SHEET</button>
+<button class="tab" data-t="assessment">ASSESSMENT</button>
+<button class="tab" data-t="answers">🔒 ANSWER KEY</button>
+<button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active"><div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Normal Distribution: Probabilities, Percentiles, and Applications</h2><p>Four complete daily Evidence-Informed 4As sessions: Activity → Analysis → Abstraction → Application.</p></div>
+<div class="card"><h3>Lesson Information</h3><div class="grid"><div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Normal random variable, characteristics, and conversion to and from the standard normal variable</div><div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Website Week</b><br>Term 2 • Week 19</div><div class="info"><b>BOW Position</b><br>Second Term • Week 9</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div></div></div>
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Second Term, Week 9 — Data and Probability:</b><ul><li>Illustrate a normal random variable and its characteristics.</li><li>Convert a normal random variable to a standard normal variable and vice versa.</li></ul>These are the Week 9 competency elements stated in the provided BOW. fileciteturn42file0L46-L50</div></div>
+<div class="card"><h3>Weekly Learning Intentions</h3><ul><li>Use a standard normal table or appropriate technology to determine probabilities and areas.</li><li>Relate the mean and standard deviation to the center and spread of a normal distribution.</li><li>Calculate z-scores for values from a normal random variable.</li><li>Convert between an original normal variable and the standard normal variable.</li><li>Determine and interpret percentiles and cut-off values in real-world contexts.</li></ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve → notice patterns → explain evidence → explicitly model → guided practice → error analysis → independent application → mastery check → targeted response.</div></div>
+<div class="session"><div class="sh"><h3>SESSION 1 — Standard Normal Probabilities</h3></div><div class="sb"><p><b>Daily objectives:</b> Identify and describe the key characteristics of a normal random variable.</p><div class="four"><div class="a"><h4>ACTIVITY</h4><span class="tag">Evidence gathering</span><p>Examine bell-shaped and skewed graphs. Learners identify center, symmetry, spread, and where observations cluster.</p></div><div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Compare graphs and justify which characteristics support a normal model.</p></div><div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model that a normal distribution is continuous, bell-shaped, and symmetric; in an ideal normal distribution, mean = median = mode.</p></div><div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Describe several graphs and explain whether each is consistent with a normal model.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners focus only on “bell-shaped,” compare normal and non-normal examples and revisit symmetry and center.</div></div></div><div class="session"><div class="sh"><h3>SESSION 2 — Calculating and Interpreting Z-Scores</h3></div><div class="sb"><p><b>Daily objectives:</b> Calculate z-scores and explain positive, negative, and zero z-scores.</p><div class="four"><div class="a"><h4>ACTIVITY</h4><span class="tag">Evidence gathering</span><p>Compare raw scores from distributions with different means and standard deviations.</p></div><div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Discuss why raw scores alone may not show relative position.</p></div><div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model z = (x − μ)/σ and interpret z = 0, positive z, and negative z.</p></div><div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Calculate and interpret z-scores in practical measurement and assessment contexts.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners reverse the subtraction, use a number line and the phrase “value minus mean.”</div></div></div><div class="session"><div class="sh"><h3>SESSION 3 — Converting to and from the Standard Normal Variable</h3></div><div class="sb"><p><b>Daily objectives:</b> Convert an original normal-variable value to z and recover x from a given z-score.</p><div class="four"><div class="a"><h4>ACTIVITY</h4><span class="tag">Evidence gathering</span><p>Match values to positions one or more standard deviations from the mean.</p></div><div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Analyze errors in sign, substitution, and reverse conversion.</p></div><div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model z = (x − μ)/σ and x = μ + zσ.</p></div><div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Convert raw values to z-scores and z-scores back to original measurements.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> If learners use x = z − μ, derive x = μ + zσ from the z-score formula.</div></div></div><div class="session"><div class="sh"><h3>SESSION 4 — Integrated Normal Distribution Problem Solving</h3></div><div class="sb"><p><b>Daily objectives:</b> Select the correct conversion, solve a multi-step problem, and interpret the result.</p><div class="four"><div class="a"><h4>ACTIVITY</h4><span class="tag">Evidence gathering</span><p>Sort prompts into “find z” and “find x,” identifying μ and σ.</p></div><div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Compare solutions and locate errors involving sign or standard deviation.</p></div><div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Use: identify x, μ, σ → choose direction → substitute → calculate → interpret.</p></div><div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Complete an integrated normal-variable problem independently and justify the interpretation.</p></div></div><div class="evidence"><b>Evidence-to-action:</b> Use mastery evidence to distinguish conceptual, procedural, and interpretation errors.</div></div></div><div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence collected</th><th>Observed need</th><th>Instructional response</th></tr><tr><td>1</td><td>Normal-distribution characteristics</td><td>________________</td><td>________________</td></tr><tr><td>2</td><td>Z-score calculation</td><td>________________</td><td>________________</td></tr><tr><td>3</td><td>Forward/reverse conversion</td><td>________________</td><td>________________</td></tr><tr><td>4</td><td>Integrated mastery</td><td>________________</td><td>________________</td></tr></table></div></section><section id="fact" class="section"><div class="title"><span class="label">LEARNER GUIDE</span><h2>Normal Random Variable</h2><p>Understand normal-distribution characteristics and standardization.</p></div><div class="card"><h3>What You Will Learn</h3><ul><li>Recognize the characteristics of a normal distribution.</li><li>Understand mean and standard deviation as measures of center and spread.</li><li>Calculate z-scores.</li><li>Convert z-scores back to original values.</li><li>Interpret standardized positions.</li></ul></div><div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Normal random variable</td><td>A continuous random variable modeled by a normal distribution.</td></tr><tr><td>Normal distribution</td><td>A continuous, bell-shaped, symmetric probability distribution.</td></tr><tr><td>Mean (μ)</td><td>The center of the distribution.</td></tr><tr><td>Standard deviation (σ)</td><td>A measure of spread around the mean.</td></tr><tr><td>Standard normal variable</td><td>A standardized normal variable with mean 0 and standard deviation 1.</td><tr><td>z-score</td><td>A standardized value showing how many standard deviations a value is from the mean.</td></table></div><div class="card"><h3>Key Ideas and Formulas</h3><ul><li>The normal curve is symmetric and bell-shaped.</li><li>In an ideal normal distribution, mean = median = mode.</li><li>The standard normal distribution has μ = 0 and σ = 1.</li></ul><div class="formula">z = (x − μ)/σ</div><div class="formula">x = μ + zσ</div><div class="formula">P(Z &lt; z) = area to the left of z</div></div><div class="card"><h3>Worked Examples</h3>
+<h4>Example 1 — Probability below a z-value</h4>
+<p>Suppose Z is standard normal. The probability to the left of z = 1.00 is approximately <b>0.8413</b> using a standard Z-table.</p>
+<h4>Example 2 — Probability between two z-values</h4>
+<p>For −1.00 &lt; Z &lt; 1.00, subtract the left-tail area at −1.00 from the left-tail area at 1.00:</p>
+<div class="formula">P(−1 &lt; Z &lt; 1) = 0.8413 − 0.1587 = <b>0.6826</b></div>
+<h4>Example 3 — Percentile</h4>
+<p>A learner is at the 90th percentile. The standard normal table gives a z-value of approximately <b>1.28</b>. Thus the learner is about 1.28 standard deviations above the mean.</p>
+<h4>Example 4 — Find an original score</h4>
+<p>If test scores have μ = 75 and σ = 8, and the desired percentile corresponds to z = 1.28:</p>
+<div class="formula">x = μ + zσ = 75 + (1.28)(8) = <b>85.24</b></div>
+<p>The cut-off score is approximately 85.24.</p></div>
+<div class="card"><h3>Common Mistakes</h3><ul><li>Using the wrong μ or σ.</li><li>Reversing x − μ.</li><li>Thinking a negative z means a negative raw value.</li><li>Forgetting to multiply z by σ in reverse conversion.</li><li>Interpreting z as a raw score.</li></ul></div><div class="card"><h3>Real-World Connections</h3><p>Normal models can support analysis of measurements, assessment results, manufacturing quality, biological measurements, and other approximately bell-shaped data.</p></div></section><section id="activity" class="section"><div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 19 Practice</h2><p>Show the table value, probability operation, computation, and interpretation.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> What is the standard normal distribution? <div class="space"></div></div>
+<div class="q"><b>2.</b> What does the area under a normal curve represent? <div class="space"></div></div>
+<div class="q"><b>3.</b> What is the total area under a normal curve? <div class="space"></div></div>
+<div class="q"><b>4.</b> What is the approximate z-value for the 50th percentile? <div class="space"></div></div>
+<div class="q"><b>5.</b> What does a percentile describe? <div class="space"></div></div>
+<div class="q"><b>6.</b> Which standard-normal area is used for a “less than z” question? <div class="space"></div></div></div>
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> Using a Z-table, find P(Z &lt; 1.00). <div class="bigspace"></div></div>
+<div class="q"><b>8.</b> Using a Z-table, find P(Z &lt; −1.00). <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> Find P(−1.00 &lt; Z &lt; 1.00). <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> Find P(Z &gt; 1.28). <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> A score has μ = 70 and σ = 10. Find the probability that a randomly selected score is less than 80. First convert 80 to z, then use the Z-table. <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> A normal variable has μ = 75 and σ = 8. Find the raw score corresponding to z = 1.25. <div class="bigspace"></div></div></div>
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Challenge</h3>
+<div class="q"><b>13.</b> A learner says P(Z &gt; 1.00) = 0.8413 because the Z-table shows 0.8413. Identify the error and give the correct probability. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> Explain why P(Z &lt; −1.00) and P(Z &gt; 1.00) are equal for the standard normal distribution. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> Find the z-value corresponding approximately to the 90th percentile. Explain what it means. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> A learner uses 1.28 as the probability for the 90th percentile. Explain why 1.28 is not itself a probability. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> Test scores are normally distributed with μ = 75 and σ = 8. Find the probability that a randomly selected learner scores between 67 and 83. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: A school wants to identify the score at the 95th percentile for a test with μ = 75 and σ = 8. Use an appropriate standard-normal percentile and convert it to a raw score. Interpret the result. <div class="bigspace"></div></div></div>
+</section>
+<section id="assessment" class="section"><div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Normal Distribution</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> Which statement is true about the standard normal distribution? A. μ = 1, σ = 0 B. μ = 0, σ = 1 C. μ = 0, σ = 0 D. μ = 1, σ = 1<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> The area under a normal curve represents: A. raw score B. probability C. standard deviation only D. sample size<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> Using a Z-table, find P(Z &lt; 1.00).<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> Find P(Z &gt; 1.00).<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Find P(−1.00 &lt; Z &lt; 1.00).<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Approximately what z-value corresponds to the 90th percentile?<div class="space"></div></div>
+<div class="q"><b>7. (3 pts)</b> A normal variable has μ = 70 and σ = 10. Find P(X &lt; 80). Show the conversion to z and the table lookup.<div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> Test scores are normally distributed with μ = 75 and σ = 8. Determine the score at approximately the 95th percentile. Show the standard-normal percentile used, convert z to x, and interpret the result.<div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Enrichment through percentile and normal-model applications.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target table reading, tail/interval probability, or conversion errors.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Reteach z-standardization and basic area interpretation before reassessment.</td></tr></table></div></section>
+<section id="answers" class="section locked"><div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Complete solutions are protected by the teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Enter the access code to reveal the complete answer key and scoring guide.</div><div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li>The standard normal distribution is a normal distribution with mean 0 and standard deviation 1.</li>
+<li>The area under a normal curve represents probability.</li>
+<li>The total area is <b>1</b>, or 100%.</li>
+<li>The 50th percentile corresponds to <b>z = 0</b>.</li>
+<li>A percentile indicates the percentage of observations at or below a specified value.</li>
+<li>Use the cumulative area to the <b>left</b> of z.</li>
+<li>From the Z-table, P(Z &lt; 1.00) = <b>0.8413</b>.</li>
+<li>From the Z-table, P(Z &lt; −1.00) = <b>0.1587</b>.</li>
+<li>P(−1 &lt; Z &lt; 1) = 0.8413 − 0.1587 = <b>0.6826</b>.</li>
+<li>P(Z &gt; 1.28) = 1 − 0.8997 = <b>0.1003</b>.</li>
+<li>z = (80−70)/10 = <b>1.00</b>. Therefore P(X &lt; 80) = P(Z &lt; 1.00) = <b>0.8413</b>, or 84.13%.</li>
+<li>x = μ + zσ = 75 + (1.25)(8) = 75 + 10 = <b>85</b>.</li>
+<li>The table value 0.8413 is P(Z &lt; 1.00), not P(Z &gt; 1.00). Correctly, P(Z &gt; 1.00) = 1 − 0.8413 = <b>0.1587</b>.</li>
+<li>Because the standard normal curve is symmetric about zero, equal distances on opposite sides have equal tail areas. Thus both probabilities equal <b>0.1587</b>.</li>
+<li>The 90th percentile is approximately <b>z = 1.28</b>. It means about 90% of observations are at or below this z-value.</li>
+<li>1.28 is a z-score, not a probability. The probability/percentile is approximately <b>0.90</b>, while 1.28 tells the standardized location.</li>
+<li>For x = 67: z = (67−75)/8 = <b>−1</b>. For x = 83: z = (83−75)/8 = <b>1</b>. Therefore P(67 &lt; X &lt; 83) = 0.8413 − 0.1587 = <b>0.6826</b>, or 68.26%.</li>
+<li>The 95th percentile corresponds to approximately z = <b>1.645</b>. x = 75 + (1.645)(8) = 75 + 13.16 = <b>88.16</b>. So approximately 95% of scores are at or below 88.16.</li>
+</ol></div>
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>B. μ = 0, σ = 1.</b></li>
+<li><b>B. probability.</b></li>
+<li>P(Z &lt; 1.00) = <b>0.8413</b>.</li>
+<li>P(Z &gt; 1.00) = 1 − 0.8413 = <b>0.1587</b>.</li>
+<li>P(−1 &lt; Z &lt; 1) = 0.8413 − 0.1587 = <b>0.6826</b>.</li>
+<li>Approximately <b>z = 1.28</b>.</li>
+<li>z = (80−70)/10 = <b>1.00</b>; therefore P(X &lt; 80) = P(Z &lt; 1.00) = <b>0.8413</b>, or 84.13%.</li>
+<li>The 95th percentile corresponds to z ≈ <b>1.645</b>. x = 75 + (1.645)(8) = <b>88.16</b>. Interpretation: about 95% of the modeled scores are at or below 88.16, while about 5% are above it.</li>
+</ol></div>
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Table/technology use</td><td>Selects correct area or percentile and reads it accurately.</td><td>Minor table-reading error.</td><td>Incorrect or unsupported lookup.</td></tr><tr><td>Computation</td><td>Correct standardization, probability operation, and reverse conversion.</td><td>Sound method with minor arithmetic error.</td><td>Incorrect or incomplete method.</td></tr><tr><td>Interpretation</td><td>Clearly explains probability/percentile in context.</td><td>Basic interpretation.</td><td>No meaningful interpretation.</td></tr></table></div>
+</div></section>
+<section id="notes" class="section"><div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid"><div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Confusing z-scores with probabilities.</li><li>Reading the wrong tail from the Z-table.</li><li>Forgetting to subtract from 1 for an upper-tail probability when using a left-cumulative table.</li><li>Using the wrong z-value for a percentile.</li><li>Failing to convert a raw value to z before using the standard-normal table.</li><li>Forgetting to convert a percentile probability back to a raw score.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use a labeled standard-normal curve and shade the requested region before looking at the table.</li><li>Teach a consistent routine: sketch → identify tail/interval → find z → table lookup → probability → interpret.</li><li>Practice three core patterns: left of z, right of z, and between two z-values.</li><li>For percentiles, begin with the cumulative probability, locate z, then use x = μ + zσ.</li><li>Require learners to write the probability statement before the numerical answer.</li></ul></div></div>
+<div class="card"><h3>Enrichment</h3><ul><li>Compare percentiles and raw scores from different normal distributions.</li><li>Use spreadsheet functions or graphing technology to verify Z-table results.</li><li>Investigate how changing μ and σ changes the raw cut-off corresponding to the same percentile.</li><li>Connect percentile problems to later normal-distribution applications and decision making.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Basic probability</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Tail/interval probability</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Percentile/cut-off</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Integrated problem</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Budget of Work, Second Term, Week 9 — Data and Probability. The BOW specifies computing probabilities and percentiles involving the standard normal distribution using a Z-distribution table or appropriate technologies and solving problems involving normal distribution. fileciteturn42file1L83-L91</p>
+<p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div></section></main>
+
+<footer>Pareja Integrated School • Grade 11 General Mathematics • Term 2 Week 19 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div>
+<h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p>
+<input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code">
+<div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div>
+<div class="err" id="err"></div></div></div>
+
+<script>
+const CODE="010203";let unlocked=false;
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{const t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));window.scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){const c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+</script>
+</body>
+</html>
