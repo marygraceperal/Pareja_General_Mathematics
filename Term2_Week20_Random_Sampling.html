@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>General Mathematics | Term 2 Week 20 | Normal Distribution Probabilities</title>
+<style>
+:root{--p:#1d4ed8;--p2:#2563eb;--soft:#eff6ff;--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#eff6ff,#fff,#dbeafe);border-bottom:1px solid var(--border)}
+.wrap,main{max-width:1180px;margin:auto}.wrap{padding:28px 18px}.badge,.label,.tag{display:inline-block;font-weight:800}.badge{background:#dbeafe;color:#1e40af;padding:6px 10px;border-radius:999px;font-size:.75rem}
+.label{background:var(--soft);color:var(--p);padding:5px 9px;border-radius:7px;font-size:.72rem}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;margin:12px 0 6px}.sub{color:var(--p);font-weight:750}
+.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.meta span{background:#fff;border:1px solid var(--border);padding:7px 10px;border-radius:8px;font-size:.82rem;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{padding:10px 14px;border-radius:9px;font-weight:800;cursor:pointer;border:1px solid var(--border);background:#fff}.primary{background:var(--p);color:#fff;border-color:var(--p)}
+nav{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+.navin{max-width:1180px;margin:auto;padding:8px 12px;display:flex;gap:7px;overflow:auto}.tab{white-space:nowrap;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--p);color:#fff;border-color:var(--p)}
+main{padding:25px 18px 55px}.section{display:none}.section.active{display:block}.title{margin-bottom:17px}.title h2{margin:7px 0 3px}.title p{margin:0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:19px;margin-bottom:16px;box-shadow:0 5px 18px #0f172a0a}.card h3{color:var(--p);margin-top:0}.card h4{color:var(--p2);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{border:1px solid var(--border);padding:12px;border-radius:9px}
+.callout,.evidence,.lock{padding:12px 14px;border-radius:8px;border-left:5px solid}.callout{background:var(--soft);border-color:var(--p2)}.evidence{background:#f0fdf4;border-color:#166534}.lock{background:#f8fafc;border-color:var(--p)}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--p)}
+.session{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}.sh{background:var(--soft);padding:13px 16px}.sh h3{margin:0;color:var(--p)}.sb{padding:16px}
+.four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.a{border:1px solid var(--border);border-radius:10px;padding:12px}.a h4{margin:0;color:var(--p)}.tag{font-size:.67rem;text-transform:uppercase;background:#f1f5f9;color:#475569;padding:3px 6px;border-radius:5px}
+.formula{background:#f8fafc;border:1px dashed #93c5fd;padding:10px;border-radius:8px;font-weight:750;margin:8px 0}
+.student{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:15px}.student div{border:1px solid var(--border);padding:8px;border-radius:7px;background:#fff}
+.q{margin-bottom:18px}.space{min-height:48px;border-bottom:1px solid #94a3b8}.bigspace{min-height:90px;border:1px dashed #cbd5e1;border-radius:7px;margin-top:7px}
+.locked .secret{display:none}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}
+.modalbox{background:#fff;width:min(410px,100%);padding:27px;border-radius:17px;text-align:center}.modalbox h3{color:var(--p)}.modalbox input{width:100%;padding:12px;text-align:center;border:1px solid var(--border);border-radius:8px;letter-spacing:.35em}.ma{display:flex;gap:8px;margin-top:10px}.ma button{flex:1}.err{height:20px;color:#b91c1c;font-size:.8rem;font-weight:700}
+footer{text-align:center;color:var(--muted);padding:22px;border-top:1px solid var(--border);font-size:.8rem}
+@media(max-width:780px){.grid,.four,.student{grid-template-columns:1fr}}
+@media print{body{background:#fff;font-size:10.5pt}.actions,nav,footer,.modal{display:none!important}main{padding:0}.section{display:block!important}.section:not(:first-child){page-break-before:always}.card,.session{box-shadow:none;break-inside:avoid}.locked{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">EVIDENCE-INFORMED ILAW • 4As</span>
+<h1>Random Sampling, Sample Size, Parameters, Statistics, and Sampling Techniques</h1>
+<div class="sub">General Mathematics • Term 2 • Week 20 (BOW Second Term Week 10)</div>
+<div class="meta">
+<span><b>Teacher:</b> Mary Grace M. Peral</span><span><b>School:</b> Pareja Integrated School</span>
+<span><b>Grade:</b> 11 – Magsaysay</span><span><b>Sessions:</b> 4</span><span><b>Theme:</b> Term 2 Blue</span>
+</div>
+<div class="actions"><button class="btn primary" onclick="window.print()">🖨️ Print Entire Package</button><button class="btn" onclick="window.print()">🖨️ Print Current View</button></div>
+</div></header>
+
+<nav><div class="navin">
+<button class="tab active" data-t="lesson">LESSON PLAN</button>
+<button class="tab" data-t="fact">FACT SHEET</button>
+<button class="tab" data-t="activity">ACTIVITY SHEET</button>
+<button class="tab" data-t="assessment">ASSESSMENT</button>
+<button class="tab" data-t="answers">🔒 ANSWER KEY</button>
+<button class="tab" data-t="notes">TEACHER NOTES</button>
+</div></nav>
+
+<main>
+<section id="lesson" class="section active"><div class="title"><span class="label">ILAW LESSON PLAN</span><h2>Random Sampling, Sample Size, Parameters, Statistics, and Sampling Techniques</h2><p>Four complete daily Evidence-Informed 4As sessions: Activity → Analysis → Abstraction → Application.</p></div>
+<div class="card"><h3>Lesson Information</h3><div class="grid"><div class="info"><b>Learning Area</b><br>General Mathematics</div><div class="info"><b>Weekly Topic</b><br>Normal random variable, characteristics, and conversion to and from the standard normal variable</div><div class="info"><b>Grade & Section</b><br>Grade 11 – Magsaysay</div><div class="info"><b>Term / Website Week</b><br>Term 2 • Week 20</div><div class="info"><b>BOW Position</b><br>Second Term • Week 10</div><div class="info"><b>Sessions</b><br>4 complete 4As sessions</div></div></div>
+<div class="card"><h3>Curriculum Alignment</h3><div class="callout"><b>BOW Second Term, Week 10 — Data and Probability:</b><ul>
+<li>Illustrate random sampling.</li>
+<li>Determine the appropriate sample size for a specific investigation.</li>
+<li>Distinguish between parameter and statistic, and probability and nonprobability sampling techniques.</li>
+</ul>These are the Week 10 competency elements stated in the provided BOW. fileciteturn43file9L397-L401</div></div>
+<div class="card"><h3>Weekly Learning Intentions</h3><ul>
+<li>Explain the purpose of sampling when studying a population.</li>
+<li>Illustrate common random sampling approaches and distinguish them from nonprobability techniques.</li>
+<li>Determine a suitable sample size for a specific investigation using the stated assumptions or rule.</li>
+<li>Distinguish a parameter from a statistic and use each term correctly.</li>
+<li>Justify a sampling choice in a practical school or community investigation.</li>
+</ul><div class="evidence"><b>Evidence-informed cycle:</b> retrieve → notice patterns → explain evidence → explicitly model → guided practice → error analysis → independent application → mastery check → targeted response.</div></div>
+<div class="session"><div class="sh"><h3>SESSION 1 — Illustrating Random Sampling</h3></div><div class="sb"><p><b>Daily objectives:</b> Explain why samples are used and illustrate how a random sample can be selected from a population.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Connect</span><p>Present a school investigation: “What proportion of Grade 11 learners prefer printed versus digital mathematics resources?” Learners identify the population and propose ways to select participants.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Formative check</span><p>Compare a simple random selection with selecting only nearby friends. Discuss how selection procedures can introduce bias.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Define population, sample, and random sampling. Illustrate simple random, systematic, stratified, and cluster sampling at an introductory level.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Learners identify the most appropriate sampling technique for several school and community investigations and justify each choice.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> If learners confuse “random” with “any convenient group,” return to the idea that selection should provide a defensible chance of inclusion according to the stated sampling design.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 2 — Appropriate Sample Size</h3></div><div class="sb"><p><b>Daily objectives:</b> Determine an appropriate sample size for a stated investigation using a provided sample-size rule or formula and explain the role of population size and precision.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Estimate</span><p>Compare investigations involving a small school population and a much larger population. Learners predict whether the same sample size is automatically appropriate.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Reasoning</span><p>Discuss why sample size depends on the purpose, population, desired precision, confidence, variability, and available resources.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>Model a stated sample-size rule. When the investigation uses Slovin’s formula, n = N ÷ (1 + Ne²), identify N as population size and e as the allowable margin of error.</p><div class="formula">Slovin: n = N ÷ (1 + Ne²)</div></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Learners determine sample sizes from stated N and e values, round appropriately to a whole participant, and explain the decision.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> If learners substitute e instead of e², pause and require them to label every quantity before calculation and check the final sample size against the population.</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 3 — Parameter, Statistic, Probability and Nonprobability Sampling</h3></div><div class="sb"><p><b>Daily objectives:</b> Distinguish parameters from statistics and probability from nonprobability sampling techniques using contextual examples.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Classify</span><p>Sort statements such as “the average of all 1,200 learners” and “the average of 100 selected learners” into population measure or sample measure.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Error analysis</span><p>Examine common sampling choices such as convenience, purposive, quota, simple random, systematic, stratified, and cluster sampling. Identify which are probability techniques.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Explicit modeling</span><p>A parameter describes a population; a statistic describes a sample. Probability sampling uses a known/randomized selection mechanism; nonprobability sampling does not give every population member a known probability of selection.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Guided → independent</span><p>Learners classify scenarios and explain whether the reported number is a parameter or statistic and whether the sampling technique is probability or nonprobability.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> If learners classify based on the size of a number rather than whether it describes the population or sample, require them to underline the words “all” or “selected.”</div></div></div>
+
+<div class="session"><div class="sh"><h3>SESSION 4 — Integrated Sampling Investigation</h3></div><div class="sb"><p><b>Daily objectives:</b> Design a defensible sampling plan, determine an appropriate sample size under stated assumptions, and distinguish the resulting statistic from the population parameter.</p><div class="four">
+<div class="a"><h4>ACTIVITY</h4><span class="tag">Retrieve</span><p>Quick classification: population/sample, parameter/statistic, probability/nonprobability, then select a sampling design for a proposed investigation.</p></div>
+<div class="a"><h4>ANALYSIS</h4><span class="tag">Strategy comparison</span><p>Compare two proposed sampling plans. Identify possible bias, feasibility concerns, and whether the sample size rule was applied correctly.</p></div>
+<div class="a"><h4>ABSTRACTION</h4><span class="tag">Synthesis</span><p>Use the routine: define population → define target variable → choose sampling technique → determine sample size → select sample → distinguish statistic from parameter → explain limitations.</p></div>
+<div class="a"><h4>APPLICATION</h4><span class="tag">Mastery</span><p>Learners complete an integrated school-based investigation plan and defend the sampling method and sample size.</p></div></div>
+<div class="evidence"><b>Evidence-to-action:</b> Use the mastery evidence to identify whether the learner's difficulty is conceptual (sampling terminology), procedural (sample-size calculation), or evaluative (justifying a sampling design).</div></div></div><div class="evidence"><b>Evidence-to-action:</b> Use mastery evidence to distinguish conceptual, procedural, and interpretation errors.</div></div></div><div class="card"><h3>Weekly Evidence-to-Action Record</h3><table><tr><th>Session</th><th>Evidence collected</th><th>Observed need</th><th>Instructional response</th></tr><tr><td>1</td><td>Normal-distribution characteristics</td><td>________________</td><td>________________</td></tr><tr><td>2</td><td>Z-score calculation</td><td>________________</td><td>________________</td></tr><tr><td>3</td><td>Forward/reverse conversion</td><td>________________</td><td>________________</td></tr><tr><td>4</td><td>Integrated mastery</td><td>________________</td><td>________________</td></tr></table></div></section><section id="fact" class="section"><div class="title"><span class="label">LEARNER GUIDE</span><h2>Random Sampling and Sample Size</h2><p>Learn how researchers select samples and make careful distinctions between population and sample information.</p></div>
+<div class="card"><h3>What You Will Learn</h3><ul><li>Explain population and sample.</li><li>Illustrate probability and nonprobability sampling.</li><li>Determine an appropriate sample size under stated assumptions.</li><li>Distinguish parameters from statistics.</li><li>Justify a sampling technique for an investigation.</li></ul></div>
+<div class="card"><h3>Essential Definitions</h3><table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Population</td><td>The entire group about which an investigation seeks information.</td></tr>
+<tr><td>Sample</td><td>A subset of the population selected for study.</td></tr>
+<tr><td>Random sampling</td><td>A sampling process that uses a random mechanism to select members according to a defined design.</td></tr>
+<tr><td>Probability sampling</td><td>A sampling approach in which population members have a known or definable probability of selection under the design.</td></tr>
+<tr><td>Nonprobability sampling</td><td>A sampling approach in which selection is not based on a known probability mechanism.</td></tr>
+<tr><td>Parameter</td><td>A numerical characteristic describing a population.</td></tr>
+<tr><td>Statistic</td><td>A numerical characteristic calculated from a sample.</td></tr>
+<tr><td>Sample size</td><td>The number of observations or participants included in a sample.</td></tr></table></div>
+<div class="card"><h3>Common Sampling Techniques</h3><table><tr><th>Technique</th><th>Basic idea</th><th>Example</th></tr>
+<tr><td>Simple random</td><td>Select members randomly from the entire population.</td><td>Randomly select 50 learner IDs from a complete list.</td></tr>
+<tr><td>Systematic</td><td>Select every k-th member after a random start.</td><td>Select every 10th name after choosing a starting point.</td></tr>
+<tr><td>Stratified</td><td>Divide the population into relevant strata, then sample within each.</td><td>Sample learners from each grade level.</td></tr>
+<tr><td>Cluster</td><td>Select whole groups or clusters, then study members within selected clusters.</td><td>Randomly select several sections and survey their learners.</td></tr>
+<tr><td>Convenience</td><td>Select those who are easiest to reach.</td><td>Survey students who happen to be in the room.</td></tr>
+<tr><td>Purposive</td><td>Select participants because they meet a chosen purpose or criterion.</td><td>Select mathematics coordinators for an expert interview.</td></tr>
+<tr><td>Quota</td><td>Fill specified subgroup quotas without requiring random selection within groups.</td><td>Recruit a target number from several categories using available participants.</td></table></div>
+<div class="card"><h3>Key Ideas and Formula</h3><p>First identify the population and the purpose of the investigation. Then choose a sampling design that is appropriate, feasible, and as defensible as possible.</p>
+<div class="formula">When Slovin’s formula is specified: n = N ÷ (1 + Ne²)</div>
+<p>N = population size; e = allowable margin of error expressed as a decimal; n = calculated sample size. Round the final participant count appropriately and never select more participants than the population contains.</p>
+<div class="formula">Parameter → population &nbsp;&nbsp;&nbsp; Statistic → sample</div></div>
+<div class="card"><h3>Worked Examples</h3>
+<h4>Example 1 — Parameter or statistic?</h4><p>The average score of <b>all</b> 500 Grade 11 learners is 78. Because the value describes the whole population, 78 is a <b>parameter</b>.</p>
+<h4>Example 2 — Sample size</h4><p>A school has N = 500 learners and the stated allowable margin of error is e = 0.05. Using Slovin’s formula:</p>
+<div class="formula">n = 500 ÷ [1 + 500(0.05)²] = 500 ÷ 2.25 ≈ <b>222.22</b></div><p>A practical whole-number sample would be <b>223</b> if rounding up to ensure the stated minimum.</p>
+<h4>Example 3 — Probability versus nonprobability</h4><p>Randomly selecting 100 learner IDs from a complete list is a probability-sampling approach. Asking the first 100 available learners to respond is a nonprobability convenience approach.</p>
+<h4>Example 4 — Choosing a technique</h4><p>If a school wants representation from each grade level, <b>stratified sampling</b> may be appropriate because grade level forms meaningful strata.</p></div>
+<div class="card"><h3>Common Mistakes</h3><ul><li>Confusing population with sample.</li><li>Calling a statistic a parameter because its value is large or small.</li><li>Calling convenience sampling random simply because many people are involved.</li><li>Forgetting to square e when using Slovin’s formula.</li><li>Using a sample size larger than the population.</li><li>Choosing a technique without considering the investigation's purpose or population structure.</li></ul></div>
+<div class="card"><h3>Real-World Connections</h3><p>Sampling is used in school surveys, public opinion studies, market research, quality control, health investigations, and community research when studying every member of a population is impractical.</p></div></section><section id="activity" class="section"><div class="title"><span class="label">PRINTABLE ACTIVITY</span><h2>Week 20 Practice</h2><p>Show your sampling reasoning, calculations, and justification.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card"><h3>Part 1 — Recall & Basic Understanding</h3>
+<div class="q"><b>1.</b> Define population and sample. <div class="space"></div></div>
+<div class="q"><b>2.</b> What is random sampling? <div class="space"></div></div>
+<div class="q"><b>3.</b> Distinguish a parameter from a statistic. <div class="space"></div></div>
+<div class="q"><b>4.</b> What is probability sampling? <div class="space"></div></div>
+<div class="q"><b>5.</b> What is nonprobability sampling? <div class="space"></div></div>
+<div class="q"><b>6.</b> Name two probability-sampling techniques. <div class="space"></div></div></div>
+<div class="card"><h3>Part 2 — Application & Problem Solving</h3>
+<div class="q"><b>7.</b> A school has 600 learners. The researcher randomly selects 60 learner IDs from the complete list. Identify the population and sample. <div class="bigspace"></div></div>
+<div class="q"><b>8.</b> A study reports that the average of all 800 Grade 11 learners is 81. Is 81 a parameter or statistic? Explain. <div class="bigspace"></div></div>
+<div class="q"><b>9.</b> Using Slovin’s formula, find the sample size for N = 400 and e = 0.05. <div class="bigspace"></div></div>
+<div class="q"><b>10.</b> Using Slovin’s formula, find the sample size for N = 1,000 and e = 0.05. <div class="bigspace"></div></div>
+<div class="q"><b>11.</b> A researcher selects every 8th name after a random starting point. Identify the sampling technique. <div class="bigspace"></div></div>
+<div class="q"><b>12.</b> A school wants each grade level represented in a survey. Which sampling technique is especially suitable? Explain. <div class="bigspace"></div></div></div>
+<div class="card"><h3>Part 3 — Advanced Analysis, Error Analysis & Differentiated Challenge</h3>
+<div class="q"><b>13.</b> A learner says asking the first 50 available students is “simple random sampling.” Explain the error. <div class="bigspace"></div></div>
+<div class="q"><b>14.</b> A learner uses n = 500 ÷ (1 + 500 × 0.05) instead of squaring 0.05. Identify the procedural error and explain how it affects the calculation. <div class="bigspace"></div></div>
+<div class="q"><b>15.</b> A statistic is calculated from a sample of 120 learners. Explain why it is not automatically a parameter. <div class="bigspace"></div></div>
+<div class="q"><b>16.</b> Compare stratified and cluster sampling. Give one situation where each may be appropriate. <div class="bigspace"></div></div>
+<div class="q"><b>17.</b> A community has 750 households. Using Slovin’s formula with e = 0.05, calculate the sample size. Then state whether you would prefer simple random, systematic, or stratified sampling for a community containing three clearly different zones. Justify your choice. <div class="bigspace"></div></div>
+<div class="q"><b>18.</b> CHALLENGE: Design a sampling plan for a school investigation. State the population, variable of interest, sampling technique, sample size assumption, and how you would select participants. Explain one possible source of sampling bias. <div class="bigspace"></div></div></div></section>
+<section id="assessment" class="section"><div class="title"><span class="label">WEEKLY ASSESSMENT</span><h2>Mastery Check — Sampling</h2><p>20 points.</p></div>
+<div class="student"><div><b>Name:</b> ____________________</div><div><b>Section:</b> 11–Magsaysay</div><div><b>Date:</b> __________</div><div><b>Score:</b> ____ / 20</div></div>
+<div class="card">
+<div class="q"><b>1. (2 pts)</b> The entire group about which an investigation seeks information is the: A. sample B. statistic C. population D. parameter<div class="space"></div></div>
+<div class="q"><b>2. (2 pts)</b> Which is a probability-sampling technique? A. convenience B. purposive C. simple random D. quota<div class="space"></div></div>
+<div class="q"><b>3. (2 pts)</b> A numerical characteristic of a population is called a: A. statistic B. parameter C. sample D. variable<div class="space"></div></div>
+<div class="q"><b>4. (2 pts)</b> Using Slovin’s formula, what is n when N = 400 and e = 0.05?<div class="space"></div></div>
+<div class="q"><b>5. (2 pts)</b> Which technique is particularly useful when a population is divided into meaningful subgroups and each subgroup should be represented? A. stratified B. convenience C. purposive D. quota<div class="space"></div></div>
+<div class="q"><b>6. (2 pts)</b> Explain the difference between probability and nonprobability sampling.<div class="bigspace"></div></div>
+<div class="q"><b>7. (3 pts)</b> A researcher selects every 10th name from a complete list after a random starting point. Identify the technique and explain why it is appropriate.<div class="bigspace"></div></div>
+<div class="q"><b>8. (5 pts)</b> A school has 750 learners. Using Slovin’s formula with e = 0.05, determine an appropriate sample size. Then recommend a sampling technique if the school wants representation from each grade level. Explain your recommendation.<div class="bigspace"></div></div>
+</div>
+<div class="card"><h3>Mastery Interpretation</h3><table><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>18–20</td><td>Mastered</td><td>Enrichment through designing and defending a sampling plan.</td></tr><tr><td>14–17</td><td>Developing</td><td>Target sampling terminology, technique selection, or sample-size computation.</td></tr><tr><td>0–13</td><td>Not Yet Mastered</td><td>Reteach population/sample, parameter/statistic, and basic sampling designs before reassessment.</td></tr></table></div></section>
+<section id="answers" class="section locked"><div class="title"><span class="label">TEACHER-ONLY</span><h2>Answer Key & Scoring Guide</h2><p>Complete solutions are protected by the teacher access code.</p></div>
+<div class="lock"><b>Teacher property:</b> Enter the access code to reveal the complete answer key and scoring guide.</div><div class="secret">
+<div class="card"><h3>Activity Sheet — Complete Solutions</h3><ol>
+<li>A <b>population</b> is the entire group of interest; a <b>sample</b> is a subset selected for study.</li>
+<li>Random sampling uses a defined random mechanism to select members according to a sampling design.</li>
+<li>A <b>parameter</b> describes a population; a <b>statistic</b> describes a sample.</li>
+<li>Probability sampling uses a known/definable selection probability under the sampling design.</li>
+<li>Nonprobability sampling does not use a known probability mechanism for selection.</li>
+<li>Examples: simple random, systematic, stratified, and cluster sampling.</li>
+<li>Population = all 600 learners; sample = the 60 selected learner IDs.</li>
+<li><b>Parameter</b>, because 81 describes all 800 Grade 11 learners.</li>
+<li>n = 400 ÷ [1 + 400(0.05)²] = 400 ÷ [1 + 400(0.0025)] = 400 ÷ 2 = <b>200</b>.</li>
+<li>n = 1,000 ÷ [1 + 1,000(0.05)²] = 1,000 ÷ [1 + 2.5] = 1,000 ÷ 3.5 ≈ <b>285.71</b>; round up to <b>286</b>.</li>
+<li><b>Systematic sampling.</b></li>
+<li><b>Stratified sampling</b> is suitable because grade levels form meaningful subgroups and the study wants each represented.</li>
+<li>It is <b>convenience sampling</b>, not simple random sampling, because selection is based on ease of access rather than a random mechanism from the population list.</li>
+<li>The formula requires <b>e²</b>. The correct denominator is 1 + Ne²; omitting the square changes the sample-size result substantially.</li>
+<li>A statistic is calculated from a <b>sample</b>, so it describes that sample rather than the whole population. It becomes a parameter only when the value describes the entire population.</li>
+<li><b>Stratified</b> sampling divides the population into relevant strata and samples within each; <b>cluster</b> sampling selects groups/clusters. Stratified is useful when each subgroup needs representation; cluster can be useful when naturally occurring groups are convenient units for selection.</li>
+<li>n = 750 ÷ [1 + 750(0.05)²] = 750 ÷ [1 + 1.875] = 750 ÷ 2.875 ≈ <b>260.87</b>; round up to <b>261</b>. With three clearly different zones, <b>stratified sampling</b> is defensible if each zone should be represented.</li>
+<li>Answers vary. Full credit requires population, variable, defensible sampling technique, stated sample-size basis, a workable selection procedure, and one realistic source of bias.</li>
+</ol></div>
+<div class="card"><h3>Assessment — Complete Solutions</h3><ol>
+<li><b>C. population.</b></li>
+<li><b>C. simple random.</b></li>
+<li><b>B. parameter.</b></li>
+<li>n = 400 ÷ [1 + 400(0.05)²] = 400 ÷ 2 = <b>200</b>.</li>
+<li><b>A. stratified.</b></li>
+<li>Probability sampling uses a known/definable random selection mechanism; nonprobability sampling does not provide a known probability mechanism for selection.</li>
+<li><b>Systematic sampling.</b> After a random starting point, every 10th name is selected according to a fixed interval.</li>
+<li>n = 750 ÷ [1 + 750(0.05)²] = 750 ÷ 2.875 ≈ 260.87, so round up to <b>261 learners</b>. <b>Stratified sampling</b> is appropriate if each grade level should be represented because grade levels can serve as strata.</li>
+</ol></div>
+<div class="card"><h3>Open-Ended Rubric</h3><table><tr><th>Criterion</th><th>Full</th><th>Partial</th><th>Beginning</th></tr><tr><td>Sampling concept</td><td>Correctly identifies and explains population, sample, parameter/statistic, and technique.</td><td>Mostly correct with minor omission.</td><td>Major conceptual misunderstanding.</td></tr><tr><td>Computation</td><td>Correct formula, substitution, arithmetic, and rounding.</td><td>Sound method with minor arithmetic error.</td><td>Incorrect or incomplete method.</td></tr><tr><td>Justification</td><td>Sampling choice is clearly connected to the investigation.</td><td>Basic justification.</td><td>Choice is unsupported or inappropriate.</td></tr></table></div>
+</div></section>
+<section id="notes" class="section"><div class="title"><span class="label">TEACHER NOTES</span><h2>Support, Remediation and Enrichment</h2></div>
+<div class="grid"><div class="card"><h3>Common Learner Misconceptions</h3><ul><li>Confusing population and sample.</li><li>Calling any large group a random sample.</li><li>Confusing a parameter with a statistic.</li><li>Thinking convenience sampling is random because participants are selected quickly.</li><li>Forgetting e² in Slovin’s formula when that formula is specified.</li><li>Choosing a sampling technique without connecting it to the population structure.</li></ul></div>
+<div class="card"><h3>Remediation</h3><ul><li>Use “ALL vs SELECTED” labels to distinguish population and sample.</li><li>Use “POPULATION → parameter” and “SAMPLE → statistic” as a retrieval cue.</li><li>Give sorting cards for probability versus nonprobability techniques.</li><li>Require learners to label N and e before substituting into a stated formula.</li><li>Use scenario comparison before assigning more numerical problems.</li></ul></div></div>
+<div class="card"><h3>Enrichment</h3><ul><li>Design a school survey and defend its sampling plan.</li><li>Compare two sample-size assumptions and discuss the effect of changing allowable error.</li><li>Use a spreadsheet to calculate sample sizes and compare rounding decisions.</li><li>Investigate how sampling bias can affect conclusions even when a sample is large.</li></ul></div>
+<div class="card"><h3>Weekly Evidence Record</h3><table><tr><th>Session</th><th>Evidence</th><th>Need observed</th><th>Teacher response</th></tr><tr><td>1</td><td>Sampling technique classification</td><td>____________</td><td>____________</td></tr><tr><td>2</td><td>Sample-size computation</td><td>____________</td><td>____________</td></tr><tr><td>3</td><td>Parameter/statistic classification</td><td>____________</td><td>____________</td></tr><tr><td>4</td><td>Integrated sampling plan</td><td>____________</td><td>____________</td></tr></table></div>
+<div class="card"><h3>References and AI Declaration</h3><p>Primary curriculum basis: Grade 11 General Mathematics Budget of Work, Second Term, Week 10 — Data and Probability. The BOW specifies illustrating random sampling, determining the appropriate sample size for a specific investigation, and distinguishing parameter/statistic and probability/nonprobability sampling techniques. fileciteturn43file9L397-L401</p>
+<p>This package was developed with AI-assisted instructional design support. The teacher remains responsible for curriculum alignment, contextualization, validation of content, assessment decisions, mathematical accuracy, and final instructional use.</p></div></section></main>
+
+<footer>Pareja Integrated School • Grade 11 General Mathematics • Term 2 Week 20 • School Year 2026–2027</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div style="font-size:2.2rem">🔒</div>
+<h3>Teacher Access Required</h3><p>The Answer Key is reserved for teacher use.</p>
+<input id="code" type="password" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code">
+<div class="ma"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="unlock()">Unlock</button></div>
+<div class="err" id="err"></div></div></div>
+
+<script>
+const CODE="010203";let unlocked=false;
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{const t=b.dataset.t;if(t==="answers"&&!unlocked){openModal();return}activate(t)});
+function activate(t){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.t===t));document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===t));window.scrollTo(0,0)}
+function openModal(){document.getElementById("modal").classList.add("show");document.getElementById("code").value="";document.getElementById("err").textContent="";setTimeout(()=>document.getElementById("code").focus(),50)}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function unlock(){const c=document.getElementById("code");if(c.value===CODE){unlocked=true;document.getElementById("answers").classList.remove("locked");closeModal();activate("answers")}else document.getElementById("err").textContent="Incorrect code."}
+document.getElementById("code").onkeydown=e=>{if(e.key==="Enter")unlock();if(e.key==="Escape")closeModal()};
+</script>
+</body>
+</html>
